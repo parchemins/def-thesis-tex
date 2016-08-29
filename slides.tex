@@ -99,7 +99,31 @@
     \titlepage
   \end{frame}
 
-  \begin{frame}
+  \input{input/introduction.tex}
+
+  \begin{frame}{Plan}
+    \tableofcontents
   \end{frame}
 
+
+  \input{input/replication.tex} %% no begin section right after toc
+
+  \AtBeginSection[]{
+    \begin{frame}{Plan}
+      \tableofcontents[currentsection]
+    \end{frame}
+  }
+  
+  \input{input/network.tex}
+  \input{input/editor.tex}
+
+  \input{input/conclusion.tex}
+  
+  \section*{Références}
+  \begin{frame}[allowframebreaks]{Références}
+    \def\newblock{\hskip .11em plus .33em minus .07em}
+    \bibliographystyle{frplainnat}
+    \bibliography{bibliographie}
+  \end{frame}
+  
 \end{document}
