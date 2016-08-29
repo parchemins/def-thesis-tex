@@ -6,3 +6,6 @@
 *.out
 *.snm
 *.toc
+*.bbl
+*.blg
+.DS_Store
