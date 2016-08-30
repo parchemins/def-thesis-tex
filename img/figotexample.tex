@@ -1,0 +1,49 @@
+
+\begin{tikzpicture}[scale=0.95]
+
+  \newcommand\X{30pt};
+  \newcommand\Y{30pt};
+  
+  \draw[->](0pt,   0pt)--(10*\X,   0pt);
+  \draw[->](0pt, -1*\Y)--(10*\X, -1*\Y);
+  \draw[->](0pt, -2*\Y)--(10*\X, -2*\Y);
+  
+  \draw[fill=black](0pt, 0pt) node[anchor=east]{réplique 1 }circle(2pt);
+  \draw[fill=black](0pt, -1*\Y) node[anchor=east]{réplique 2 }circle(2pt);
+  \draw[fill=black](0pt, -2*\Y) node[anchor=east]{réplique 3 }circle(2pt);
+
+  \draw(\X,2pt)--node[anchor=south]{[WERTY]}( \X,   -2pt);
+  \draw(\X,2 -1*\Y)--node[anchor=south]{[WERTY]}(\X,-2 -1*\Y);
+  \draw(\X,2 -2*\Y)--node[anchor=south]{[WERTY]}(\X,-2 -2*\Y);
+  \footnotesize
+  \draw(3* \X,2pt)--node[anchor=north]{\textsc{insert}(Q, 0)}(3 * \X,   -2pt);
+  \draw(3* \X,2 -2*\Y)--node[anchor=north]{\textsc{delete}(\DARKBLUE{\textbf{0}})}(3 * \X,-2 -2*\Y);
+  \normalsize
+
+  \draw(3* \X,2pt)--node[anchor=south]{[QWERTY]}(3 * \X,   -2pt);
+%  \draw(2* \X,2 -1*\Y)--node[anchor=south]{[ ]}(2* \X,-2 -1*\Y)
+  \draw(3* \X,2 -2*\Y)--node[anchor=south]{[ERTY]}( 3 * \X,-2 -2*\Y);
+
+  \draw[->, dashed] (5*\X, 0pt) -- (7*\X, -1*\Y);
+  \draw[->, dashed] (5*\X, 0pt) -- (7*\X, -2*\Y);
+
+  \footnotesize
+  \draw[->, dashed] (5*\X, -2*\Y) -- (7*\X,  0*\Y)
+  node[anchor=south]{\textsc{delete}(\DARKBLUE{\textbf{1}})};
+  \normalsize
+  \draw[->, dashed] (5*\X, -2*\Y) -- (7*\X, -1*\Y);
+
+  \draw(9*\X, 2 -0*\Y)--node[anchor=south]{[QERTY]}(9*\X,-2 -0*\Y);
+  \draw(9*\X, 2 -1*\Y)--node[anchor=south]{[QERTY]}(9*\X,-2 -1*\Y);
+  \draw(9*\X, 2 -2*\Y)--node[anchor=south]{[QERTY]}(9*\X,-2 -2*\Y);
+
+
+%%  \draw(9*\X, 2 -0*\Y)--node[anchor=south]{[QWERTY]}(9*\X,-2 -0*\Y);
+%%  \draw(9*\X, 2 -1*\Y)--node[anchor=south]{[QWERTY]}(9*\X,-2 -1*\Y);
+%%  \draw(9*\X, 2 -2*\Y)--node[anchor=south]{[QWERTY]}(9*\X,-2 -2*\Y);
+
+
+%%  \draw[fill=white, very thick]
+%%  (0*\X, 0*\Y) node{$p_1$} +(-5pt,-5pt) rectangle +(5pt,5pt);
+%%  \draw[->](-5+\X, 5+2*\Y)to[out=120,in=30](0pt,5+2*\Y); %% 6 -> 7
+\end{tikzpicture}

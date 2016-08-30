@@ -16,6 +16,104 @@
   \begin{textblock*}{\textwidth}(-0.65cm,0.4cm) 
     \input{img/figoptimisticsteps.tex}
   \end{textblock*}
+\end{frame}
+
+
+\begin{frame}{Structure de séquences}{Cohérence des répliques}
+  
+  \vspace{-1.5cm}
+
+  D'après Sun et al. \REF{}, l'édition collaborative temps réel nécessite un
+  système préservant les trois propriétés : 
+
+  \begin{itemize}
+  \item Convergence;
+  \item Causalité;
+  \item Intention.  
+  \end{itemize}
+
+  \begin{textblock*}{\textwidth}(-0.65cm,0.4cm) 
+    \input{img/figcausality.tex}
+  \end{textblock*}
+
+\end{frame}
+
+
+\begin{frame}{Structure de séquences}{Intention}
+  
+  L'effet observé sur le document lors de la génération d'une opération doit
+  être également observé lors de son intégration malgré l'interférence
+  d'opérations \textbf{concurrentes}.
+
+  \vspace{0.5cm}
+
+  \begin{itemize}
+  \item Difficile à formaliser dans le cas général;
+  \item L'opération doit respecter le plus possible sa spécification séquentielle \REF.
+  \end{itemize}
+
+  \vspace{0.5cm}
+  
+  Pour la séquence :
+  \begin{itemize}
+  \item \og insérer l'élément $e$ à la position $i$ dans la séquence \fg
+  \item \og supprimer l'élément à la position $i$ dans la séquence \fg
+  \end{itemize}
+
+  \vspace{0.5cm}
+
+  \begin{itemize}
+    \only<1-1>{\item [$\rightarrow$]L'intention semble être liée à aux
+      positions.}
+    \only<2->{\item [$\rightarrow$]\sout{L'intention semble être
+        liée aux \textbf{positions}.}}
+    \uncover<2->{\item [$\rightarrow$] Une séquence
+    se définit par un \textbf{ordre dense} sur ses éléments : les éléments 
+    sont ordonnés
+    et il est toujours possible d'insérer un élément entre deux autres éléments.}
+  \end{itemize}
+  
+\end{frame}
+
+
+\begin{frame}{Structure de séquences}{Complexités}
+
+\begin{itemize}
+  \only<1-1>{\item Complexité en \textbf{communication};}
+  \only<2->{\item  \textbf{Complexité en communication};}
+\item Complexité \textbf{spatiale} de la réplique;
+\item Complexité \textbf{temporelle} d'une opération \textbf{générée} localement;
+  \only<1-1>{\item Complexité \textbf{temporelle} de l'\textbf{intégration} d'une opération reçue.}
+  \only<2->{\item \textbf{Complexité temporelle de l'intégration d'une opération reçue.}}
+\end{itemize}
+
+%% (TODO) maybe explain the reasons of this emphasis
+\end{frame}
+
+
+\begin{frame}{Structure de séquences}{État de l'art : transformées opérationnelles}
+
+  \vspace{-1.5cm}
+
+  Ces approches \REF{} ont une signature identique à celle communément employée
+  pour les séquences : 
+  \begin{itemize}
+  \item \textsc{insert}($element,\,position$)
+  \item \textsc{delete}($position$)
+  \end{itemize}
+
+  \vspace{0.5cm}
+
+  Lors de la réception d'une opération, ses arguments sont ajustés afin qu'ils
+  s'appliquent à l'état courant de la réplique malgré les opérations effectuées
+  et intégrées en concurrence. 
+
+
+  \begin{textblock*}{\textwidth}(-0.65cm,0.4cm) 
+    \input{img/figotexample.tex}
+  \end{textblock*}
+
+
 
 \end{frame}
 
