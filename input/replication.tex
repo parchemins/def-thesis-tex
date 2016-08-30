@@ -1,6 +1,21 @@
 \section{Structure de séquences répartie à large échelle}
 
-\begin{frame}
-  replication
+\begin{frame}{Structure de séquences}{Réplication}
+  \vspace{-1.5cm}
+  La \textbf{réplication optimiste} \REF{} améliore la \textbf{disponibilité} d'un
+  document et sa \textbf{réactivité} aux changements effectués.
+  \vspace{0.75cm}
+
+  Fonctionnement :
+  \begin{enumerate}[(a)]
+  \item Une modification produit un résultat;
+  \item ce résultat est disséminé aux autres répliques;
+  \item ces dernières exécutent -- ou intègrent -- le résultat reçu.
+  \end{enumerate}
+
+  \begin{textblock*}{\textwidth}(-0.65cm,0.4cm) 
+    \input{img/figoptimisticsteps.tex}
+  \end{textblock*}
+
 \end{frame}
 
