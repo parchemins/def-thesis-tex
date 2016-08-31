@@ -114,6 +114,32 @@
 %   \end{textblock*}
 % \end{frame}
 
+
+\begin{frame}{Structure de séquences}{Le prix de la causalité}
+  
+  Ordonner les opérations selon l'ordre causal est extrêmement coûteux : au
+  minimum $\mathcal{O}(W)$ en communication où $W$ est le nombre de participants
+  ayant jamais écrit dans le document \REF.
+  \begin{itemize}
+  \item[$\rightarrow$] Relaxer l'ordre est nécessaire pour le passage à l'échelle
+  \end{itemize}
+  
+  \vspace{0.5cm}
+  
+  \large
+  \begin{itemize}
+  \item [$\rightarrow$] L'utilisation de structures de données répliquées sans
+    conflits \REF permet cela.
+    \begin{itemize}
+    \item [$\rightarrow$] Ces approches se basent sur la génération
+      d'identifiants uniques et immuables. Nous nous intéresserons
+      particulièrement à celles dont les identifiants sont des listes de taille
+      variable.
+    \end{itemize}
+  \end{itemize}
+
+\end{frame}
+
 \begin{frame}{Structure de séquences}{Définition du problème}
 
 \end{frame}
