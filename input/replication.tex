@@ -140,7 +140,25 @@
 
 \end{frame}
 
-\begin{frame}{Structure de séquences}{Définition du problème}
+\begin{frame}{Structure de séquences}{Structures sans conflits}
+  
+  La signature change : 
+  \begin{itemize}
+  \item \textsc{insert}($element,\, position$) $\rightarrow$
+    \textsc{insert}($id_{position-1},\, element,\, id_{position}$)
+  \item \textsc{delete}($position$) $\rightarrow$ \textsc{delete}($id_{position}$)
+  \end{itemize}
+
+  \vspace{0.5cm}
+  
+
+  \begin{algorithm}[H]
+    \input{img/algogeneral.tex}
+  \end{algorithm}
 
 \end{frame}
 
+
+\begin{frame}{Structure de séquences}{Problème d'allocation des chemins}
+
+\end{frame}

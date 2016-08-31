@@ -1,0 +1,67 @@
+
+\footnotesize
+\algrenewcommand{\algorithmiccomment}[1]{\hskip2em$\rhd$ #1}
+
+\newcommand{\comment}[1]{$\rhd$ #1}
+
+
+\algblockdefx[initially]{initially}{endInitially}
+  [0] {\textbf{INITIALLY:}} 
+
+\algblockdefx[local]{local}{endLocal}
+  [0] {\textbf{LOCAL UPDATE:}}
+
+\algsetblockdefx[received]{received}{endReceived}
+  {65535}{}
+  [0] {\textbf{RECEIVED UPDATE:}}
+
+\algblockdefx[onInsert]{onLocal}{endOnLocal}
+  [0] {\textbf{on} insert ($previous \in \mathcal{I},\,\alpha \in \mathcal{A},\,
+   next\in\mathcal{I}$):}
+  [0] {\textbf{on} delete ($i \in \mathcal{I}$):} 
+
+\algsetblockdefx[onRemote]{onRemote}{endOnRemote}
+  {65535}{}
+  [0] {\textbf{on} insert ($i\in\mathcal{I}$):
+    \hfill\comment{\DARKBLUE{\textbf{une fois}} par identifiant}}
+  [0] {\textbf{on} delete ($i\in\mathcal{I}$):
+    \hfill\comment{\DARKBLUE{\textbf{après}} l'exécution de \textsc{insert}($i$)}} 
+
+\newcommand{\LINEFOR}[2]{%
+  \algorithmicfor\ {#1}\ \algorithmicdo\ {#2} %
+  }
+
+\newcommand{\LINEIFTHEN}[2]{%
+  \algorithmicif\ {#1}\ \algorithmicthen\ {#2} %
+  }
+
+\newcommand{\INDSTATE}[1][1]{\State\hspace{\algorithmicindent}}
+
+\begin{algorithmic}[1]
+  \Statex
+  \initially
+    \State $T \leftarrow \varnothing$;
+    \hfill \comment{CRDT conçue pour les séquences}
+  \endInitially
+  
+  \local
+    \onLocal
+    \State \textbf{let}
+    $\langle p,\, q \rangle \leftarrow $\textsc{convert2Path}$(previous,\, next)$;
+    \State \textbf{let}
+    $\DARKBLUE{newPath \leftarrow} $\DARKBLUE{\textbf{\textsc{allocPath}}}\DARKBLUE{$(p,\,q)$}; \label{line:allocpath}
+    \State \textbf{let} 
+    $newDis \leftarrow $\textsc{allocDis}$(p,\, newPath,\, q)$; \label{line:allocdes}
+    \State \textsc{broadcast}$(\text{'insert'},\,
+    \langle newPath,\, \alpha,\, newDis \rangle)$;
+    \endOnLocal
+    \INDSTATE \textsc{broadcast}$(\text{'delete'},\,i)$;
+  \endLocal
+  
+  \received
+    \onRemote
+    \State $T \leftarrow T \cup i$;
+    \endOnRemote
+    \INDSTATE $T \leftarrow T\, \backslash\, i$; 
+  
+\end{algorithmic}
