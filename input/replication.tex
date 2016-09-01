@@ -159,6 +159,70 @@
 \end{frame}
 
 
-\begin{frame}{Structure de séquences}{Problème d'allocation des chemins}
+\begin{frame}{Structure de séquences}{Problèmes d'allocation}
 
+  La fonction d'allocation ne connait ni le \textbf{nombre} de caractères, ni
+  leur \textbf{position} dans la séquence finale.
+
+  \vspace{0.5cm}
+
+  \begin{center}
+    \input{img/figendeditingexample.tex}
+  \end{center}
+
+\end{frame}
+
+
+\begin{frame}{Structure de séquences}{Arbre}
+  
+  \begin{center}
+    \input{img/figallocpathexampleB.tex}
+  \end{center}
+  
+  \vspace{0.5cm}
+  
+  La taille des chemins impacte les performances de l'éditeur et le trafic
+  généré par l'éditeur.
+  \begin{itemize}
+  \item [$\rightarrow$] \textsc{allocPath} doit allouer les plus petits chemins
+    possibles.
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Structure de séquences}{Définition du problème}
+
+  \begin{problem}
+    Soit la séquence d'identifiants $s(I)= id_1.id_2\ldots id_I$, et
+    $s(I+1) = s(I) \cup $\textsc{insert}$(p,\, \_,\, n)$ où $p,q \in s(I)$ et
+    $p<_\mathcal{I}q$. Soit $|s(I)|$ la taille de la représentation binaire de la
+    séquence. La fonction \textsc{insert} doit allouer des identifiants tels que :
+    \begin{equation}
+      |s(I+1)| - |s(I)| < \mathcal{O}(I)
+    \end{equation}
+  \end{problem}
+  
+  \vspace{0.5cm}
+
+  \begin{itemize}
+  \item [$\rightarrow$] Sinon, il faut relocaliser les identifiants qui ont été
+    générés pour conserver de bonnes performances
+    \begin{itemize}
+    \item [$\approx$] consensus répartis qui ne passe pas à l'échelle.
+    \end{itemize}
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Structure de séquences}{\LSEQ}
+  
+  Fonction d'allocation de chemins :
+  \begin{itemize}
+  \item Arbre exponentiel
+  \item Sous-fonctions d'allocation
+  \item Fonction commune d'assignation de sous-fonctions    
+  \end{itemize}
+  
 \end{frame}

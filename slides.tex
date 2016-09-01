@@ -22,10 +22,15 @@
     urlcolor=black
 }
 
-
 \usepackage{booktabs}
 \usepackage[round]{natbib}
 \usepackage{tikz}
+\usetikzlibrary{trees}
+\definecolor{light-gray}{gray}{0.65}
+\tikzset{fade on/.code={\only<#1>{\color{light-gray}}}}
+\tikzset{hide on/.code={\only<#1>{\color{white}}}}
+\tikzset{bold on/.code={\only<#1>{\bfseries}}}
+\usetikzlibrary{plotmarks,shapes}
 \usepackage{colortbl}
 \usepackage{ulem}
 \usepackage{multicol}
