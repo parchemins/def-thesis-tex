@@ -67,13 +67,32 @@
   \end{minipage}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Communication}{Redécentralisation du Web}
   En \textbf{décentralisé}, la diffusion épidémique de messages constitue une
-  manière efficace de disséminer l'information.
-    
+  manière efficace de disséminer l'information. Les messages parviennent à tous
+  les pairs sans que ceux-ci ne connaissent tous les membres du réseau.
+
+  \vspace{0.5cm}
+
+  Fonctionnement : chaque pair possède une vue partielle du réseau.
+  \begin{enumerate}
+  \uncover<2->{\item un pair souhaitant diffuser un message l'envoie à sa vue partielle;}
+  \uncover<3->{\item chaque pair recevant un tel message le diffuse à sa vue partielle;}
+  \uncover<4->{\item condition d'arrêt : le message a déjà été reçu auparavant.}
+  \end{enumerate}
+
+
+  \begin{center}
+    \input{img/figepidemic.tex}
+  \end{center}
+
+\end{frame}
+
+\begin{frame}{Communication}{Possible grâce à WebRTC, mais\ldots}
+
   \begin{itemize}
-  \item [$\rightarrow$] Rendu possible grâce à la récente technologie WebRTC :
-    un navigateur peut devenir à la fois client et serveur.
+  \item [$\rightarrow$] Récemment rendu possible grâce à WebRTC : un navigateur
+    peut devenir \textbf{à la fois client et serveur}.
     \begin{itemize}
     \item Les nœuds n'ont \textbf{ni adresses ni routes}, les connexions sont
       plus \textbf{coûteuses} et sujettes aux \textbf{defaillances} que sur
