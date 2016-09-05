@@ -30,6 +30,14 @@
 \tikzset{fade on/.code={\only<#1>{\color{light-gray}}}}
 \tikzset{hide on/.code={\only<#1>{\color{white}}}}
 \tikzset{bold on/.code={\only<#1>{\bfseries}}}
+\tikzset{
+  opinvisible/.style={opacity=0.2},
+  visible on/.style={alt={#1{}{opinvisible}}},
+  alt/.code args={<#1>#2#3}{%
+    \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+  },
+}
+
 \usetikzlibrary{plotmarks,shapes}
 \usepackage{colortbl}
 \usepackage{ulem}
@@ -45,6 +53,7 @@
 \usepackage{xfrac}
 \usepackage{pgfplots}
 
+\usepackage{transparent}
 
 \usepackage{epstopdf}
 \usepackage{epsfig}
