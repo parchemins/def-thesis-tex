@@ -279,12 +279,42 @@
   \vspace{0.5cm}
   \large
   \begin{itemize}
-  \uncover<4->{\item [$\Rightarrow$] Équilibre la taille des vues partielles;}
-  \uncover<4->{\item [$\Rightarrow$] Disperse les connexions.}
+  \uncover<4->{\item [$\Rightarrow$] \textbf{Équilibre la taille des vues partielles;}}
+  \uncover<4->{\item [$\Rightarrow$] \textbf{Disperse les connexions.}}
   \end{itemize}
   
 \end{frame}
 
 \begin{frame}{Communication}{\SPRAY : quitter le réseau}
+
+  Le départ d'un pair engendre la suppression de $\ln\mathcal{N}+1$ connexions.
+
+  \vspace{0.5cm}
+
+  \begin{minipage}{0.6\textwidth}
+    \begin{enumerate}[(a)]
+    \item Un pair quitte le réseau ou tombe en panne;
+    \uncover<2->{\item Les pairs ayant une connexion vers lui s'aperçoivent de sa disparition;}
+    \uncover<3->{\item Ces pairs ajoutent de manière probabiliste des doublons.}
+    \end{enumerate}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.37\textwidth}
+    \begin{center}
+      \input{img/figleavingexample.tex}
+    \end{center}
+  \end{minipage}
+
+  \vspace{0.5cm}
+  \large
+  \begin{itemize}
+  \uncover<4->{\item[$\Rightarrow$] \textbf{DOUBLONSSSSSS TODO}}
+  \end{itemize}
+ 
+\end{frame}
+
+
+\begin{frame}{Communication}{Expérimentations}
+
 
 \end{frame}
