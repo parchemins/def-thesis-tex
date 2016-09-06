@@ -22,6 +22,37 @@
 \end{frame}
 
 
+\begin{frame}{Communication}{Diffusion épidémique}
+  En \textbf{décentralisé}, la diffusion épidémique de messages constitue une
+  manière efficace de disséminer l'information. Les messages parviennent à tous
+  les pairs sans que ceux-ci ne connaissent tous les membres du réseau.
+
+  \vspace{0.5cm}
+
+  Fonctionnement : chaque pair possède une vue partielle du réseau.
+  \begin{enumerate}
+  \uncover<2->{\item un pair souhaitant diffuser un message l'envoie à sa vue partielle;}
+  \uncover<3->{\item chaque pair recevant un tel message le diffuse à sa vue partielle;}
+  \uncover<4->{\item condition d'arrêt : le message a déjà été reçu auparavant.}
+  \end{enumerate}
+
+  \begin{minipage}{0.45\textwidth}
+    \begin{center}
+      \input{img/figepidemic.tex}
+    \end{center}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.5\textwidth}
+    \large
+    \begin{itemize}
+      \uncover<5->{\item [$\rightarrow$] \textbf{Comment configurer la taille
+          des vues partielles et les peupler ?}}
+    \end{itemize}
+  \end{minipage}
+
+\end{frame}
+
+
 \begin{frame}{Communication}{Contexte Web}
   
   \begin{minipage}{0.69\textwidth}
@@ -67,26 +98,6 @@
   \end{minipage}
 \end{frame}
 
-\begin{frame}{Communication}{Redécentralisation du Web}
-  En \textbf{décentralisé}, la diffusion épidémique de messages constitue une
-  manière efficace de disséminer l'information. Les messages parviennent à tous
-  les pairs sans que ceux-ci ne connaissent tous les membres du réseau.
-
-  \vspace{0.5cm}
-
-  Fonctionnement : chaque pair possède une vue partielle du réseau.
-  \begin{enumerate}
-  \uncover<2->{\item un pair souhaitant diffuser un message l'envoie à sa vue partielle;}
-  \uncover<3->{\item chaque pair recevant un tel message le diffuse à sa vue partielle;}
-  \uncover<4->{\item condition d'arrêt : le message a déjà été reçu auparavant.}
-  \end{enumerate}
-
-
-  \begin{center}
-    \input{img/figepidemic.tex}
-  \end{center}
-
-\end{frame}
 
 \begin{frame}{Communication}{Possible grâce à WebRTC}
 
@@ -122,10 +133,28 @@
     \end{itemize}
   \end{minipage}
   \begin{minipage}{0.3\textwidth}
-%    \begin{center}
+    \begin{center}
       \input{img/figsignalingexample.tex}
-%    \end{center}
+    \end{center}
   \end{minipage}
 
 \end{frame}
 
+
+\begin{frame}{Communication}{Définition du problème}
+
+\begin{problem}
+  \label{net:problem:properties}
+  Soit $t$ une unité de temps arbitraire, soit $\mathcal{N}^t$ l'ensemble des
+  membres non-byzantins du réseau à un instant $t$ et soit $P_i^t$ la vue
+  partielle du nœud $n_i \in \mathcal{N}^t$. Un protocole d'échantillonnage
+  aléatoire de pairs efficace doit assurer les propriétés suivantes :
+  \begin{enumerate}
+  \item Taille des vues partielles : \hfill $\forall n_i \in \mathcal{N}^t$,
+    $|P_i^t| \approx \mathcal{O}(\ln |\mathcal{N}^t|)$
+  \item Établissement de connexion : \hfill $\mathcal{O}(1)$
+%  \item \TODO{Convergence}
+  \end{enumerate}
+\end{problem}
+
+\end{frame}
