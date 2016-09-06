@@ -75,15 +75,58 @@
 
 \begin{frame}{Introduction}{Problématique}
 
-  L'organisation du Web est éminemment centralisée : quelques serveurs sont en
-  charge d'un nombre titanesque de clients.
-  \begin{itemize}
-  \item Problèmes de confidentialité, de censure, d'intelligence économique, de
-    propriété, etc.
-  \item Problèmes de passage à l'échelle et de résilience aux pannes.
-  \end{itemize}
+  % L'organisation du Web est éminemment centralisée : quelques serveurs sont en
+  % charge d'un nombre titanesque de clients.
+  % \begin{itemize}
+  % \item Problèmes de confidentialité, de censure, d'intelligence économique, de
+  %   propriété, etc.
+  % \item Problèmes de passage à l'échelle et de résilience aux pannes.
+  % \end{itemize}
   
-  \vspace{1cm}
+  \begin{minipage}{0.69\textwidth}
+    Le contexte \textbf{Web} pousse à la \textbf{centralisation :}
+    \begin{itemize}
+    \item problèmes de \textbf{confidentialité}, \textbf{censure}, etc.
+    \uncover<2->{\item problèmes de passage à l'échelle, notamment en \textbf{nombre de
+        collaborateurs};}
+    \uncover<3->{\item problèmes de \textbf{résilience} aux pannes.}
+    \end{itemize}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.3\textwidth}
+    \includegraphics[width=0.7\textwidth]{img/www.png}
+  \end{minipage}
+
+  \vspace{0.5cm}
+  
+
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+      \begin{tikzpicture}
+        \node[visible on=<1-3>]
+        {\includegraphics[width=0.95\textwidth]{img/centralizedethicproblems.png}};
+      \end{tikzpicture}
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+      \begin{tikzpicture}
+        \node[visible on=<2-3>]
+        {\includegraphics[width=0.95\textwidth]{img/centralizedcpuproblems.png}};
+      \end{tikzpicture}
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+      \begin{tikzpicture}
+        \node[visible on=<3-3>]
+        {\includegraphics[width=0.95\textwidth]{img/centralizedscalabilityproblems.png}};
+      \end{tikzpicture}        
+    \end{center}
+  \end{minipage}
+
+
+  \vspace{0.5cm}
 
   \large\textbf{$\Rightarrow$ L'édition collaborative temps réel est-elle
     possible sur le Web, sans l'intervention d'un tiers et sans limites quant

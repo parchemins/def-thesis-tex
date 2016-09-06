@@ -1,0 +1,47 @@
+\begin{tikzpicture}[scale=1.]
+
+\newcommand\X{40pt}
+\newcommand\Y{-40pt}
+
+  \draw (-\X, 0); %% align texts
+
+  \small
+  \draw (0pt,5pt)node[align=left,anchor=south]{$1_{initie}$\\
+    $3_{ach\grave{e}ve}$};
+  \draw (2*\X, 5pt)node[anchor=south east]{$2_{accepte}^{Cyclon}$};
+  \draw(4*\X,5pt)node[anchor=south]{$2_{accepte}^{Scamp}$};
+  \draw (3.5*\X, 0.5*\Y)node{\DARKBLUE{\ldots}};
+
+  \draw[dashed](2*\X,-5pt)--(2*\X,-5+1*\Y);
+  \draw[dashed](2*\X, 5pt)--(2*\X, 20pt);
+
+  \normalsize
+  \draw[fill=white, thick, draw=darkblue] (0pt, 0pt)
+  node{\DARKBLUE{$n_1$}} +(-5pt,-5pt) rectangle +(5pt,5pt);
+  \draw[fill=white] (1*\X,\Y) node{$n_2$} +(-5pt,-5pt) rectangle +(5pt,5pt);
+  \draw[fill=white] (2*\X, 0pt) node{$n_3$} +(-5pt,-5pt) rectangle +(5pt,5pt);
+  \draw[fill=white] (3*\X,\Y) node{$n_4$} +(-5pt,-5pt) rectangle +(5pt,5pt);
+  \draw[fill=white, thick, draw=darkblue] (4*\X, 0pt) node{\DARKBLUE{$n_k$}}
+  +(-5pt,-5pt) rectangle +(5pt,5pt);
+
+
+  \draw[->] ( 0pt,-5pt) to[out=-85,in=175] (-5+1*\X,\Y);
+  \draw[->, densely dashed] (1*\X, 5+\Y) to[out=95,in=-5] ( 5pt, 0pt);
+  \draw     ( 5+1*\X, \Y) to[out=5,in=-95] (2*\X,-5pt);
+  \draw[densely dashed] ( -5+2*\X, 0pt) to[out=185,in=85] (1*\X, 5+\Y);
+  \draw[->] (2*\X, -5pt) to[out=-85,in=175] (-5+3*\X, \Y);
+  \draw[->, densely dashed] (3*\X, 5+\Y) to[out=95,in=-5] (5+2*\X,0pt);
+  \draw[->] (5+3*\X, \Y) to[out=5pt,in=-95] (4*\X,-5pt);
+  \draw[densely dashed] (-5+4*\X, 0pt) to[out=185,in=85] (3*\X, 5+\Y);
+%%  \draw[->, densely dashed] (-70pt, 0pt) -- (-30pt, 0pt); %% u1 -> u4
+%%  \draw[->, densely dashed] (-5pt, 30pt) -- (-70pt, 5pt); %% u3 -> u1
+%%  \draw[->, densely dashed] (30pt, -5pt) to[out=-85,in=-95](-70pt,-5pt);%%u5 u1
+
+  \small 
+  \begin{scope}[shift={(4.5*\X,0pt)}]
+    \draw[->](0pt, -12pt)--(10pt, -12pt) node[anchor=west]{Aller};
+    \draw[->, densely dashed](0pt, -19pt)--(10pt, -19pt)
+    node[anchor=west]{Retour};    
+  \end{scope}
+  
+\end{tikzpicture}

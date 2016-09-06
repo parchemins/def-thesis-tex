@@ -16,7 +16,7 @@
 
   \large
   \begin{itemize}
-  \item [$\rightarrow$] \textbf{Dissémination d'information}
+  \item [$\Rightarrow$] \textbf{Dissémination d'information}
   \end{itemize}
   \vspace{0.5cm}
 \end{frame}
@@ -42,94 +42,112 @@
     \end{center}
   \end{minipage}
   \hfill
-  \begin{minipage}{0.5\textwidth}
+  \begin{minipage}{0.53\textwidth}
     \large
     \begin{itemize}
-      \uncover<5->{\item [$\rightarrow$] \textbf{Comment configurer la taille
-          des vues partielles et les peupler ?}}
+      \uncover<5->{\item [$\Rightarrow$] \textbf{Comment configurer la taille
+          des vues partielles et les peupler ?}
+      \begin{itemize}
+      \item [$\rightarrow$] Protocole d'échantillonnage de pairs
+      \end{itemize}}
     \end{itemize}
   \end{minipage}
 
 \end{frame}
 
 
-\begin{frame}{Communication}{Contexte Web}
+% \begin{frame}{Communication}{Contexte Web}
   
-  \begin{minipage}{0.69\textwidth}
-    Le contexte \textbf{Web} pousse à la \textbf{centralisation :}
-    \begin{itemize}
-    \item problèmes de \textbf{confidentialité}, \textbf{censure}, etc.
-    \uncover<2->{\item problèmes de passage à l'échelle, notamment en \textbf{nombre de
-        collaborateurs};}
-    \uncover<3->{\item problèmes de \textbf{résilience} aux pannes.}
-    \end{itemize}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.3\textwidth}
-    \includegraphics[width=0.7\textwidth]{img/www.png}
-  \end{minipage}
+%   \begin{minipage}{0.69\textwidth}
+%     Le contexte \textbf{Web} pousse à la \textbf{centralisation :}
+%     \begin{itemize}
+%     \item problèmes de \textbf{confidentialité}, \textbf{censure}, etc.
+%     \uncover<2->{\item problèmes de passage à l'échelle, notamment en \textbf{nombre de
+%         collaborateurs};}
+%     \uncover<3->{\item problèmes de \textbf{résilience} aux pannes.}
+%     \end{itemize}
+%   \end{minipage}
+%   \hfill
+%   \begin{minipage}{0.3\textwidth}
+%     \includegraphics[width=0.7\textwidth]{img/www.png}
+%   \end{minipage}
 
-  \vspace{0.75cm}
+%   \vspace{0.75cm}
   
 
-  \begin{minipage}{0.32\textwidth}
-    \begin{center}
-      \begin{tikzpicture}
-        \node[visible on=<1-3>]
-        {\includegraphics[width=0.95\textwidth]{img/centralizedethicproblems.png}};
-      \end{tikzpicture}
-    \end{center}
-  \end{minipage}
-  \begin{minipage}{0.32\textwidth}
-    \begin{center}
-      \begin{tikzpicture}
-        \node[visible on=<2-3>]
-        {\includegraphics[width=0.95\textwidth]{img/centralizedcpuproblems.png}};
-      \end{tikzpicture}
-    \end{center}
-  \end{minipage}
-  \begin{minipage}{0.32\textwidth}
-    \begin{center}
-      \begin{tikzpicture}
-        \node[visible on=<3-3>]
-        {\includegraphics[width=0.95\textwidth]{img/centralizedscalabilityproblems.png}};
-      \end{tikzpicture}        
-    \end{center}
-  \end{minipage}
-\end{frame}
+%   \begin{minipage}{0.32\textwidth}
+%     \begin{center}
+%       \begin{tikzpicture}
+%         \node[visible on=<1-3>]
+%         {\includegraphics[width=0.95\textwidth]{img/centralizedethicproblems.png}};
+%       \end{tikzpicture}
+%     \end{center}
+%   \end{minipage}
+%   \begin{minipage}{0.32\textwidth}
+%     \begin{center}
+%       \begin{tikzpicture}
+%         \node[visible on=<2-3>]
+%         {\includegraphics[width=0.95\textwidth]{img/centralizedcpuproblems.png}};
+%       \end{tikzpicture}
+%     \end{center}
+%   \end{minipage}
+%   \begin{minipage}{0.32\textwidth}
+%     \begin{center}
+%       \begin{tikzpicture}
+%         \node[visible on=<3-3>]
+%         {\includegraphics[width=0.95\textwidth]{img/centralizedscalabilityproblems.png}};
+%       \end{tikzpicture}        
+%     \end{center}
+%   \end{minipage}
+% \end{frame}
 
 
 \begin{frame}{Communication}{Possible grâce à WebRTC}
 
-  Les navigateur Web ne sont plus seulement des clients mais aussi des
-  \textbf{serveurs}. En revanche, 
-  
-  \vspace{0.5cm}
-  
-  \begin{minipage}{0.6\textwidth}
-    \begin{itemize}
-    \item \textbf{ni adresses ni routes};
-    \item les connexions sont \textbf{coûteuses} et sujettes aux
-      \textbf{defaillances};
-    \item \textbf{capacités hétérogènes et parfois limités} des outils de
-      navigation;
-    \item le contexte Web expose aux \textbf{pics soudains de popularité.}
-    \end{itemize}
+
+  \begin{minipage}{0.67\textwidth}
+    Grâce à WebRTC, les navigateurs Web ne sont plus seulement des clients mais
+    aussi des \textbf{serveurs}.
   \end{minipage}
   \hfill
   \begin{minipage}{0.3\textwidth}
+    \begin{center}
     \includegraphics[width=0.7\textwidth]{img/webrtc.png}
+    \end{center}
+  \end{minipage}
+  
+  % \vspace{0.5cm}
+  En revanche, 
+  \begin{itemize}
+  \item \textbf{ni adresses ni routes};
+  \item les connexions sont \textbf{coûteuses} et sujettes aux
+    \textbf{défaillances};
+  \item \textbf{capacités hétérogènes et parfois limitées} des outils de
+    navigation;
+  \item le contexte Web expose aux \textbf{pics soudains de popularité.}
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}{Communication}{Création de réseau}
+
+  \begin{minipage}{0.37\textwidth}
+    L'établissement de connexion nécessite au moins 1 aller-retour de message.
+  \end{minipage}
+  \begin{minipage}{0.61\textwidth}
+    \begin{center}
+    \input{img/fighandshake.tex}
+    \end{center}
   \end{minipage}
 
   \vspace{0.5cm}
 
-
   \begin{minipage}{0.6\textwidth}
-    Création d'un réseau :
+    Pour créer un réseau : 
     \begin{itemize}
-    \uncover<2->{\item Un \textbf{serveur sert de médiateur} à la connexion initiale;}
-    \uncover<3->{\item Les pairs \textbf{deviennent des médiateurs} du réseau;}
-    \uncover<4>{\item Réseau de trois membres avec connexions directes.}
+      \uncover<2->{\item Un \textbf{serveur sert de médiateur} à la connexion initiale;}
+      \uncover<3->{\item Les pairs \textbf{deviennent des médiateurs} du réseau;}
+      \uncover<4>{\item Réseau de trois membres avec connexions directes.}
     \end{itemize}
   \end{minipage}
   \begin{minipage}{0.3\textwidth}
@@ -137,7 +155,16 @@
       \input{img/figsignalingexample.tex}
     \end{center}
   \end{minipage}
-
+  
+  
+  \vspace{0.5cm}
+  
+  \large
+  \begin{itemize}
+  \item [$\Rightarrow$] \textbf{Protocole d'échantillonnage de pair adaptés à ces
+      contraintes.}
+  \end{itemize}
+  
 \end{frame}
 
 
@@ -156,5 +183,108 @@
 %  \item \TODO{Convergence}
   \end{enumerate}
 \end{problem}
+
+\end{frame}
+
+
+
+\begin{frame}{Communication}{\SPRAY}
+
+  \SPRAY est un protocole d'échantillonnage aléatoire de pairs
+  \textbf{adaptatif}. 
+
+  \vspace{0.5cm}
+
+  Chaque pair réagit à des événements et agit périodiquement. Le système
+  converge rapidement vers une topologie possédant des propriétés similaires à
+  celles des graphes aléatoires.
+
+  \vspace{0.5cm}
+
+  Cycle de vie d'un pair : 
+  \begin{enumerate}
+  \item \textbf{Rejoindre} le réseau;
+  \item \textbf{Rester} dans le réseau;
+  \item \textbf{Quitter} le réseau.
+  \end{enumerate}
+
+  \large
+  \begin{itemize}
+  \item [$\Rightarrow$] \textbf{Le nombre de connexions établies doit rester cohérent.}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Communication}{\SPRAY : rejoindre le réseau}
+
+  L'introduction d'un nouveau pair s'accompagne de $1+ \ln {|\mathcal{N}|}$
+  connexions.%
+  \begin{itemize}
+  \item [$\rightarrow$] $|\mathcal{N}|$ pairs implique
+    $|\mathcal{N}|\ln |\mathcal{N}|$ connexions.
+  \end{itemize}
+
+
+  \vspace{0.5cm}
+
+  \begin{minipage}{0.6\textwidth}
+    \begin{enumerate}[(a)]
+    \item Le nouvel arrivant se connecte à un contact ($1$ connexion);
+    \uncover<2->{\item Le contact dissémine la nouvelle arrivée aux membres de sa vue;}
+    \uncover<3->{\item Chacun de ces voisins établit une connexion
+      ($\approx \ln |\mathcal{N}|$ connexions).}
+    \end{enumerate}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.35\textwidth}
+    \begin{center}
+      \input{img/figjoiningexample.tex}
+    \end{center}
+  \end{minipage}
+  
+  \vspace{1cm}
+  
+  \large
+  \begin{itemize}
+  \uncover<4->{\item [$\Rightarrow$] \textbf{Les vues partielles sont déséquilibrées}}
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Communication}{\SPRAY : échanges périodiques}
+ 
+  Les échanges périodiques mélangent les vues partielles. Le nombre de
+  connexions n'augmente ni ne diminue.
+ 
+  \vspace{0.5cm}
+
+  \begin{minipage}{0.6\textwidth}
+    \begin{enumerate}[(a)]
+    \item Initiation du mélange périodique. Le pair devient médiateur entre
+      $\lceil P \div 2 \rceil - 1$ voisins aléatoires et le pair choisi pour le
+      mélange. 
+    \uncover<2->{\item En réponse, le pair choisi devient médiateur entre
+      $\lceil P\div 2 \rceil$ voisins et le pair initiateur;}
+    \uncover<3->{\item Le pair initiateur reçoit la réponse et établit ses 
+      connexions grâce au pair choisi.}
+    \end{enumerate}
+  \end{minipage}
+  \begin{minipage}{0.37\textwidth}
+    \begin{center}
+      \input{img/figshuffleexample.tex}
+    \end{center}
+  \end{minipage}
+
+
+  \vspace{0.5cm}
+  \large
+  \begin{itemize}
+  \uncover<4->{\item [$\Rightarrow$] Équilibre la taille des vues partielles;}
+  \uncover<4->{\item [$\Rightarrow$] Disperse les connexions.}
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}{Communication}{\SPRAY : quitter le réseau}
 
 \end{frame}
