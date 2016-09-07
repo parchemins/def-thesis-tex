@@ -287,7 +287,7 @@
 
 \begin{frame}{Communication}{\SPRAY : quitter le réseau}
 
-  Le départ d'un pair engendre la suppression de $\ln\mathcal{N}+1$ connexions.
+  Le départ d'un pair engendre la suppression de $1+\ln|\mathcal{N}|$ connexions.
 
   \vspace{0.5cm}
 
@@ -305,10 +305,13 @@
     \end{center}
   \end{minipage}
 
-  \vspace{0.5cm}
+  \vspace{1cm}
   \large
   \begin{itemize}
-  \uncover<4->{\item[$\Rightarrow$] \textbf{DOUBLONSSSSSS TODO}}
+  \uncover<4->{\item[$\Rightarrow$] \textbf{Présence de doublons assure la cohérence du nombre de connexions.}
+  \begin{itemize}
+  \item [$\rightarrow$] Mais impacte négativement les propriétés du réseau.
+  \end{itemize}}
   \end{itemize}
  
 \end{frame}
@@ -316,12 +319,134 @@
 
 \begin{frame}{Communication}{Expérimentations}
 
+  Simulations \PEERSIM.
+
+  \vspace{0.5cm}
+
+  \begin{itemize}
+  \item \CYCLON : vue partielle dont la taille est configurée \textit{a priori};
+  \item \SCAMP : vue partielle dont la taille s'ajuste au réseau;
+  \item \SPRAY : vue partielles dont la taille s'ajuste au réseau et adapté au
+    contexte Web.
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Communication}{Résultats attendus}
+  
+  \begin{itemize}
+  \item Convergence rapide vers un réseau possédant des propriétés similaires à
+    celles des graphes aléatoires.
+  \item Les doublons sont peu nombreux et n'impactent pas significativement les
+    propriétés du réseau.
+  \end{itemize}
+
 \end{frame}
 
 \begin{frame}{Communication}{Coefficient d'agglomération diminue rapidement}
+  \hspace{-1cm}
+  \begin{minipage}{0.47\textwidth}
+    \begin{center}
+      \includegraphics[width=1.23\textwidth]{img/network/cycloncluster.eps}
+    \end{center}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.47\textwidth}
+      \includegraphics[width=1.23\textwidth]{img/network/spraycluster.eps}
+  \end{minipage}
+\end{frame}
+
+
+\begin{frame}{Communication}{L'information se propage rapidement}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/network/avgpath.eps}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Communication}{La charge est équilibrée}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/network/histo.eps}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Communication}{Les vues partielles s'adaptent}
+  \hspace{-1cm}
+  \begin{minipage}{0.47\textwidth}
+    \begin{center}
+      \includegraphics[width=1.23\textwidth]{img/network/churn.eps}
+    \end{center}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.47\textwidth}
+      \includegraphics[width=1.23\textwidth]{img/network/avgpv.eps}
+  \end{minipage}
+\end{frame}
+
+
+\begin{frame}{Communication}{Robuste aux défaillances}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/network/resilience.eps}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Communication}{Faible taux de doublons}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/network/duplicates.eps}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Communication}{Cas de la diffusion de messages}
+  \begin{algorithm}[H]
+    \input{img/algobroadcast.tex}
+  \end{algorithm}
+
+  \begin{itemize}
+  \item \CYCLON 
+    \begin{enumerate}
+    \item vue partielle de 30 voisins, fanout de $\ln(100)+1\approx 6$;
+    \item vue partielle de 30 voisins, fanout de  $\ln(100)+3 \approx 8$.
+    \end{enumerate}
+  \item \SPRAY
+    \begin{enumerate}
+    \item vue partielle de $6\cdot\ln|\mathcal{N}|$ voisins,
+      fanout de $\ln(|\mathcal{N}|)+1$;
+    \item vue partielle de $6\cdot\ln|\mathcal{N}|$ voisins,
+      fanout de $\ln(|\mathcal{N}|)+3$;
+    \end{enumerate}
+  \end{itemize}
+
+%  \vspace{0.5cm}
+
+  \begin{itemize}
+  \item[$\rightarrow$] \CYCLON et \SPRAY sont équivalent à 100 pairs
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Communication}{Le taux d'erreur reste constant}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/network/hardrate.eps}
+  \end{center} 
+\end{frame}
+
+\begin{frame}{Communication}{Le pic de popularité est mieux géré}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/network/peak.eps}
+  \end{center} 
+\end{frame}
+
+
+
+\begin{frame}{Communication}{Conclusion}
+  
+  \begin{itemize}
+  \item \SPRAY est un protocole d'échantillonnage aléatoire de pair adaptatif.
+  \item \SPRAY a le désavantage d'utiliser des doublons, mais leur faible
+    proportion n'impacte pas les propriétés du réseau.    
+  \item Les protocoles construits au dessus de \SPRAY bénéficient de cette
+    adaptativité.
+  \end{itemize}
 
 \end{frame}

@@ -1,0 +1,67 @@
+\begin{tikzpicture}[scale=0.8]
+
+\newcommand\X{25pt}
+\newcommand\Y{20pt}
+
+\newcommand\LIGHTGRAY{gray!20}
+\newcommand\MEDIUMGRAY{gray!40}
+
+\tiny
+%% communication
+\draw[rounded corners=2mm, color=\MEDIUMGRAY, fill=white](0pt, 0pt)+(-4*\X,-\Y)rectangle+(4*\X,\Y);
+\draw(4*\X, \Y)node[anchor=north east]{\textbf{communication}};
+
+\draw[fill=white](-2*\X, -0.25*\Y)
+node{dissémination}+(-0.85*\X,-0.5*\Y)rectangle+(0.85*\X,0.5*\Y);
+\draw[fill=white, very thick, draw=darkblue]( 0*\X, 0.25*\Y)
+node[align=center]{\DARKBLUE{appartenance}}+(-0.85*\X,-0.5*\Y)rectangle+(0.85*\X,0.5*\Y);
+\draw[fill=white]( 2*\X, -0.25*\Y)
+node{monodiffusion}+(-0.85*\X,-0.5*\Y)rectangle+(0.85*\X,0.5*\Y);
+
+\draw[<-](-0.85*\X, 0.25*\Y)--(-1.15*\X, -0.25*\Y);
+\draw[<-](0.85*\X, 0.25*\Y)--(1.15*\X, -0.25*\Y);
+
+%% causality
+\draw[rounded corners=2mm, color=\MEDIUMGRAY, fill=\LIGHTGRAY](0pt, -2*\Y)+(-4*\X,-\Y)rectangle+(4*\X,\Y);
+\draw(4*\X, -\Y)node[anchor=north east]{\textbf{causalité}};
+
+\draw[fill=\LIGHTGRAY](-2*\X, -2*\Y)
+node[align=center]{détection\\[-1mm]des relations\\[-1mm]causales}
++(-1.0*\X,-0.6*\Y)rectangle+(1.0*\X,0.6*\Y);
+\tiny
+\draw[->, thick](-1.5*\X, -0.75*\Y) -- node[anchor=west]{reçoit}
+(-1.5*\X, -1.4*\Y);
+\draw[<-, thick](-2.5*\X, -0.75*\Y) -- node[anchor=east]{envoie}
+(-2.5*\X, -1.4*\Y);
+\tiny
+\draw[<->]( 2*\X, -0.75*\Y)--( 1*\X, -2.5*\Y);
+
+%% sequence structure
+\draw[rounded corners=2mm, color=\MEDIUMGRAY, fill=white](0pt, -4*\Y)+(-4*\X,-\Y)rectangle+(4*\X,\Y);
+\draw(4*\X, -3*\Y)node[anchor=north east, align=right]
+{\textbf{structure}\\\textbf{pour}\\\textbf{séquences}};
+
+\draw[fill=white, shading=axis,top color=\LIGHTGRAY, bottom color=white, shading angle=0](1*\X, -3*\Y)
+node{anti-entropie}+(-0.95*\X,-0.5*\Y) rectangle +(0.95 *\X, 0.5*\Y);
+\draw[fill=white, very thick, draw=darkblue](-2*\X, -4*\Y)
+node{\DARKBLUE{réplique}}+(-0.75*\X,-0.5*\Y) rectangle +(0.75 *\X, 0.5*\Y);
+
+\draw[->] (0.05*\X, -2.75*\Y)--(-1*\X,-2*\Y);
+\draw[->] (0.05*\X, -3.25*\Y)--(-1.25*\X,-4*\Y);
+\tiny
+\draw[<-, thick] (-1.5*\X, -3.5*\Y)--node[anchor=west]{délivre}(-1.5*\X, -2.6*\Y);
+\draw[->, thick] (-2.5*\X, -3.5*\Y)--node[anchor=east]{décore}(-2.5*\X, -2.6*\Y);
+\tiny
+%% gui
+\draw[rounded corners=2mm, color=\MEDIUMGRAY, fill=\LIGHTGRAY](0pt, -6*\Y)+(-4*\X,-\Y)rectangle+(4*\X,\Y);
+\draw(4*\X, -5*\Y)node[anchor=north east, align=right]
+{\textbf{interface}\\\textbf{utilisateur}};
+\draw[fill=\LIGHTGRAY](0pt,-6*\Y)
+node{éditeur web}+(-0.85*\X,-0.5*\Y) rectangle +(0.85 *\X, 0.5*\Y);
+
+%%\draw[<->] (-2*\X, -4.5*\Y) -- (0*\X, -5.5*\Y);
+\tiny
+\draw[->, thick] (-1.80*\X, -4.5*\Y)--node[anchor=west]{notifie}(-0.85*\X, -5.75*\Y);
+\draw[<-, thick] (-2.20*\X, -4.5*\Y)--node[anchor=east]{met à jour}(-0.85*\X, -6.25*\Y);
+\tiny
+\end{tikzpicture}
