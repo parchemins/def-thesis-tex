@@ -1,0 +1,56 @@
+
+\begin{tikzpicture}[scale=1.3]
+
+\newcommand\X{20pt}
+\newcommand\Y{-20pt}
+
+\newcommand\ADDYA{-10pt}
+\newcommand\ADDYB{-30pt}
+
+%\draw (-0.5*\X, 0*\Y); %% spacing
+
+\draw[color=darkblue] (0*\X, 0*\Y) -- node[anchor=west]{1 bit}( 1*\X, 1*\Y);
+\draw[dashed] (0*\X, 0*\Y) -- ( -1*\X, 1*\Y);
+
+\draw[fill=black] (0*\X, 0*\Y) circle (1pt);
+\draw[fill=white] (-1*\X, 1*\Y) circle (1pt); 
+
+%% 
+\draw[dashed] (1*\X, 1*\Y) -- (1.25*\X, \ADDYA + 2*\Y);
+\draw[dashed] (1*\X, 1*\Y) -- (1.5*\X, \ADDYA + 2*\Y);
+\draw[dashed] (1*\X, 1*\Y) -- (1.75*\X, \ADDYA + 2*\Y);
+\draw[color=darkblue] (1*\X, 1*\Y) -- node[anchor=west]{2 bits} (2*\X, \ADDYA + 2*\Y);
+
+\draw[fill=white] (1*\X, 1*\Y) circle (1pt); 
+%%
+
+\draw[dashed](2*\X, \ADDYA + 2*\Y) -- (2.125*\X, \ADDYB + 3*\Y);
+\draw[dashed](2*\X, \ADDYA + 2*\Y) -- (2.25*\X, \ADDYB + 3*\Y);
+\draw[dashed](2*\X, \ADDYA + 2*\Y) -- (2.375*\X, \ADDYB + 3*\Y);
+\draw[dashed](2*\X, \ADDYA + 2*\Y) -- (2.5*\X, \ADDYB + 3*\Y);
+\draw[dashed](2*\X, \ADDYA + 2*\Y) -- (2.625*\X, \ADDYB + 3*\Y);
+\draw[dashed](2*\X, \ADDYA + 2*\Y) -- (2.75*\X, \ADDYB + 3*\Y);
+\draw[dashed](2*\X, \ADDYA + 2*\Y) -- (2.875*\X, \ADDYB + 3*\Y);
+\draw[color=darkblue](2*\X, \ADDYA + 2*\Y) -- node[anchor=west]{3 bits} (3*\X, \ADDYB + 3*\Y);
+
+
+\draw[fill=white] (1.25*\X, \ADDYA + 2*\Y) circle (1pt);
+\draw[fill=white] (1.5 *\X, \ADDYA + 2*\Y) circle (1pt);
+\draw[fill=white] (1.75*\X, \ADDYA + 2*\Y) circle (1pt);
+\draw[fill=white] (2*\X, \ADDYA + 2*\Y) circle (1pt);
+
+%%
+
+\draw[fill=white] (2.125*\X, \ADDYB + 3*\Y) circle (1pt);
+\draw[fill=white] (2.25*\X, \ADDYB + 3*\Y) circle (1pt);
+\draw[fill=white] (2.375*\X, \ADDYB + 3*\Y) circle (1pt);
+\draw[fill=white] (2.5*\X, \ADDYB + 3*\Y) circle (1pt);
+\draw[fill=white] (2.625*\X, \ADDYB + 3*\Y) circle (1pt);
+\draw[fill=white] (2.75*\X, \ADDYB + 3*\Y) circle (1pt);
+\draw[fill=white] (2.875*\X, \ADDYB + 3*\Y) circle (1pt);
+\draw[fill=white] (3*\X, \ADDYB + 3*\Y) 
+node[anchor=north west]{\DARKBLUE{[1.3.7]}} circle (1pt);
+
+
+
+\end{tikzpicture}

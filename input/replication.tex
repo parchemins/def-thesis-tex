@@ -75,6 +75,41 @@
   
 \end{frame}
 
+\begin{frame}{Structure de séquences}{Spécification}
+  \begin{definition}[Spécification séquentielle d'une séquence]
+  Soit une série d'opérations $H$ produisant la séquence
+  $s(H) = \{p_1,\, p_2 \ldots p_k\}$ avec $p_{1..k} \in \mathcal{P}$ où
+  $\mathcal{P}$ est un ensemble muni d'un ordre
+  dense $(\mathcal{P},\,<_\mathcal{P})$ tel que : \\
+  $\forall p\in\mathcal{P},\, p_\vdash <_\mathcal{P} p <_\mathcal{P} p_\dashv $
+  \hfill et \ \
+  $p_\vdash <_\mathcal{P} p_1 <_\mathcal{P} p_2 <_\mathcal{P} \ldots
+  <_\mathcal{P} p_k <_\mathcal{P} p_\dashv$.
+  
+  \vspace{0.25cm}
+
+  \noindent L'insertion d'un élément $e$ en position $i$ dans la séquence $s(H)$
+  est définie de la façon suivante :
+  \begin{equation}
+    \small
+    s(H \cup INSERT(i,\, e)) \rightarrow s(H) \cup 
+    \begin{cases}
+      \{p,\, p_\vdash <_\mathcal{P} p <_\mathcal{P} p_\dashv \} & i = 0 \wedge |s(H)| = 0\\
+      \{p,\, p_\vdash <_\mathcal{P} p <_\mathcal{P} p_1 \} & i = 0 \wedge |s(H)|>0\\
+      \{p,\, p_k <_\mathcal{P} p <_\mathcal{P} p_\dashv \} & i = k\\
+      \{p,\, p_i <_\mathcal{P} p <_\mathcal{P} p_{i+1} \} & sinon
+    \end{cases}
+  \end{equation}
+
+  \noindent La suppression de l'élément en position $i$ dans la séquence $s(H)$
+  est définie de la façon suivante :
+  \begin{equation}
+    \small
+    s(H \cup DELETE(i)) \rightarrow s(H) \setminus \{ p_i \}
+  \end{equation}
+\end{definition}
+\end{frame}
+
 
 \begin{frame}{Structure de séquences}{Complexités}
 
@@ -219,10 +254,44 @@
 \begin{frame}{Structure de séquences}{\LSEQ}
   
   Fonction d'allocation de chemins :
-  \begin{itemize}
-  \item Arbre exponentiel
-  \item Sous-fonctions d'allocation
-  \item Fonction commune d'assignation de sous-fonctions    
-  \end{itemize}
+  \begin{enumerate}
+  \item Une structure d'arbre dont l'arité maximale augmente avec la profondeur;
+  \item Deux sous-fonctions d'allocation conçues pour gérer des comportements
+    d'édition opposés;
+  \item Une fonction assignant à chaque profondeur de l'arbre une sous-fonction
+    d'allocation parmi celles disponibles.
+  \end{enumerate}
   
+\end{frame}
+
+
+\begin{frame}{Structure de séquences}{Arbre exponentiel}
+
+  \begin{center}
+    \input{img/figexponentialtree.tex}
+  \end{center}
+
+\end{frame}
+
+
+\begin{frame}{Structure de séquences}{Sous-fonctions d'allocations}
+  
+  \begin{minipage}{0.45\textwidth}
+    \begin{center}
+      \input{img/figsuballocationA.tex}
+    \end{center}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \begin{center}
+      \input{img/figsuballocationB.tex}
+    \end{center}
+  \end{minipage}
+
+\end{frame}
+
+
+\begin{frame}{Structure de séquences}{Choix de sous-fonction d'allocation}
+
+
 \end{frame}
