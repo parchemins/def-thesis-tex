@@ -293,5 +293,136 @@
 
 \begin{frame}{Structure de séquences}{Choix de sous-fonction d'allocation}
 
+\end{frame}
+
+\begin{frame}{Structure de séquences}{Complexités}
+
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+      \input{img/figrandomlseqtree.tex}
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+      \input{img/figmonotoniclseqtree.tex}
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+      \input{img/figworstlseqtree.tex}
+    \end{center}
+  \end{minipage}
+
+\end{frame}
+
+\begin{frame}{Structure de séquences}{Complexité spatiale}
+    \begin{textblock*}{\textwidth}(-1cm,-1.5cm) 
+      \begin{table}[H]
+        \input{img/tablelseqspace.tex}
+      \end{table}
+    \end{textblock*}
+\end{frame}
+
+
+\begin{frame}{Structure de séquences}{Complexité temporelle}
+
+  \begin{center}
+    \input{img/tablelseqtime.tex}
+  \end{center}
+
+\end{frame}
+
+\begin{frame}{Structure de séquences}{Complexité temporelle du lookup}
+  
+  \begin{center}
+    \input{img/tablelseqlookup.tex}
+  \end{center}
+  
+\end{frame}
+
+
+\begin{frame}{Structure de séquences}{Expérimentations}
+  
+\end{frame}
+
+\begin{frame}{Structure de séquences}{Résultats attendus}
+  
+  \begin{itemize}
+  \item Confirmation des résutlats de l'analyse en complexité
+  \end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}{Structure de séquences}{Contribution de chaque composant}
+  
+  \hspace{-1cm}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=1.25\textwidth]{img/replication/logoot.eps}
+  \end{minipage}
+  \hspace{1.5cm}
+  \begin{minipage}{0.45\textwidth}
+    \begin{tikzpicture}
+      \node[visible on=<2-4>]
+      {\includegraphics[width=1.25\textwidth]{img/replication/double.eps}};
+    \end{tikzpicture}
+  \end{minipage}
+  
+  \hspace{-1cm}
+  \begin{minipage}{0.45\textwidth}
+    \begin{tikzpicture}
+      \node[visible on=<3-4>]
+      {\includegraphics[width=1.25\textwidth]{img/replication/robin.eps}};
+    \end{tikzpicture}
+  \end{minipage}
+  \hspace{1.5cm}
+  \begin{minipage}{0.45\textwidth}
+    \begin{tikzpicture}
+      \node[visible on=<4-4>]
+      {\includegraphics[width=1.25\textwidth]{img/replication/lseq.eps}};
+    \end{tikzpicture}
+  \end{minipage}
+
+\end{frame}
+
+
+\begin{frame}{Structure de séquences}{Identifiants sur traces réelles}
+
+  \hspace{-1cm}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=1.29\textwidth]{img/replication/poste.eps}
+  \end{minipage}
+  \hspace{1.2cm}
+  \begin{minipage}{0.45\textwidth}
+    \begin{tikzpicture}
+      \node[visible on=<2>]
+      {\includegraphics[width=1.29\textwidth]{img/replication/templatetalk.eps}};
+    \end{tikzpicture}
+  \end{minipage}
+
+
+\end{frame}
+
+
+\begin{frame}{Structure de séquences}{Évolution des performances}
+
+  \begin{center}
+    \includegraphics[width=\textwidth]{img/replication/time.eps}
+  \end{center}
+
+\end{frame}
+
+\begin{frame}{Structure de séquences}{Effets de la concurrence}
+  \vspace{-0.5cm}
+  \begin{center}
+    \includegraphics[angle=-90, width=\textwidth]{img/replication/latency.eps}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Structure de séquences}{Conclusion}
+
+%  \begin{itemize}
+%  \end{itemize}
 
 \end{frame}
