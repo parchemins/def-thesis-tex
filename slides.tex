@@ -19,6 +19,24 @@
 
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage[style=alphabetic, autocite=inline, firstinits=true, maxnames=2]{biblatex}
+\bibliography{bibliographie}
+\renewcommand*{\bibfont}{\small}
+%\usepackage[round]{natbib}
+
+\makeatletter
+\renewcommand\@makefnmark{\hbox{\@textsuperscript{\normalfont[\@thefnmark]}}}
+\renewcommand\@makefntext[1]{{\normalfont[\@thefnmark]}\enspace #1}
+\makeatother
+
+\DeclareCiteCommand{\footfullcitetext}[\mkbibfootnotetext]
+  {\usebibmacro{prenote}}
+  {\usedriver
+     {\DeclareNameAlias{sortname}{default}}
+     {\thefield{entrytype}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
 
 \hypersetup{
     colorlinks,
@@ -29,7 +47,6 @@
 }
 
 \usepackage{tabularx, booktabs}
-\usepackage[round]{natbib}
 \usepackage{tikz}
 \usetikzlibrary{trees}
 \definecolor{light-gray}{gray}{0.65}
@@ -177,11 +194,11 @@
 
   \input{input/conclusion.tex}
   
-  \section*{Références}
-  \begin{frame}[allowframebreaks]{Références}
-    \def\newblock{\hskip .11em plus .33em minus .07em}
-    \bibliographystyle{frplainnat}
-    \bibliography{bibliographie}
-  \end{frame}
+  % \section*{Références}
+  % \begin{frame}[allowframebreaks]{Références}
+  %   \def\newblock{\hskip .11em plus .33em minus .07em}
+  % \bibliographystyle{frplainnat}
+
+  % \end{frame}
   
 \end{document}

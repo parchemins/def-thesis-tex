@@ -2,9 +2,10 @@
 
 \begin{frame}{Structure de séquences}{Réplication}
   \vspace{-1.5cm}
-  La \textbf{réplication optimiste} \REF{} améliore la \textbf{disponibilité} d'un
-  document et sa \textbf{réactivité} aux changements effectués.
-  \vspace{0.75cm}
+
+  La \textbf{réplication optimiste}\footfullcite{saito2005optimistic} améliore
+  la \textbf{disponibilité} d'un document et sa \textbf{réactivité} aux
+  changements effectués.  \vspace{0.75cm}
 
   Fonctionnement :
   \begin{enumerate}[(a)]
@@ -16,6 +17,9 @@
   \begin{textblock*}{\textwidth}(-0.65cm,0.4cm) 
     \input{img/figoptimisticsteps.tex}
   \end{textblock*}
+  
+  \vspace{1cm}
+
 \end{frame}
 
 
@@ -23,8 +27,8 @@
   
   \vspace{-1.5cm}
 
-  D'après Sun et al. \REF{}, l'édition collaborative temps réel nécessite un
-  système préservant les trois propriétés : 
+  D'après Sun et al.\footfullcite{sun1998achieving}, l'édition collaborative
+  temps réel nécessite un système préservant les trois propriétés :
 
   \begin{itemize}
   \item Convergence;
@@ -49,7 +53,8 @@
 
   \begin{itemize}
   \item Difficile à formaliser dans le cas général;
-  \item L'opération doit respecter le plus possible sa spécification séquentielle \REF.
+  \item L'opération doit respecter le plus possible sa spécification
+    séquentielle \footfullcite{bieniusa2012brief}.
   \end{itemize}
 
   \vspace{0.5cm}
@@ -72,6 +77,8 @@
     sont ordonnés
     et il est toujours possible d'insérer un élément entre deux autres éléments.}
   \end{itemize}
+
+  \vspace{0.2cm}
   
 \end{frame}
 
@@ -112,6 +119,10 @@
 
 
 \begin{frame}{Structure de séquences}{Complexités}
+
+Créer un ordre dense a un coût dont la progression peut être estimée par : 
+
+\vspace{0.5cm}
 
 \begin{itemize}
   \only<1-1>{\item Complexité en \textbf{communication};}
@@ -154,7 +165,7 @@
   
   Ordonner les opérations selon l'ordre causal est extrêmement coûteux : au
   minimum $\mathcal{O}(W)$ en communication où $W$ est le nombre de participants
-  ayant jamais écrit dans le document \REF.
+  ayant jamais écrit dans le document \footfullcite{charronbost1991concerning}.
   \begin{itemize}
   \item[$\rightarrow$] Relaxer l'ordre est nécessaire pour le passage à l'échelle
   \end{itemize}
@@ -164,7 +175,7 @@
   \large
   \begin{itemize}
   \item [$\rightarrow$] L'utilisation de structures de données répliquées sans
-    conflits \REF permet cela.
+    conflits \footfullcite{shapiro2011conflict} permet cela.
     \begin{itemize}
     \item [$\rightarrow$] Ces approches se basent sur la génération
       d'identifiants uniques et immuables. Nous nous intéresserons
@@ -426,3 +437,10 @@
 %  \end{itemize}
 
 \end{frame}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../slides"
+%%% End:

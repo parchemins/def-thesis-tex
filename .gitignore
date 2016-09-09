@@ -9,3 +9,6 @@
 *.bbl
 *.blg
 .DS_Store
+*.bcf
+*.run.xml
+.#*
