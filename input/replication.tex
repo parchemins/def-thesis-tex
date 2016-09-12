@@ -68,7 +68,7 @@
   \vspace{0.5cm}
 
   \begin{itemize}
-    \only<1-1>{\item [$\rightarrow$]L'intention semble être liée à aux
+    \only<1-1>{\item [$\rightarrow$]L'intention semble être liée aux
       positions.}
     \only<2->{\item [$\rightarrow$]\sout{L'intention semble être
         liée aux \textbf{positions}.}}
@@ -209,7 +209,7 @@ Créer un ordre dense a un coût dont la progression peut être estimée par :
 
   La fonction d'allocation ne connait ni le \textbf{nombre} de caractères, ni
   leur \textbf{position} dans la séquence finale.
-
+  
   \vspace{0.5cm}
 
   \begin{center}
@@ -316,20 +316,78 @@ Créer un ordre dense a un coût dont la progression peut être estimée par :
     \end{center}
   \end{minipage}
 
+  \vspace{0.15cm}
+
+  \begin{minipage}{0.45\textwidth}
+    \begin{itemize}
+    \item Adaptée à l'édition de gauche à droite
+    \end{itemize}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \begin{itemize}
+    \item Adaptée à l'édition de droite à gauche
+    \end{itemize}
+  \end{minipage}
+
+  \vspace{0.5cm}
+  
+  \begin{itemize}
+  \item Petit espace laissé entre les caractères pour les corrections eventuelles;
+  \item Grand espace laissé avant/après les caractères pour les insertions à venir.
+  \end{itemize}
+  
+  \vspace{0.5cm}
+  \large
+  \begin{itemize}
+  \item [$\Rightarrow$] \textbf{Quand appliquer telle ou telle sous-fonction
+      d'allocation ?}
+  \end{itemize}
+
 \end{frame}
 
 
 \begin{frame}{Structure de séquences}{Choix de sous-fonction d'allocation}
 
+  \hspace{-1cm}
+  \begin{minipage}{0.45\textwidth}
+    \begin{center}
+      \input{img/figlseqtreeexampleA.tex}
+    \end{center}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \begin{center}
+      \input{img/figlseqtreeexampleB.tex}
+    \end{center}
+  \end{minipage}
+
+  \vspace{0.5cm}
+  
+  \begin{itemize}
+  \item Une sous-fonction d'allocation par niveau de l'arbre;
+  \item Choix de sous-fonction identiques quelle que soit la réplique.
+  \end{itemize}
+
+  \vspace{0.5cm}
+
+  \large
+  \begin{itemize}
+  \item [$\Rightarrow$] Sacrifice de niveau pour trouver la bonne sous-fonction
+    d'allocation
+  \end{itemize}
+
 \end{frame}
 
 \begin{frame}{Structure de séquences}{Complexités}
 
+  \hspace{-1cm}
   \begin{minipage}{0.32\textwidth}
     \begin{center}
       \input{img/figrandomlseqtree.tex}
     \end{center}
   \end{minipage}
+  \hspace{1.cm}
   \begin{minipage}{0.32\textwidth}
     \begin{center}
       \input{img/figmonotoniclseqtree.tex}
@@ -341,14 +399,56 @@ Créer un ordre dense a un coût dont la progression peut être estimée par :
     \end{center}
   \end{minipage}
 
+  \vspace{0.5cm}
+  
+  Comportements d'édition étudiés :
+  \begin{itemize}
+  \item Insertions en position aléatoire;
+  \item Insertions monotone : de gauche à droite ou de droite à gauche;    
+  \item [$\rightarrow$] L'édition collaborative est une composition de ces
+    comportements.
+  \end{itemize}
+  
+  \begin{itemize}
+  \item Pire cas.
+  \end{itemize}
+
+  \vspace{0.5cm}
+  
+  \begin{itemize}
+  \item La structure analysée est un arbre 
+    \begin{itemize}
+    \item mais d'autres compromis existent entre les complexités en temps et en
+      espace.
+    \end{itemize}
+  \end{itemize}
+
 \end{frame}
 
 \begin{frame}{Structure de séquences}{Complexité spatiale}
-    \begin{textblock*}{\textwidth}(-1cm,-1.5cm) 
-      \begin{table}[H]
-        \input{img/tablelseqspace.tex}
-      \end{table}
-    \end{textblock*}
+  \vspace{1cm}
+  
+  \begin{textblock*}{\textwidth}(-1cm,-1.5cm) 
+    \begin{table}[H]
+      \input{img/tablelseqspace.tex}
+    \end{table}
+  \end{textblock*}
+  
+  \vspace{2cm}
+  
+  \begin{itemize}
+  \item La complexité en espace des identifiants est indépendante de la
+    structure choisie pour la réplique
+  \item \LSEQ fournit des identifiants sous-linéaires pour l'édition monotone
+    et aléatoire.
+  \end{itemize}
+  
+  \begin{itemize}
+  \item [$\rightarrow$] Léger surcoût par rapport à l'état de l'art sur la
+    séquence répliquée totale.
+  \item [$\rightarrow$] Pire cas quadratique
+  \end{itemize}
+  
 \end{frame}
 
 
@@ -357,7 +457,15 @@ Créer un ordre dense a un coût dont la progression peut être estimée par :
   \begin{center}
     \input{img/tablelseqtime.tex}
   \end{center}
-
+  
+  \vspace{0.5cm}
+  
+  \begin{itemize}
+  \item Coût réparti équitablement entre la partie locale et la partie distante
+  \item [$\rightarrow$] Avantageux car à 1 opération locale correspond $N$
+    exécutions distantes où $N$ est le nombre de répliques.
+  \end{itemize}
+  
 \end{frame}
 
 \begin{frame}{Structure de séquences}{Complexité temporelle du lookup}
@@ -366,17 +474,29 @@ Créer un ordre dense a un coût dont la progression peut être estimée par :
     \input{img/tablelseqlookup.tex}
   \end{center}
   
-\end{frame}
+  Fonction qui permet de passer d'une structure de séquence à une structure
+  d'arbre, et inversement.
+  
+  \vspace{0.5cm}
 
-
-\begin{frame}{Structure de séquences}{Expérimentations}
+  \begin{itemize}
+  \item Linéaire dans le cas monotone qui est aussi le pire cas.
+  \item [$\rightarrow$] Heureusement, ce coût peut souvent être réduit à temps
+    constant.
+  \end{itemize}
   
 \end{frame}
+
+
+% \begin{frame}{Structure de séquences}{Expérimentations}
+  
+% \end{frame}
 
 \begin{frame}{Structure de séquences}{Résultats attendus}
   
   \begin{itemize}
   \item Confirmation des résutlats de l'analyse en complexité
+  \item Effets de la concurrence sur la taille des identifiants
   \end{itemize}
 
 \end{frame}
@@ -429,6 +549,17 @@ Créer un ordre dense a un coût dont la progression peut être estimée par :
     \end{tikzpicture}
   \end{minipage}
 
+  \begin{minipage}{0.4\textwidth}
+    Document édité en fin
+  \end{minipage}
+  \hspace{1.6cm}
+  \begin{minipage}{0.4\textwidth}
+    \begin{tikzpicture}
+      \node[visible on=<2>]
+      {Document édité au début};
+    \end{tikzpicture}
+  \end{minipage}
+
 
 \end{frame}
 
@@ -450,8 +581,24 @@ Créer un ordre dense a un coût dont la progression peut être estimée par :
 
 \begin{frame}{Structure de séquences}{Conclusion}
 
-%  \begin{itemize}
-%  \end{itemize}
+  \begin{itemize}
+  \item \LSEQ est une fonction d'allocation d'identifiants pour les séquences
+    réparties;
+  \item Les identifiants générés ont une complexité sous-linéaire dans le contexte
+    de l'édition collaborative
+  \item [$\rightarrow$] ce qui répond partiellement au problème scientifique.
+  \item [$\rightarrow$] Évite l'utilisation d'un méchanisme périodique de
+    relocalisation dans l'édition collaborative.
+  \end{itemize}
+
+
+  \vspace{1cm}
+  
+  \large
+  \begin{itemize}
+  \item [$\Rightarrow$] Nécessite un moyen de communiquer les identifiants à tous
+    les éditeurs.
+  \end{itemize}
 
 \end{frame}
 
