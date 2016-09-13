@@ -162,12 +162,16 @@ Créer un ordre dense a un coût dont la progression peut être estimée par :
 
 
 \begin{frame}{Structure de séquences}{Le prix de la causalité}
-  
-  Ordonner les opérations selon l'ordre causal est extrêmement coûteux : au
-  minimum $\mathcal{O}(W)$ en communication où $W$ est le nombre de participants
-  ayant jamais écrit dans le document \footfullcite{charronbost1991concerning}.
+
+  Concernant la Causalité du CCI:
   \begin{itemize}
-  \item[$\rightarrow$] Relaxer l'ordre est nécessaire pour le passage à l'échelle
+  \item Ordonner les opérations selon l'ordre causal est extrêmement coûteux :
+    au minimum $\pmb{\mathcal{O}(W)}$\textbf{ en communication} où $W$ est le
+    nombre de participants ayant jamais écrit dans le document
+    \footfullcite{charronbost1991concerning}.
+    \begin{itemize}
+    \item[$\rightarrow$] Relaxer l'ordre est nécessaire pour le passage à l'échelle
+    \end{itemize}
   \end{itemize}
   
   \vspace{0.5cm}
@@ -181,6 +185,9 @@ Créer un ordre dense a un coût dont la progression peut être estimée par :
       d'identifiants uniques et immuables. Nous nous intéresserons
       particulièrement à celles dont les identifiants sont des listes de taille
       variable.
+      \begin{itemize}
+      \item [$\rightarrow$] Garder ces identifiants de petite taille.
+      \end{itemize}
     \end{itemize}
   \end{itemize}
 
@@ -373,8 +380,8 @@ Créer un ordre dense a un coût dont la progression peut être estimée par :
 
   \large
   \begin{itemize}
-  \item [$\Rightarrow$] Sacrifice de niveau pour trouver la bonne sous-fonction
-    d'allocation
+  \item [$\Rightarrow$] \textbf{Sacrifice de niveau pour trouver la bonne sous-fonction
+    d'allocation.}
   \end{itemize}
 
 \end{frame}
@@ -468,7 +475,7 @@ Créer un ordre dense a un coût dont la progression peut être estimée par :
   
 \end{frame}
 
-\begin{frame}{Structure de séquences}{Complexité temporelle du lookup}
+\begin{frame}{Structure de séquences}{Complexité temporelle des accès}
   
   \begin{center}
     \input{img/tablelseqlookup.tex}
@@ -477,12 +484,15 @@ Créer un ordre dense a un coût dont la progression peut être estimée par :
   Fonction qui permet de passer d'une structure de séquence à une structure
   d'arbre, et inversement.
   
-  \vspace{0.5cm}
+  \vspace{0.25cm}%
+  \begin{center}%
+  \input{img/figgetexample.tex}
+  \end{center}%
+  \vspace{0.25cm}
 
   \begin{itemize}
   \item Linéaire dans le cas monotone qui est aussi le pire cas.
-  \item [$\rightarrow$] Heureusement, ce coût peut souvent être réduit à temps
-    constant.
+  \item [$\rightarrow$] Heureusement, ce coût peut souvent être réduit.
   \end{itemize}
   
 \end{frame}
@@ -492,10 +502,14 @@ Créer un ordre dense a un coût dont la progression peut être estimée par :
   
 % \end{frame}
 
-\begin{frame}{Structure de séquences}{Résultats attendus}
+\begin{frame}{Structure de séquences}{Résultats attendus des expérimentations}
   
   \begin{itemize}
   \item Confirmation des résutlats de l'analyse en complexité
+    \begin{itemize}
+    \item [$\rightarrow$] temps des opérations
+    \item [$\rightarrow$] espace des identifiants
+    \end{itemize}
   \item Effets de la concurrence sur la taille des identifiants
   \end{itemize}
 
@@ -587,7 +601,7 @@ Créer un ordre dense a un coût dont la progression peut être estimée par :
   \item Les identifiants générés ont une complexité sous-linéaire dans le contexte
     de l'édition collaborative
   \item [$\rightarrow$] ce qui répond partiellement au problème scientifique.
-  \item [$\rightarrow$] Évite l'utilisation d'un méchanisme périodique de
+  \item [$\rightarrow$] Évite l'utilisation d'un mécanisme périodique de
     relocalisation dans l'édition collaborative.
   \end{itemize}
 
@@ -596,8 +610,8 @@ Créer un ordre dense a un coût dont la progression peut être estimée par :
   
   \large
   \begin{itemize}
-  \item [$\Rightarrow$] Nécessite un moyen de communiquer les identifiants à tous
-    les éditeurs.
+  \item [$\Rightarrow$] \textbf{Nécessite un moyen de communiquer les
+      identifiants à tous les éditeurs.}
   \end{itemize}
 
 \end{frame}

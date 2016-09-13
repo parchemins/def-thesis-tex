@@ -1,0 +1,49 @@
+\begin{tikzpicture}[scale=0.9]
+  \newcommand\X{30pt}
+  \newcommand\Y{45pt}
+
+  \small
+  \draw[dashed, thick] (0pt,0pt) -- node[anchor=south east]{0} (-3.5*\X,-1*\Y);
+  \draw[thick, color=darkblue] (0pt,0pt) --
+  node[anchor=west]{\DARKBLUE{1}} (-2.5*\X,-1*\Y);
+  \draw[thick] (-2.5*\X,-1*\Y) -- node[anchor=east]{3} (-1.5*\X,-2*\Y);
+  \draw[thick] (-2.5*\X,-1*\Y) -- node[anchor=east]{7} (-0.5*\X, -2*\Y);
+  \draw[thick] (-2.5*\X,-1*\Y) -- node[anchor=west]{11} (0.5*\X,-2*\Y);
+  \draw[thick, color=darkblue](0pt,0pt) -- 
+  node[anchor=west]{\DARKBLUE{5}} ( 1.5*\X,-1*\Y);
+  \draw[thick, color=darkblue] (1.5*\X,-1*\Y) -- 
+  node[anchor=west]{\DARKBLUE{4}} (2.5*\X,-2*\Y);
+  \draw[dashed, thick] (0pt,0pt) -- node[anchor=south west]{8} ( 3.5*\X,-1*\Y);
+
+  \draw[->, color=darkblue] (-2.5*\X,-1*\Y) -- (-2.5*\X,-10-1*\Y);
+  \draw[->] (-1.5*\X,-2*\Y) -- (-1.5*\X,-10-2*\Y);
+  \draw[->] (-0.5*\X,-2*\Y) -- (-0.5*\X,-10-2*\Y);
+  \draw[->] ( 0.5*\X,-2*\Y) -- ( 0.5*\X,-10-2*\Y);
+  \draw[->, color=darkblue] ( 1.5*\X,-1*\Y) -- ( 1.5*\X,-10-1*\Y);
+  \draw[->, color=darkblue] ( 2.5*\X,-2*\Y) -- ( 2.5*\X,-10-2*\Y);
+
+  \draw[fill=white, draw=darkblue](-2.5*\X,-14-1*\Y)
+  node{\DARKBLUE{\textbf{Q}}}+(-4pt,-4pt)rectangle+(4pt,4pt);
+  \draw[fill=white](-1.5*\X,-14-2*\Y)node{\textbf{W}}+(-4pt,-4pt)rectangle+(4pt,4pt);
+  \draw[fill=white](-0.5*\X,-14-2*\Y)node{\textbf{E}}+(-4pt,-4pt)rectangle+(4pt,4pt);
+  \draw[fill=white]( 0.5*\X,-14-2*\Y)node{\textbf{R}}+(-4pt,-4pt)rectangle+(4pt,4pt);
+  \draw[fill=white, draw=darkblue]( 1.5*\X,-14-1*\Y)
+  node{\DARKBLUE{\textbf{T}}}+(-4pt,-4pt)rectangle+(4pt,4pt);
+  \draw[fill=white, draw=darkblue]( 2.5*\X,-14-2*\Y)
+  node{\DARKBLUE{\textbf{Y}}}+(-4pt,-4pt)rectangle+(4pt,4pt);
+
+  \draw[fill=darkblue] (  0pt,  0pt) circle (1pt);
+  \draw[fill=black] (-3.5*\X,-1*\Y) circle (1pt);
+  \draw[fill=white, draw=darkblue] (-2.5*\X,-1*\Y) circle (1pt);
+  \draw[fill=white] (-1.5*\X,-2*\Y) circle (1pt);
+  \draw[fill=white] (-0.5*\X,-2*\Y) circle (1pt);
+  \draw[fill=white] ( 0.5*\X,-2*\Y) circle (1pt);
+  \draw[fill=white, draw=darkblue] ( 1.5*\X,-1*\Y) circle (1pt);
+  \draw[fill=white, draw=darkblue] ( 2.5*\X,-2*\Y) circle (1pt);
+  \draw[fill=black] ( 3.5*\X,-1*\Y) circle (1pt);
+
+  \draw[->, very thick, densely dashdotted] (15-2.5*\X,-1*\Y) --
+  node[anchor=south]{\textbf{explore}} (-20+1.5*\X, -1*\Y) -- (-20+2.5*\X, -2*\Y);
+
+
+\end{tikzpicture}
