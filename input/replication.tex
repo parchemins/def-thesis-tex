@@ -9,9 +9,10 @@
 
   Fonctionnement :
   \begin{enumerate}[(a)]
-  \item Une modification produit un résultat;
-  \item ce résultat est disséminé aux autres répliques;
-  \item ces dernières exécutent -- ou intègrent -- le résultat reçu.
+  \item Une modification \textbf{produit un résultat};
+  \item ce résultat est \textbf{disséminé} aux autres répliques;
+  \item ces dernières exécutent -- ou \textbf{intègrent} -- le résultat
+    \textbf{reçu}.
   \end{enumerate}
 
   \begin{textblock*}{\textwidth}(-0.65cm,0.4cm) 
@@ -62,79 +63,44 @@
   Pour la séquence :
   \begin{itemize}
   \item \og insérer l'élément $e$ à la position $i$ dans la séquence \fg
+    $\rightarrow$ \textsc{insert}$(e,\,i)$
   \item \og supprimer l'élément à la position $i$ dans la séquence \fg
+    $\rightarrow$ \textsc{delete}$(i)$
   \end{itemize}
 
   \vspace{0.5cm}
 
   \begin{itemize}
-    \only<1-1>{\item [$\rightarrow$]L'intention semble être liée aux
-      positions.}
-    \only<2->{\item [$\rightarrow$]\sout{L'intention semble être
-        liée aux \textbf{positions}.}}
-    \uncover<2->{\item [$\rightarrow$] Une séquence
-    se définit par un \textbf{ordre dense} sur ses éléments : les éléments 
-    sont ordonnés
-    et il est toujours possible d'insérer un élément entre deux autres éléments.}
+%%    \only<1-1>{\item [$\rightarrow$]L'intention semble être liée aux
+%%      positions.}
+%%    \only<2->{\item [$\rightarrow$]\sout{L'intention semble être
+%%        liée aux \textbf{positions}.}}
+  \item [$\rightarrow$] Une séquence se définit par un \textbf{ordre dense} sur
+    ses éléments : les éléments sont ordonnés et il est toujours possible
+    d'insérer un élément entre deux autres éléments.
   \end{itemize}
 
   \vspace{0.2cm}
   
 \end{frame}
 
-\begin{frame}{Structure de séquences}{Spécification}
-  \begin{definition}[Spécification séquentielle d'une séquence]
-  Soit une série d'opérations $H$ produisant la séquence
-  $s(H) = \{p_1,\, p_2 \ldots p_k\}$ avec $p_{1..k} \in \mathcal{P}$ où
-  $\mathcal{P}$ est un ensemble muni d'un ordre
-  dense $(\mathcal{P},\,<_\mathcal{P})$ tel que : \\
-  $\forall p\in\mathcal{P},\, p_\vdash <_\mathcal{P} p <_\mathcal{P} p_\dashv $
-  \hfill et \ \
-  $p_\vdash <_\mathcal{P} p_1 <_\mathcal{P} p_2 <_\mathcal{P} \ldots
-  <_\mathcal{P} p_k <_\mathcal{P} p_\dashv$.
-  
-  \vspace{0.25cm}
+% \begin{frame}{Structure de séquences}{Complexités}
 
-  \noindent L'insertion d'un élément $e$ en position $i$ dans la séquence $s(H)$
-  est définie de la façon suivante :
-  \begin{equation}
-    \small
-    s(H \cup INSERT(i,\, e)) \rightarrow s(H) \cup 
-    \begin{cases}
-      \{p,\, p_\vdash <_\mathcal{P} p <_\mathcal{P} p_\dashv \} & i = 0 \wedge |s(H)| = 0\\
-      \{p,\, p_\vdash <_\mathcal{P} p <_\mathcal{P} p_1 \} & i = 0 \wedge |s(H)|>0\\
-      \{p,\, p_k <_\mathcal{P} p <_\mathcal{P} p_\dashv \} & i = k\\
-      \{p,\, p_i <_\mathcal{P} p <_\mathcal{P} p_{i+1} \} & sinon
-    \end{cases}
-  \end{equation}
+% Créer un ordre dense a un coût dont la progression peut être estimée par : 
 
-  \noindent La suppression de l'élément en position $i$ dans la séquence $s(H)$
-  est définie de la façon suivante :
-  \begin{equation}
-    \small
-    s(H \cup DELETE(i)) \rightarrow s(H) \setminus \{ p_i \}
-  \end{equation}
-\end{definition}
-\end{frame}
+% \vspace{0.5cm}
 
+% \begin{itemize}
+%   \only<1-1>{\item Complexité en \textbf{communication};}
+%   \only<2->{\item  \textbf{Complexité en communication};}
+% \item Complexité \textbf{spatiale} de la réplique;
+% \item Complexité \textbf{temporelle} d'une opération \textbf{générée} localement;
+%   \only<1-1>{\item Complexité \textbf{temporelle} de l'\textbf{intégration} d'une opération reçue.}
+%   \only<2->{\item \textbf{Complexité temporelle de l'intégration d'une opération reçue.}}
+% \end{itemize}
 
-\begin{frame}{Structure de séquences}{Complexités}
-
-Créer un ordre dense a un coût dont la progression peut être estimée par : 
-
-\vspace{0.5cm}
-
-\begin{itemize}
-  \only<1-1>{\item Complexité en \textbf{communication};}
-  \only<2->{\item  \textbf{Complexité en communication};}
-\item Complexité \textbf{spatiale} de la réplique;
-\item Complexité \textbf{temporelle} d'une opération \textbf{générée} localement;
-  \only<1-1>{\item Complexité \textbf{temporelle} de l'\textbf{intégration} d'une opération reçue.}
-  \only<2->{\item \textbf{Complexité temporelle de l'intégration d'une opération reçue.}}
-\end{itemize}
-
-%% (TODO) maybe explain the reasons of this emphasis
-\end{frame}
+% %% (TODO) maybe explain the reasons of this emphasis
+% \end{frame}
 
 
 % \begin{frame}{Structure de séquences}{État de l'art : transformées opérationnelles}
@@ -161,87 +127,141 @@ Créer un ordre dense a un coût dont la progression peut être estimée par :
 % \end{frame}
 
 
-\begin{frame}{Structure de séquences}{Le prix de la causalité}
+\begin{frame}{Structure de séquences}{Ordre dense grâce aux identifiants}
 
-  Concernant la Causalité du CCI:
-  \begin{itemize}
-  \item Ordonner les opérations selon l'ordre causal est extrêmement coûteux :
-    au minimum $\pmb{\mathcal{O}(W)}$\textbf{ en communication} où $W$ est le
-    nombre de participants ayant jamais écrit dans le document
-    \footfullcite{charronbost1991concerning}.
-    \begin{itemize}
-    \item[$\rightarrow$] Relaxer l'ordre est nécessaire pour le passage à l'échelle
-    \end{itemize}
-  \end{itemize}
+  Pour créer cet ordre dense, il est possible d'allouer un \textbf{identifiant}
+  unique et immuable à chaque caractère\footfullcite{shapiro2011conflict}. Les
+  identifiants permettent de retrouver l'ordre des éléments de la séquence.
   
-  \vspace{0.5cm}
+  \vspace{1cm}
   
-  \large
-  \begin{itemize}
-  \item [$\rightarrow$] L'utilisation de structures de données répliquées sans
-    conflits \footfullcite{shapiro2011conflict} permet cela.
-    \begin{itemize}
-    \item [$\rightarrow$] Ces approches se basent sur la génération
-      d'identifiants uniques et immuables. Nous nous intéresserons
-      particulièrement à celles dont les identifiants sont des listes de taille
-      variable.
-      \begin{itemize}
-      \item [$\rightarrow$] Garder ces identifiants de petite taille.
-      \end{itemize}
-    \end{itemize}
-  \end{itemize}
+  \textsc{insert}$($\texttt{R}, $0)$ \uncover<2->{\textsc{insert}$($\texttt{T},
+    $1)$} \uncover<3->{\textsc{insert}$($\texttt{Y}, $2)$} \\
+  \uncover<4->{\textsc{insert}$($\texttt{E}, $0)$}
+  \uncover<5->{\textsc{insert}$($\texttt{W}, $0)$}
+  \uncover<6->{\textsc{insert}$($\texttt{Q}, $0)$}
 
-\end{frame}
-
-\begin{frame}{Structure de séquences}{Structures sans conflits}
-  
-  La signature change : 
-  \begin{itemize}
-  \item \textsc{insert}($element,\, position$) $\rightarrow$
-    \textsc{insert}($id_{position-1},\, element,\, id_{position}$)
-  \item \textsc{delete}($position$) $\rightarrow$ \textsc{delete}($id_{position}$)
-  \end{itemize}
-
-  \vspace{0.5cm}
-  
-
-  \begin{algorithm}[H]
-    \input{img/algogeneral.tex}
-  \end{algorithm}
-
-\end{frame}
-
-
-\begin{frame}{Structure de séquences}{Problèmes d'allocation}
-
-  La fonction d'allocation ne connait ni le \textbf{nombre} de caractères, ni
-  leur \textbf{position} dans la séquence finale.
-  
-  \vspace{0.5cm}
+  \vspace{1cm}
 
   \begin{center}
-    \input{img/figendeditingexample.tex}
+    \input{img/figdenseorder.tex}
   \end{center}
 
 \end{frame}
 
 
-\begin{frame}{Structure de séquences}{Arbre}
+% \begin{frame}{Structure de séquences}{Le prix de la causalité}
+
+%   Concernant la Causalité du CCI:
+%   \begin{itemize}
+%   \item Ordonner les opérations selon l'ordre causal est extrêmement coûteux :
+%     au minimum $\pmb{\mathcal{O}(W)}$\textbf{ en communication} où $W$ est le
+%     nombre de participants ayant jamais écrit dans le document
+%     \footfullcite{charronbost1991concerning}.
+%     \begin{itemize}
+%     \item[$\rightarrow$] Relaxer l'ordre est nécessaire pour le passage à l'échelle
+%     \end{itemize}
+%   \end{itemize}
   
+%   \vspace{0.5cm}
+  
+%   \large
+%   \begin{itemize}
+%   \item [$\rightarrow$] L'utilisation de structures de données répliquées sans
+%     conflits \footfullcite{shapiro2011conflict} permet cela.
+%     \begin{itemize}
+%     \item [$\rightarrow$] Ces approches se basent sur la génération
+%       d'identifiants uniques et immuables. Nous nous intéresserons
+%       particulièrement à celles dont les identifiants sont des listes de taille
+%       variable.
+%       \begin{itemize}
+%       \item [$\rightarrow$] Garder ces identifiants de petite taille.
+%       \end{itemize}
+%     \end{itemize}
+%   \end{itemize}
+
+% \end{frame}
+
+% \begin{frame}{Structure de séquences}{Structures sans conflits}
+  
+%   La signature change : 
+%   \begin{itemize}
+%   \item \textsc{insert}($element,\, position$) $\rightarrow$
+%     \textsc{insert}($id_{position-1},\, element,\, id_{position}$)
+%   \item \textsc{delete}($position$) $\rightarrow$ \textsc{delete}($id_{position}$)
+%   \end{itemize}
+  
+%   \vspace{0.2cm}
+%   La complexité algorithmique se situe dans la partie locale de l'insertion.
+
+%   \vspace{0.2cm}
+  
+%   \begin{algorithm}[H]
+%     \input{img/algogeneral.tex}
+%   \end{algorithm}
+
+% \end{frame}
+
+\begin{frame}{Structure de séquences}{Problèmes d'allocation d'identifiants}
+
+  \textbf{Avec la connaissance} de la position des caractères dans la séquence
+  finale, il est possible d'obtenir une allocation \textbf{optimale} avec des
+  identifiants de taille \textbf{logarithmique} par rapport au nombre d'insertions.
+
+  \vspace{0.1cm}
+
   \begin{center}
-    \input{img/figallocpathexampleB.tex}
+  \input{img/figdenseorderideal.tex}
   \end{center}
+
+  \vspace{0.25cm}
+
+  \textbf{Sans connaissance}, les identifiants peuvent grandir très
+  rapidement. Une stratégie adaptée à l'édition de gauche à droite devient
+  catastrophique lorsque l'ordre d'insertion est opposé.
+
+%  La fonction d'allocation ne connait ni le \textbf{nombre} de caractères, ni
+%  leur \textbf{position} dans la séquence finale.
   
-  \vspace{0.5cm}
-  
-  La taille des chemins impacte les performances de l'éditeur et le trafic
-  généré par l'éditeur.
-  \begin{itemize}
-  \item [$\rightarrow$] \textsc{allocPath} doit allouer les plus petits chemins
-    possibles.
-  \end{itemize}
+  \vspace{0.1cm}
+
+  \begin{center}
+    \input{img/figdenseorderstatic.tex}
+  \end{center}
 
 \end{frame}
+
+
+\begin{frame}{Structure de séquences}{Représentation sous forme d'arbre}
+
+  \begin{center}
+    \input{img/figdenseorderstatic.tex}
+  \end{center}
+  
+  \vspace{0.15cm}
+  
+  \begin{minipage}{0.45\textwidth}
+    Les parties communes des identifiants peuvent être factorisées. Un arbre
+    représente alors la séquence.
+
+    \vspace{0.2cm}
+
+    La taille des chemins impacte les \textbf{performances} de l'éditeur et le
+    \textbf{trafic généré} par l'éditeur.
+    \begin{itemize}
+    \item [$\rightarrow$] Il est crucial d'allouer les plus petits chemins
+      possibles.
+    \end{itemize}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \begin{center}
+      \input{img/figallocpathexampleB.tex}
+    \end{center}
+  \end{minipage}
+
+\end{frame}
+
 
 
 \begin{frame}{Structure de séquences}{Définition du problème}
