@@ -37,6 +37,35 @@
 \end{frame}
 
 
+\begin{frame}{Structure de séquences}{Complexité temporelle des accès}
+  
+  \begin{center}
+    \input{img/tablelseqlookup.tex}
+  \end{center}
+  
+  Fonction qui permet de passer d'une structure de séquence à une structure
+  d'arbre, et inversement.
+  
+  \vspace{0.25cm}%
+  \begin{center}%
+  \input{img/figgetexample.tex}
+  \end{center}%
+  \vspace{0.25cm}
+
+  \begin{itemize}
+  \item Linéaire dans le cas monotone qui est aussi le pire cas.
+  \item [$\rightarrow$] Heureusement, ce coût peut souvent être réduit.
+  \end{itemize}
+  
+\end{frame}
+
+
+\begin{frame}{Structure de séquences}{Effets de la concurrence}
+  \vspace{-0.5cm}
+  \begin{center}
+    \includegraphics[angle=-90, width=\textwidth]{img/replication/latency.eps}
+  \end{center}
+\end{frame}
 
 
 %% WORST CASE SLIDE LSEQ

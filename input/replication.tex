@@ -64,9 +64,10 @@
   \begin{itemize}
   \item \og insérer l'élément $e$ à la position $i$ dans la séquence \fg
     $\rightarrow$ \textsc{insert}$(e,\,i)$
-  \item \og supprimer l'élément à la position $i$ dans la séquence \fg
+  \item \small \og supprimer l'élément à la position $i$ dans la séquence \fg
     $\rightarrow$ \textsc{delete}$(i)$
   \end{itemize}
+
 
   \vspace{0.5cm}
 
@@ -280,11 +281,30 @@
 
   \begin{itemize}
   \item [$\rightarrow$] Sinon, il faut relocaliser les identifiants qui ont été
-    générés pour conserver de bonnes performances
+    générés pour retrouver un arbre équilibré et conserver de bonnes performances
     \begin{itemize}
     \item [$\approx$] consensus répartis qui ne passe pas à l'échelle.
     \end{itemize}
   \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Structure de séquences}{État de l'art}
+  
+  Logoot\footfullcite{weiss2009logoot},
+  Treedoc\footfullcite{preguica2009commutative} : 
+  \begin{itemize}
+  \item Arité maximale de l'arbre reste fixe
+  \item Adapté à l'édition de gauche à droite
+  \item [$\rightarrow$] Progression linéaire des identifiants
+  \end{itemize}
+
+%  \hspace{-1cm}
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{img/replication/motivationartificial.eps}
+  \end{center}
+  \vspace{0.025cm}
 
 \end{frame}
 
@@ -408,46 +428,45 @@
 
 \begin{frame}{Structure de séquences}{Complexités}
 
-  \hspace{-1cm}
-  \begin{minipage}{0.32\textwidth}
+%  \hspace{-1cm}
+  \begin{minipage}{0.45\textwidth}
     \begin{center}
       \input{img/figrandomlseqtree.tex}
     \end{center}
   \end{minipage}
-  \hspace{1.cm}
-  \begin{minipage}{0.32\textwidth}
+  \hfill
+%  \hspace{1.cm}
+  \begin{minipage}{0.45\textwidth}
     \begin{center}
       \input{img/figmonotoniclseqtree.tex}
     \end{center}
   \end{minipage}
-  \begin{minipage}{0.32\textwidth}
-    \begin{center}
-      \input{img/figworstlseqtree.tex}
-    \end{center}
-  \end{minipage}
+  % \begin{minipage}{0.32\textwidth}
+  %   \begin{center}
+  %     \input{img/figworstlseqtree.tex}
+  %   \end{center}
+  % \end{minipage}
 
   \vspace{0.5cm}
   
   Comportements d'édition étudiés :
   \begin{itemize}
-  \item Insertions en position aléatoire;
-  \item Insertions monotone : de gauche à droite ou de droite à gauche;    
+  \item Insertions en position aléatoire $\rightarrow$ corrections orthographiques;
+  \item Insertions monotone : de gauche à droite ou de droite à gauche;
   \item [$\rightarrow$] L'édition collaborative est une composition de ces
     comportements.
   \end{itemize}
   
-  \begin{itemize}
-  \item Pire cas.
-  \end{itemize}
+%  \begin{itemize}
+%  \item Pire cas.
+%  \end{itemize}
 
   \vspace{0.5cm}
   
+  La structure analysée est un arbre 
   \begin{itemize}
-  \item La structure analysée est un arbre 
-    \begin{itemize}
-    \item mais d'autres compromis existent entre les complexités en temps et en
-      espace.
-    \end{itemize}
+  \item mais d'autres structures existent offrant d'autres compromis entre les
+    complexités temporelle et spatiale.
   \end{itemize}
 
 \end{frame}
@@ -465,16 +484,19 @@
   
   \begin{itemize}
   \item La complexité en espace des identifiants est indépendante de la
-    structure choisie pour la réplique
+    structure choisie pour la réplique;
   \item \LSEQ fournit des identifiants sous-linéaires pour l'édition monotone
-    et aléatoire.
+    et aléatoire;
+  \item Le traffic généré par l'éditeur collaboratif dépend de cette complexité.
+  \item [$\rightarrow$] Important car la largeur de bande est souvent le facteur
+    le plus limitant d'un système.
   \end{itemize}
   
-  \begin{itemize}
-  \item [$\rightarrow$] Léger surcoût par rapport à l'état de l'art sur la
-    séquence répliquée totale.
-  \item [$\rightarrow$] Pire cas quadratique
-  \end{itemize}
+%   \begin{itemize}
+%   \item [$\rightarrow$] Léger surcoût par rapport à l'état de l'art sur la
+%     séquence répliquée totale.
+%  \item [$\rightarrow$] Pire cas quadratique
+%   \end{itemize}
   
 \end{frame}
 
@@ -495,42 +517,16 @@
   
 \end{frame}
 
-\begin{frame}{Structure de séquences}{Complexité temporelle des accès}
-  
-  \begin{center}
-    \input{img/tablelseqlookup.tex}
-  \end{center}
-  
-  Fonction qui permet de passer d'une structure de séquence à une structure
-  d'arbre, et inversement.
-  
-  \vspace{0.25cm}%
-  \begin{center}%
-  \input{img/figgetexample.tex}
-  \end{center}%
-  \vspace{0.25cm}
+\begin{frame}{Structure de séquences}{Expérimentations}
 
-  \begin{itemize}
-  \item Linéaire dans le cas monotone qui est aussi le pire cas.
-  \item [$\rightarrow$] Heureusement, ce coût peut souvent être réduit.
-  \end{itemize}
-  
-\end{frame}
-
-
-% \begin{frame}{Structure de séquences}{Expérimentations}
-  
-% \end{frame}
-
-\begin{frame}{Structure de séquences}{Résultats attendus des expérimentations}
-  
+  Attentes sur les expérimentations : 
   \begin{itemize}
   \item Confirmation des résutlats de l'analyse en complexité
     \begin{itemize}
     \item [$\rightarrow$] temps des opérations
     \item [$\rightarrow$] espace des identifiants
     \end{itemize}
-  \item Effets de la concurrence sur la taille des identifiants
+%  \item Effets de la concurrence sur la taille des identifiants
   \end{itemize}
 
 \end{frame}
@@ -545,25 +541,25 @@
   \end{minipage}
   \hspace{1.5cm}
   \begin{minipage}{0.45\textwidth}
-    \begin{tikzpicture}
-      \node[visible on=<2-4>]
-      {\includegraphics[width=1.25\textwidth]{img/replication/double.eps}};
-    \end{tikzpicture}
+%    \begin{tikzpicture}
+%      \node[visible on=<2-4>]
+      {\includegraphics[width=1.25\textwidth]{img/replication/double.eps}}%;
+%    \end{tikzpicture}
   \end{minipage}
   
   \hspace{-1cm}
   \begin{minipage}{0.45\textwidth}
-    \begin{tikzpicture}
-      \node[visible on=<3-4>]
-      {\includegraphics[width=1.25\textwidth]{img/replication/robin.eps}};
-    \end{tikzpicture}
+%    \begin{tikzpicture}
+%      \node[visible on=<3-4>]
+      {\includegraphics[width=1.25\textwidth]{img/replication/robin.eps}}%;
+%    \end{tikzpicture}
   \end{minipage}
   \hspace{1.5cm}
   \begin{minipage}{0.45\textwidth}
-    \begin{tikzpicture}
-      \node[visible on=<4-4>]
-      {\includegraphics[width=1.25\textwidth]{img/replication/lseq.eps}};
-    \end{tikzpicture}
+%    \begin{tikzpicture}
+%      \node[visible on=<4-4>]
+      {\includegraphics[width=1.25\textwidth]{img/replication/lseq.eps}}%;
+%    \end{tikzpicture}
   \end{minipage}
 
 \end{frame}
@@ -577,10 +573,10 @@
   \end{minipage}
   \hspace{1.2cm}
   \begin{minipage}{0.45\textwidth}
-    \begin{tikzpicture}
-      \node[visible on=<2>]
-      {\includegraphics[width=1.29\textwidth]{img/replication/templatetalk.eps}};
-    \end{tikzpicture}
+%    \begin{tikzpicture}
+%      \node[visible on=<2>]
+      {\includegraphics[width=1.29\textwidth]{img/replication/templatetalk.eps}}%;
+%    \end{tikzpicture}
   \end{minipage}
 
   \begin{minipage}{0.4\textwidth}
@@ -588,10 +584,10 @@
   \end{minipage}
   \hspace{1.6cm}
   \begin{minipage}{0.4\textwidth}
-    \begin{tikzpicture}
-      \node[visible on=<2>]
-      {Document édité au début};
-    \end{tikzpicture}
+%    \begin{tikzpicture}
+%      \node[visible on=<2>]
+      {Document édité au début}%;
+%    \end{tikzpicture}
   \end{minipage}
 
 
@@ -606,12 +602,6 @@
 
 \end{frame}
 
-\begin{frame}{Structure de séquences}{Effets de la concurrence}
-  \vspace{-0.5cm}
-  \begin{center}
-    \includegraphics[angle=-90, width=\textwidth]{img/replication/latency.eps}
-  \end{center}
-\end{frame}
 
 \begin{frame}{Structure de séquences}{Conclusion}
 
