@@ -1,0 +1,3 @@
+
+Cette expérimentation comprend 4 fonctions d'allocations aux configurations
+différentes. 
