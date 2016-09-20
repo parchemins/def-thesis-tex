@@ -373,9 +373,10 @@
   Résultats attendus :
   \begin{itemize}
   \item Convergence rapide vers un réseau possédant des propriétés similaires à
-    celles des graphes aléatoires.
+    celles des graphes aléatoires;
   \item Les doublons sont peu nombreux et n'impactent pas significativement les
-    propriétés du réseau.
+    propriétés du réseau;
+  \item Les protocoles basés sur \SPRAY bénéficient de son adaptativité.
   \end{itemize}
 
 \end{frame}
@@ -491,8 +492,20 @@
   
   \begin{itemize}
   \item \SPRAY est un protocole d'échantillonnage aléatoire de pair adaptatif.
+  \item \SPRAY est adapté au processus complexe d'établissement de connexion de
+    WebRTC.
+  \end{itemize}
+
+  \vspace{0.25cm}
+
+  \begin{itemize}
   \item \SPRAY a le désavantage d'utiliser des doublons, mais leur faible
     proportion n'impacte pas les propriétés du réseau.    
+  \end{itemize}
+
+  \vspace{0.25cm}
+
+  \begin{itemize}
   \item Les protocoles construits au dessus de \SPRAY bénéficient de cette
     adaptativité.
   \end{itemize}

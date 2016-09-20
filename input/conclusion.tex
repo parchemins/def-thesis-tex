@@ -9,24 +9,33 @@
 \end{frame}
 
 
-\begin{frame}{Conclusion}{Architecture et fonctionnement}
-  \hspace{-1cm}
-  \begin{minipage}{0.47\textwidth}
+\begin{frame}{Conclusion}{Architecture}
+%  \hspace{-1cm}
+
+%  \begin{minipage}{0.47\textwidth}
     \begin{center}
       \input{img/figarchitecture.tex}
     \end{center}
-  \end{minipage}
+%  \end{minipage}
+    
+    Le trafic croît 
+    \begin{itemize}
+    \item logarithmiquement par rapport au nombre de collaborateurs grâce à \SPRAY;
+    \item polylogarithmiquement par rapport au nombre d'insertions dans le
+      document grâce à \LSEQ.
+    \end{itemize}
+
 %  \hfill
-  \hspace{0.5cm}
-  \begin{minipage}{0.47\textwidth}
-    \begin{center}
-      \input{img/figenteringsession.tex}
-    \end{center}
-  \end{minipage}
+  % \hspace{0.5cm}
+  % \begin{minipage}{0.47\textwidth}
+  %   \begin{center}
+  %     \input{img/figenteringsession.tex}
+  %   \end{center}
+  % \end{minipage}
 \end{frame}
 
 
-\begin{frame}{Conclusion}{Évaluation du passage à l'échelle}
+\begin{frame}{Conclusion}{Évaluation du passage à l'échelle sur Grid'5k}
 
   \begin{center}
     \includegraphics[width=1\textwidth]{img/editor/communication.eps}
