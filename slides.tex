@@ -1,4 +1,8 @@
+\pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}
 \documentclass[10pt, xcolor={usenames, dvipsnames}]{beamer}
+
+%\PassOptionsToPackage{cmyk}{xcolor}
+%\usepackage[cmyk]{xcolor}
 %\documentclass[handout, 10pt, xcolor={usenames, dvipsnames}]{beamer}
 
 %\usepackage{etex}
@@ -7,6 +11,11 @@
 \usepackage[T1]{fontenc}
 \usepackage{upgreek,textgreek}
 %\usepackage{textcomp}
+\usepackage{animate}
+
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
 
 \usepackage{algorithm}
 \usepackage{algorithmicx}
@@ -82,6 +91,8 @@
 \usepackage{epsfig}
 
 \newcommand{\REF}{\textcolor{purple}{REF}}
+\newcommand{\YES}[1]{\textcolor{green}{#1}}
+\newcommand{\NO}[1]{\textcolor{red}{#1}}
 
 \definecolor{darkestblue}{HTML}{253494}
 \definecolor{darkblue}{HTML}{2c7FB8}

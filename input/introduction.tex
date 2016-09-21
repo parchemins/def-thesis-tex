@@ -14,7 +14,7 @@
   \vspace{0.25cm}
 
   \noindent
-  \begin{exampleblock}{Le Wikipédia anglais\ldots}
+  \begin{exampleblock}{La version anglaise de Wikipédia \ldots}
   \begin{minipage}{0.6\textwidth}
     \ldots compte \textbf{5 millions} d'articles, \textbf{40 millions}
       de pages et \textbf{112 mille} utilisateurs actifs.\\Les articles
@@ -34,7 +34,7 @@
 \end{frame}
 
 
-\begin{frame}{Introduction}{Éditeur collaboratif Web}
+\begin{frame}{Introduction}{Éditeur collaboratif}
 %  \begin{minipage}{0.53\textwidth}
 %     Un éditeur collaboratif permet
 %     \begin{itemize}
@@ -63,80 +63,109 @@
 %       \end{center}
 %     \end{figure}
 %  \end{minipage}
-
-
-%  \begin{figure}   
-%    \hspace{-1cm}
-    \begin{textblock*}{\textwidth}(-1cm,-2.5cm) 
+  
+  \begin{textblock*}{\textwidth}(-1cm,-2.5cm) 
     \includegraphics[width=1.19\textwidth]{img/googledocs3.png}
-    %\footfullcite{johansen1988groupware}
+    % \footfullcite{johansen1988groupware}
+%    \vspace{0.25cm}
   \end{textblock*}
- % \end{figure}
+
+  \begin{textblock*}{\textwidth}(0cm,4cm)
+    \large
+    \begin{itemize}
+    \item[$\Rightarrow$] L'édition \textbf{temps réel} et le \textbf{Web}
+      contribuent grandement à la popularité de tels éditeurs.
+    \end{itemize}    
+  \end{textblock*}
 \end{frame}
 
 
-\begin{frame}{Introduction}{Problématique}
-
-  % L'organisation du Web est éminemment centralisée : quelques serveurs sont en
-  % charge d'un nombre titanesque de clients.
-  % \begin{itemize}
-  % \item Problèmes de confidentialité, de censure, d'intelligence économique, de
-  %   propriété, etc.
-  % \item Problèmes de passage à l'échelle et de résilience aux pannes.
-  % \end{itemize}
+\begin{frame}{Introduction}{Le contexte Web incite à la centralisation}
   
+%  \hspace{-1cm}
   \begin{minipage}{0.69\textwidth}
-    Le contexte \textbf{Web} pousse à la \textbf{centralisation :}
-    \begin{itemize}
-    \item problèmes de \textbf{confidentialité}, \textbf{censure}, etc.
-    \uncover<2->{\item problèmes de passage à l'échelle, notamment en \textbf{nombre de
-        collaborateurs};}
-    \uncover<3->{\item problèmes de \textbf{résilience} aux pannes.}
-    \end{itemize}
+    Problèmes de \textbf{confidentialité}, \textbf{censure},
+    \textbf{intelligence économique}, \textbf{legislation}, etc. \vspace{0.15cm}\\
+    \textit{En 2013, les révélations sur PRISM montre que la NSA possède des
+      accès aux données hébergées par Google, Facebook, YouTube, Microsoft,
+      Yahoo!, Skype, AOL et Apple.}
   \end{minipage}
   \hfill
   \begin{minipage}{0.3\textwidth}
-    \includegraphics[width=0.7\textwidth]{img/www.png}
+    \hfill
+    \includegraphics[width=0.97\textwidth]{img/centralizedethicproblems.png}
   \end{minipage}
 
-%  \vspace{0.025cm}
+  \begin{minipage}{0.69\textwidth}
+    Problèmes de passage à l'échelle, notamment en \textbf{nombre de
+      collaborateurs}. \vspace{0.15cm}\\
+    \textit{En 2013, Coursera rassembla 41000 étudiants sur un seul cours.  Les
+      limitations de l'outil collaboratif utilisé conduisirent au \og
+      désastre\fg.}% \footfullcite{strauss2013how}.}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.3\textwidth}
+    \hfill
+    \includegraphics[width=0.97\textwidth]{img/centralizedcpuproblems.png}
+  \end{minipage}
+
+  \begin{minipage}{0.69\textwidth}
+    Problèmes de \textbf{robustesse face aux défaillances}.
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.3\textwidth}
+    \hfill
+    \includegraphics[width=0.97\textwidth]{img/centralizedscalabilityproblems.png}
+  \end{minipage}
+
+\end{frame}
+
+
+\begin{frame}{Introduction}{Ce que l'on veut : un éditeur collaboratif \ldots}
   
-
-  \begin{minipage}{0.32\textwidth}
-    \begin{center}
-      \begin{tikzpicture}
-        \node[visible on=<1-3>]
-        {\includegraphics[width=0.95\textwidth]{img/centralizedethicproblems.png}};
-      \end{tikzpicture}
-    \end{center}
+%  \begin{textblock*}
+  \begin{minipage}{0.45\textwidth}
+    \hfill \YES{\cmark} \textbf{Temps réel}
   \end{minipage}
-  \begin{minipage}{0.32\textwidth}
-    \begin{center}
-      \begin{tikzpicture}
-        \node[visible on=<2-3>]
-        {\includegraphics[width=0.95\textwidth]{img/centralizedcpuproblems.png}};
-      \end{tikzpicture}
-    \end{center}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=0.75\textwidth]{img/watch.jpg}
   \end{minipage}
-  \begin{minipage}{0.32\textwidth}
-    \begin{center}
-      \begin{tikzpicture}
-        \node[visible on=<3-3>]
-        {\includegraphics[width=0.95\textwidth]{img/centralizedscalabilityproblems.png}};
-      \end{tikzpicture}        
-    \end{center}
+  % \end{textblock*}
+    
+  \vspace{-0.75cm}
+
+  \begin{minipage}{0.45\textwidth}
+    \hfill  \includegraphics[width=0.8\textwidth]{img/toile.jpg}
+  \end{minipage}  
+  \begin{minipage}{0.45\textwidth}
+    \textbf{Web} \YES{\cmark}
+  \end{minipage}
+  
+  \vspace{-0.75cm}
+  
+  \begin{minipage}{0.45\textwidth}
+    \hfill \NO{\xmark}\textbf{Sans fournisseur de service}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=0.8\textwidth]{img/service.jpg}
   \end{minipage}
 
-%  \vspace{0.025cm}
+  \vspace{-0.75cm}
 
-  \uncover<2->{\begin{exampleblock}{En 2013, Coursera rassembla 41000 étudiants\ldots}
-    \ldots pour un seul cours.  Les cours étant basés sur les outils de
-    collaboration Google, ils n'offraient la collaboration en temps réel qu'à un
-    petit groupe d'utilisateurs. Selon les journalistes, l'expérience fut un \og
-    désastre\fg \footfullcite{strauss2013how}.
-  \end{exampleblock}}
+  \begin{minipage}{0.45\textwidth}
+    \hfill \includegraphics[width=0.8\textwidth]{img/crowd.jpg}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \textbf{Des milliers d'utilisateurs éditant simultanément} \NO{\xmark}
+  \end{minipage}
 
-  \vspace{0.05cm}
+\end{frame}
+
+
+\begin{frame}{Introduction}{Ce que l'on propose}
+
+\animategraphics[loop,autoplay,width=\linewidth]{13}{img/animations/tmp-}{0}{69}
+
 \end{frame}
 
 
