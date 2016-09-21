@@ -1,6 +1,7 @@
 \section{Structure de séquences répartie à large échelle}
 
-\begin{frame}{Structure de séquences}{Réplication}
+
+\begin{frame}{Document}{Réplication}
   \vspace{-1.5cm}
 
   La \textbf{réplication optimiste}\footfullcite{saito2005optimistic} améliore
@@ -24,7 +25,7 @@
 \end{frame}
 
 
-\begin{frame}{Structure de séquences}{Cohérence des répliques}
+\begin{frame}{Document}{Cohérence des répliques}
   
   \vspace{-1.5cm}
 
@@ -44,7 +45,7 @@
 \end{frame}
 
 
-\begin{frame}{Structure de séquences}{Intention}
+\begin{frame}{Document}{Intention}
   
   L'effet observé sur le document lors de la génération d'une opération doit
   être également observé lors de son intégration malgré l'interférence
@@ -85,7 +86,7 @@
   
 \end{frame}
 
-% \begin{frame}{Structure de séquences}{Complexités}
+% \begin{frame}{Document}{Complexités}
 
 % Créer un ordre dense a un coût dont la progression peut être estimée par : 
 
@@ -104,7 +105,7 @@
 % \end{frame}
 
 
-% \begin{frame}{Structure de séquences}{État de l'art : transformées opérationnelles}
+% \begin{frame}{Document}{État de l'art : transformées opérationnelles}
 
 %   \vspace{-1.5cm}
 
@@ -128,7 +129,7 @@
 % \end{frame}
 
 
-\begin{frame}{Structure de séquences}{Ordre dense grâce aux identifiants}
+\begin{frame}{Document}{Ordre dense grâce aux identifiants}
 
   Pour créer cet ordre dense, il est possible d'allouer un \textbf{identifiant}
   unique et immuable à chaque caractère\footfullcite{shapiro2011conflict}. Les
@@ -136,11 +137,13 @@
   
   \vspace{1cm}
   
+  \begin{center}
   \textsc{insert}$($\texttt{R}, $0)$ \uncover<2->{\textsc{insert}$($\texttt{T},
     $1)$} \uncover<3->{\textsc{insert}$($\texttt{Y}, $2)$} \\
   \uncover<4->{\textsc{insert}$($\texttt{E}, $0)$}
   \uncover<5->{\textsc{insert}$($\texttt{W}, $0)$}
   \uncover<6->{\textsc{insert}$($\texttt{Q}, $0)$}
+  \end{center}
 
   \vspace{1cm}
 
@@ -151,7 +154,7 @@
 \end{frame}
 
 
-% \begin{frame}{Structure de séquences}{Le prix de la causalité}
+% \begin{frame}{Document}{Le prix de la causalité}
 
 %   Concernant la Causalité du CCI:
 %   \begin{itemize}
@@ -183,7 +186,7 @@
 
 % \end{frame}
 
-% \begin{frame}{Structure de séquences}{Structures sans conflits}
+% \begin{frame}{Document}{Structures sans conflits}
   
 %   La signature change : 
 %   \begin{itemize}
@@ -203,7 +206,7 @@
 
 % \end{frame}
 
-\begin{frame}{Structure de séquences}{Problèmes d'allocation d'identifiants}
+\begin{frame}{Document}{Problèmes d'allocation d'identifiants}
 
   \textbf{Avec la connaissance} de la position des caractères dans la séquence
   finale, il est possible d'obtenir une allocation \textbf{optimale} avec des
@@ -233,7 +236,7 @@
 \end{frame}
 
 
-\begin{frame}{Structure de séquences}{Représentation sous forme d'arbre}
+\begin{frame}{Document}{Représentation sous forme d'arbre}
 
   \begin{center}
     \input{img/figdenseorderstatic.tex}
@@ -265,7 +268,7 @@
 
 
 
-\begin{frame}{Structure de séquences}{Définition du problème}
+\begin{frame}{Document}{Définition du problème}
 
   \begin{problem}
     Soit la séquence d'identifiants $s(I)= id_1.id_2\ldots id_I$, et
@@ -290,7 +293,7 @@
 \end{frame}
 
 
-\begin{frame}{Structure de séquences}{État de l'art}
+\begin{frame}{Document}{État de l'art}
   
   Logoot\footfullcite{weiss2009logoot},
   Treedoc\footfullcite{preguica2009commutative} : 
@@ -309,7 +312,7 @@
 \end{frame}
 
 
-\begin{frame}{Structure de séquences}{\LSEQ}
+\begin{frame}{Document}{\LSEQ}
   
   Fonction d'allocation de chemins :
   \begin{enumerate}
@@ -323,7 +326,7 @@
 \end{frame}
 
 
-\begin{frame}{Structure de séquences}{Arbre exponentiel}
+\begin{frame}{Document}{Arbre exponentiel}
 
   \begin{center}
     \input{img/figexponentialtree.tex}
@@ -349,7 +352,7 @@
 \end{frame}
 
 
-\begin{frame}{Structure de séquences}{Sous-fonctions d'allocations}
+\begin{frame}{Document}{Sous-fonctions d'allocations}
   
   \begin{minipage}{0.45\textwidth}
     \begin{center}
@@ -394,7 +397,7 @@
 \end{frame}
 
 
-\begin{frame}{Structure de séquences}{Choix de sous-fonction d'allocation}
+\begin{frame}{Document}{Choix de sous-fonction d'allocation}
 
   \hspace{-1cm}
   \begin{minipage}{0.45\textwidth}
@@ -426,7 +429,7 @@
 
 \end{frame}
 
-\begin{frame}{Structure de séquences}{Complexités}
+\begin{frame}{Document}{Complexités}
 
 %  \hspace{-1cm}
   \begin{minipage}{0.45\textwidth}
@@ -471,7 +474,7 @@
 
 \end{frame}
 
-\begin{frame}{Structure de séquences}{Complexité spatiale}
+\begin{frame}{Document}{Complexité spatiale}
   \vspace{1cm}
   
   \begin{textblock*}{\textwidth}(-1cm,-1.5cm) 
@@ -501,7 +504,7 @@
 \end{frame}
 
 
-\begin{frame}{Structure de séquences}{Complexité temporelle}
+\begin{frame}{Document}{Complexité temporelle}
 
   \begin{center}
     \input{img/tablelseqtime.tex}
@@ -517,7 +520,7 @@
   
 \end{frame}
 
-\begin{frame}{Structure de séquences}{Expérimentations}
+\begin{frame}{Document}{Expérimentations}
 
   Attentes sur les expérimentations : 
   \begin{itemize}
@@ -533,7 +536,7 @@
 
 
 
-\begin{frame}{Structure de séquences}{Contribution de chaque composant}
+\begin{frame}{Document}{Contribution de chaque composant}
   
   \hspace{-1cm}
   \begin{minipage}{0.45\textwidth}
@@ -565,7 +568,7 @@
 \end{frame}
 
 
-\begin{frame}{Structure de séquences}{Identifiants sur traces réelles}
+\begin{frame}{Document}{Identifiants sur traces réelles}
 
   \hspace{-1cm}
   \begin{minipage}{0.45\textwidth}
@@ -594,7 +597,7 @@
 \end{frame}
 
 
-\begin{frame}{Structure de séquences}{Évolution des performances}
+\begin{frame}{Document}{Évolution des performances}
 
   \begin{center}
     \includegraphics[width=\textwidth]{img/replication/time.eps}
@@ -603,7 +606,7 @@
 \end{frame}
 
 
-\begin{frame}{Structure de séquences}{Conclusion}
+\begin{frame}{Document}{Conclusion}
 
   \begin{itemize}
   \item \LSEQ est une fonction d'allocation d'identifiants pour les séquences

@@ -11,15 +11,14 @@
   \item[$\rightarrow$] Les documents sont de \textbf{meilleure qualité}.
   \end{itemize}
   
-  \vspace{0.25cm}
+  \vspace{1cm}
 
-  \noindent
-  \begin{exampleblock}{La version anglaise de Wikipédia \ldots}
   \begin{minipage}{0.6\textwidth}
-    \ldots compte \textbf{5 millions} d'articles, \textbf{40 millions}
-      de pages et \textbf{112 mille} utilisateurs actifs.\\Les articles
-      possèdent une \textbf{fiabilité} \textbf{comparable} à celle de
-      l'Encyclopædia Britannica.
+    \textit{La version anglaise de Wikipédia compte \textbf{5 millions}
+      d'articles, \textbf{40 millions} de pages et \textbf{112 mille}
+      utilisateurs actifs.\vspace{0.15cm}\\Les articles possèdent une
+      \textbf{fiabilité} \textbf{comparable} à celle de l'Encyclopædia
+      Britannica.}
   \end{minipage}\footfullcite{giles2005internet}
   \hfill
   \begin{minipage}{0.3\textwidth}
@@ -29,7 +28,6 @@
       \end{center}
     \end{figure}
   \end{minipage}
-  \end{exampleblock}
 
 \end{frame}
 
@@ -162,29 +160,40 @@
 \end{frame}
 
 
-\begin{frame}{Introduction}{Ce que l'on propose}
+\begin{frame}{Introduction}{Un éditeur décentralisé dans les navigateurs}
+  
 
-\animategraphics[loop,autoplay,width=\linewidth]{13}{img/animations/tmp-}{0}{69}
+  \begin{minipage}{0.69\textwidth}
+    \CRATE est un éditeur collaboratif 
+    \begin{itemize}
+    \item temps réel \YES{\cmark}
+    \item fonctionnant dans les navigateurs Web \YES{\cmark}
+    \item sans fournisseur de services \YES{\cmark}
+    \item pouvant atteindre de large dimensions \YES{\cmark}
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}{0.3\textwidth}
+    \includegraphics[width=\textwidth,interpolate=false]{img/crateicon.png}
+  \end{minipage}
+    
+%  \vspace{1.0cm}
+  
+  \begin{textblock*}{1.18\textwidth}(-1cm,1cm)
+    \animategraphics[loop,autoplay,width=1\textwidth]{10}{img/animations/tmp-}{0}{69}
+  \end{textblock*}
+  
+  \vspace{1cm}
 
 \end{frame}
 
 
 \begin{frame}{Introduction}\framesubtitle{Éditeur collaboratif décentralisé}
   
-  \begin{itemize}
-  \item [$\Rightarrow$] \large\textbf{L'édition collaborative temps réel est-elle
-      possible sur le Web, sans l'intervention d'un tiers et sans limites quant
-      aux dimensions du système ?}
-    \begin{itemize}
-    \item [$\rightarrow$] Décentralisé large échelle dans les navigateurs Web.
-    \end{itemize}
-  \end{itemize}
-  
-  \vspace{0.25cm}
   \begin{center}
     \includegraphics[width=0.8\textwidth]{img/world.png}
   \end{center}
-  \vspace{0.25cm}
+
+  \vspace{0.75cm}
   
   \begin{enumerate}
     \item Moyen de représenter efficacement un \textbf{document} de manière
@@ -192,6 +201,11 @@
     \item Moyen de \textbf{communiquer} efficacement les modifications sur le
       document.
   \end{enumerate}
+
+  \begin{itemize}
+  \item Un éditeur collaboratif pouvant fonctionner sur les outils informatiques
+    les plus modestes (CPU, mémoire, largeur de bande).
+  \end{itemize}
 
   % \begin{itemize}
   % \item Répartition géographique des collaborateurs;
