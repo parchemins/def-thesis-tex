@@ -8,13 +8,13 @@
   la \textbf{disponibilité} d'un document et sa \textbf{réactivité} aux
   changements effectués.  \vspace{0.75cm}
 
-  Fonctionnement :
-  \begin{enumerate}[(a)]
-  \item Une modification \textbf{produit un résultat};
-  \item ce résultat est \textbf{disséminé} aux autres répliques;
-  \item ces dernières exécutent -- ou \textbf{intègrent} -- le résultat
-    \textbf{reçu}.
-  \end{enumerate}
+  % Fonctionnement :
+  % \begin{enumerate}[(a)]
+  % \item Une modification \textbf{produit un résultat};
+  % \item ce résultat est \textbf{disséminé} aux autres répliques;
+  % \item ces dernières exécutent -- ou \textbf{intègrent} -- le résultat
+  %   \textbf{reçu}.
+  % \end{enumerate}
 
   \begin{textblock*}{\textwidth}(-0.65cm,0.4cm) 
     \input{img/figoptimisticsteps.tex}
@@ -29,13 +29,13 @@
   
   \vspace{-1.5cm}
 
-  D'après Sun et al.\footfullcite{sun1998achieving}, l'édition collaborative
-  temps réel nécessite un système préservant les trois propriétés :
+  L'édition collaborative temps réel nécessite un système préservant les trois
+  propriétés\footfullcite{sun1998achieving} :
 
   \begin{itemize}
-  \item Convergence;
-  \item Causalité;
-  \item Intention.  
+  \item \textbf{Convergence};
+  \item \textbf{Causalité};
+  \item \textbf{Intention}.  
   \end{itemize}
 
   \begin{textblock*}{\textwidth}(-0.65cm,0.4cm) 
@@ -51,15 +51,15 @@
   être également observé lors de son intégration malgré l'interférence
   d'opérations \textbf{concurrentes}.
 
-  \vspace{0.5cm}
+  \vspace{1cm}
 
-  \begin{itemize}
-  \item Difficile à formaliser dans le cas général;
-  \item L'opération doit respecter le plus possible sa spécification
-    séquentielle \footfullcite{bieniusa2012brief}.
-  \end{itemize}
+  % \begin{itemize}
+  % \item Difficile à formaliser dans le cas général;
+  % \item L'opération doit respecter le plus possible sa spécification
+  %   séquentielle \footfullcite{bieniusa2012brief}.
+  % \end{itemize}
 
-  \vspace{0.5cm}
+  % \vspace{0.5cm}
   
   Pour la séquence :
   \begin{itemize}
@@ -244,9 +244,9 @@
   
   \vspace{0.15cm}
   
-  \begin{minipage}{0.45\textwidth}
-    Les parties communes des identifiants peuvent être factorisées. Un arbre
-    représente alors la séquence.
+  \begin{minipage}{0.55\textwidth}
+    Factoriser les parties communes des identifiants construit un \textbf{arbre}
+    représentant la même séquence.
 
     \vspace{0.2cm}
 
@@ -258,7 +258,7 @@
     \end{itemize}
   \end{minipage}
   \hfill
-  \begin{minipage}{0.45\textwidth}
+  \begin{minipage}{0.37\textwidth}
     \begin{center}
       \input{img/figallocpathexampleB.tex}
     \end{center}
@@ -328,25 +328,40 @@
 
 \begin{frame}{Document}{Arbre exponentiel}
 
-  \begin{center}
-    \input{img/figexponentialtree.tex}
-  \end{center}
-
-  L'union des identifiants forme un arbre dont l'arité maximale double à chaque
-  niveau.
-  
-  \begin{itemize}
-  \item [$\rightarrow$] Un chemin de profondeur 3 tel que [1.3.7] nécessite
-    $\log_2(2)+\log_2(4)+\log_2(8)=6$ bits pour être représenté en mémoire.
-  \item [$\rightarrow$] Un chemin de profondeur $e$ nécessite
-    $\sum_{i=1}^e i = {e^2 + e \over 2}$ bits.
+  \begin{minipage}{0.55\textwidth}
+    L'union des identifiants forme un arbre dont \textbf{l'arité maximale double
+      à chaque niveau.}
+    
+    \begin{itemize}
+    \item [$\rightarrow$] Un chemin de profondeur 3 tel que [1.3.7] nécessite
+      $6$ bits pour être représenté en mémoire.
+    \item [$\rightarrow$] Un chemin de profondeur $e$ nécessite
+      $\sum_{i=1}^e i = {e^2 + e \over 2}$ bits.
   \end{itemize}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.40\textwidth}
+    \begin{center}
+      \input{img/figexponentialtree.tex}
+    \end{center}
+  \end{minipage}
 
-  \vspace{0.25cm}
-  \large
-  \begin{itemize}
-  \item [$\Rightarrow$] \textbf{Les chemins doivent être très prudemmment assignés.}
-  \end{itemize}
+
+  \vspace{0.5cm}\hspace{-1cm}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=1.25\textwidth]{img/replication/logoot.eps}
+  \end{minipage}
+  \hspace{1.5cm}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=1.25\textwidth]{img/replication/double.eps}
+  \end{minipage}
+
+
+  % \vspace{0.25cm}
+  % \large
+  % \begin{itemize}
+  % \item [$\Rightarrow$] \textbf{Les chemins doivent être très prudemmment assignés.}
+  % \end{itemize}
     
 
 \end{frame}
@@ -369,35 +384,39 @@
   \vspace{0.15cm}
 
   \begin{minipage}{0.45\textwidth}
-    \begin{itemize}
-    \item Adaptée à l'édition de gauche à droite
-    \end{itemize}
+    Pour l'édition de \textbf{gauche à droite}
   \end{minipage}
   \hfill
   \begin{minipage}{0.45\textwidth}
-    \begin{itemize}
-    \item Adaptée à l'édition de droite à gauche
-    \end{itemize}
+    Pour l'édition de \textbf{droite à gauche}
+  \end{minipage}
+  
+  \vspace{0.43cm}\hspace{-1cm}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=1.25\textwidth]{img/replication/logoot.eps}
+  \end{minipage}
+  \hspace{1.5cm}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=1.25\textwidth]{img/replication/robin.eps}
   \end{minipage}
 
-  \vspace{0.5cm}
+
+  % \begin{itemize}
+  % \item Petit espace laissé entre les caractères pour les corrections eventuelles;
+  % \item Grand espace laissé avant/après les caractères pour les insertions à venir.
+  % \end{itemize}
   
-  \begin{itemize}
-  \item Petit espace laissé entre les caractères pour les corrections eventuelles;
-  \item Grand espace laissé avant/après les caractères pour les insertions à venir.
-  \end{itemize}
-  
-  \vspace{0.5cm}
-  \large
-  \begin{itemize}
-  \item [$\Rightarrow$] \textbf{Quand appliquer telle ou telle sous-fonction
-      d'allocation ?}
-  \end{itemize}
+  % \vspace{0.5cm}
+  % \large
+  % \begin{itemize}
+  % \item [$\Rightarrow$] \textbf{Quand appliquer telle ou telle sous-fonction
+  %     d'allocation ?}
+  % \end{itemize}
 
 \end{frame}
 
 
-\begin{frame}{Document}{Choix de sous-fonction d'allocation}
+\begin{frame}{Document}{Compensation des niveaux sacrifiés}
 
   \hspace{-1cm}
   \begin{minipage}{0.45\textwidth}
@@ -412,20 +431,28 @@
     \end{center}
   \end{minipage}
 
-  \vspace{0.5cm}
+  \vspace{0.4cm}\hspace{-1cm}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=1.25\textwidth]{img/replication/logoot.eps}
+  \end{minipage}
+  \hspace{1.5cm}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=1.25\textwidth]{img/replication/lseq.eps}
+  \end{minipage}
+
   
-  \begin{itemize}
-  \item Une sous-fonction d'allocation par niveau de l'arbre;
-  \item Choix de sous-fonction identiques quelle que soit la réplique.
-  \end{itemize}
+  % \begin{itemize}
+  % \item Une sous-fonction d'allocation par niveau de l'arbre;
+  % \item Choix de sous-fonction identiques quelle que soit la réplique.
+  % \end{itemize}
 
-  \vspace{0.5cm}
+  % \vspace{0.5cm}
 
-  \large
-  \begin{itemize}
-  \item [$\Rightarrow$] \textbf{Sacrifice de niveau pour trouver la bonne sous-fonction
-    d'allocation.}
-  \end{itemize}
+  % \large
+  % \begin{itemize}
+  % \item [$\Rightarrow$] \textbf{Sacrifice de niveau pour trouver la bonne sous-fonction
+  %   d'allocation.}
+  % \end{itemize}
 
 \end{frame}
 
@@ -454,7 +481,8 @@
   
   Comportements d'édition étudiés :
   \begin{itemize}
-  \item Insertions en position aléatoire $\rightarrow$ corrections orthographiques;
+  \item Insertions en position
+    aléatoire; % $\rightarrow$ corrections orthographiques;
   \item Insertions monotone : de gauche à droite ou de droite à gauche;
   \item [$\rightarrow$] L'édition collaborative est une composition de ces
     comportements.
@@ -510,100 +538,106 @@
     \input{img/tablelseqtime.tex}
   \end{center}
   
-  \vspace{0.5cm}
-  
-  \begin{itemize}
-  \item Coût réparti équitablement entre la partie locale et la partie distante
-  \item [$\rightarrow$] Avantageux car à 1 opération locale correspond $N$
-    exécutions distantes où $N$ est le nombre de répliques.
-  \end{itemize}
-  
-\end{frame}
-
-\begin{frame}{Document}{Expérimentations}
-
-  Attentes sur les expérimentations : 
-  \begin{itemize}
-  \item Confirmation des résutlats de l'analyse en complexité
+  \vspace{0.5cm}\hspace{-1cm}  
+  \begin{minipage}{0.51\textwidth}
     \begin{itemize}
-    \item [$\rightarrow$] temps des opérations
-    \item [$\rightarrow$] espace des identifiants
-    \end{itemize}
-%  \item Effets de la concurrence sur la taille des identifiants
-  \end{itemize}
+    \item Coût réparti équitablement entre la partie locale et la partie distante
+    \item [$\rightarrow$] Avantageux car à 1 opération locale correspond $N$
+      exécutions distantes où $N$ est le nombre de répliques.
+    \end{itemize}    
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.48\textwidth}
+    \includegraphics[width=1.2\textwidth]{img/replication/time.eps}
+  \end{minipage}
 
-\end{frame}
-
-
-
-\begin{frame}{Document}{Contribution de chaque composant}
   
-  \hspace{-1cm}
-  \begin{minipage}{0.45\textwidth}
-    \includegraphics[width=1.25\textwidth]{img/replication/logoot.eps}
-  \end{minipage}
-  \hspace{1.5cm}
-  \begin{minipage}{0.45\textwidth}
-%    \begin{tikzpicture}
-%      \node[visible on=<2-4>]
-      {\includegraphics[width=1.25\textwidth]{img/replication/double.eps}}%;
-%    \end{tikzpicture}
-  \end{minipage}
+\end{frame}
+
+% \begin{frame}{Document}{Expérimentations}
+
+%   Attentes sur les expérimentations : 
+%   \begin{itemize}
+%   \item Confirmation des résutlats de l'analyse en complexité
+%     \begin{itemize}
+%     \item [$\rightarrow$] temps des opérations
+%     \item [$\rightarrow$] espace des identifiants
+%     \end{itemize}
+% %  \item Effets de la concurrence sur la taille des identifiants
+%   \end{itemize}
+
+% \end{frame}
+
+
+
+% \begin{frame}{Document}{Contribution de chaque composant}
   
-  \hspace{-1cm}
-  \begin{minipage}{0.45\textwidth}
-%    \begin{tikzpicture}
-%      \node[visible on=<3-4>]
-      {\includegraphics[width=1.25\textwidth]{img/replication/robin.eps}}%;
-%    \end{tikzpicture}
-  \end{minipage}
-  \hspace{1.5cm}
-  \begin{minipage}{0.45\textwidth}
-%    \begin{tikzpicture}
-%      \node[visible on=<4-4>]
-      {\includegraphics[width=1.25\textwidth]{img/replication/lseq.eps}}%;
-%    \end{tikzpicture}
-  \end{minipage}
+%   \hspace{-1cm}
+%   \begin{minipage}{0.45\textwidth}
+%     \includegraphics[width=1.25\textwidth]{img/replication/logoot.eps}
+%   \end{minipage}
+%   \hspace{1.5cm}
+%   \begin{minipage}{0.45\textwidth}
+% %    \begin{tikzpicture}
+% %      \node[visible on=<2-4>]
+%       {\includegraphics[width=1.25\textwidth]{img/replication/double.eps}}%;
+% %    \end{tikzpicture}
+%   \end{minipage}
+  
+%   \hspace{-1cm}
+%   \begin{minipage}{0.45\textwidth}
+% %    \begin{tikzpicture}
+% %      \node[visible on=<3-4>]
+%       {\includegraphics[width=1.25\textwidth]{img/replication/robin.eps}}%;
+% %    \end{tikzpicture}
+%   \end{minipage}
+%   \hspace{1.5cm}
+%   \begin{minipage}{0.45\textwidth}
+% %    \begin{tikzpicture}
+% %      \node[visible on=<4-4>]
+%       {\includegraphics[width=1.25\textwidth]{img/replication/lseq.eps}}%;
+% %    \end{tikzpicture}
+%   \end{minipage}
 
-\end{frame}
-
-
-\begin{frame}{Document}{Identifiants sur traces réelles}
-
-  \hspace{-1cm}
-  \begin{minipage}{0.45\textwidth}
-    \includegraphics[width=1.29\textwidth]{img/replication/poste.eps}
-  \end{minipage}
-  \hspace{1.2cm}
-  \begin{minipage}{0.45\textwidth}
-%    \begin{tikzpicture}
-%      \node[visible on=<2>]
-      {\includegraphics[width=1.29\textwidth]{img/replication/templatetalk.eps}}%;
-%    \end{tikzpicture}
-  \end{minipage}
-
-  \begin{minipage}{0.4\textwidth}
-    Document édité en fin
-  \end{minipage}
-  \hspace{1.6cm}
-  \begin{minipage}{0.4\textwidth}
-%    \begin{tikzpicture}
-%      \node[visible on=<2>]
-      {Document édité au début}%;
-%    \end{tikzpicture}
-  \end{minipage}
+% \end{frame}
 
 
-\end{frame}
+% \begin{frame}{Document}{Identifiants sur traces réelles}
+
+%   \hspace{-1cm}
+%   \begin{minipage}{0.45\textwidth}
+%     \includegraphics[width=1.29\textwidth]{img/replication/poste.eps}
+%   \end{minipage}
+%   \hspace{1.2cm}
+%   \begin{minipage}{0.45\textwidth}
+% %    \begin{tikzpicture}
+% %      \node[visible on=<2>]
+%       {\includegraphics[width=1.29\textwidth]{img/replication/templatetalk.eps}}%;
+% %    \end{tikzpicture}
+%   \end{minipage}
+
+%   \begin{minipage}{0.4\textwidth}
+%     Document édité en fin
+%   \end{minipage}
+%   \hspace{1.6cm}
+%   \begin{minipage}{0.4\textwidth}
+% %    \begin{tikzpicture}
+% %      \node[visible on=<2>]
+%       {Document édité au début}%;
+% %    \end{tikzpicture}
+%   \end{minipage}
 
 
-\begin{frame}{Document}{Évolution des performances}
+% \end{frame}
 
-  \begin{center}
-    \includegraphics[width=\textwidth]{img/replication/time.eps}
-  \end{center}
 
-\end{frame}
+% \begin{frame}{Document}{Évolution des performances}
+
+%   \begin{center}
+%     \includegraphics[width=\textwidth]{img/replication/time.eps}
+%   \end{center}
+
+% \end{frame}
 
 
 \begin{frame}{Document}{Conclusion}
@@ -615,18 +649,18 @@
     de l'édition collaborative
   \item [$\rightarrow$] ce qui répond partiellement au problème scientifique.
   \item [$\rightarrow$] Évite l'utilisation d'un mécanisme périodique de
-    relocalisation dans l'édition collaborative.
+    relocalisation dans notre contexte.
   \end{itemize}
 
 
-  % \vspace{1cm}
+  \vspace{1cm}
   
-  % \large
-  % \begin{itemize}
-  % \item [$\Rightarrow$] \textbf{Nécessite un moyen de communiquer les
-  %     identifiants à tous les éditeurs.}
-  % \end{itemize}
-
+  \large
+  \begin{itemize}
+  \item [$\Rightarrow$] \textbf{Nécessite un moyen de communiquer les
+      identifiants à tous les éditeurs.}
+  \end{itemize}
+  
 \end{frame}
 
 
