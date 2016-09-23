@@ -106,8 +106,8 @@
 
 
   \begin{minipage}{0.67\textwidth}
-    Grâce à WebRTC, les navigateurs Web ne sont plus seulement des clients mais
-    aussi des \textbf{serveurs}.
+    Seulement depuis récemment, et grâce à WebRTC, les navigateurs Web ne sont
+    plus seulement des clients mais aussi des \textbf{serveurs}.
   \end{minipage}
   \hfill
   \begin{minipage}{0.3\textwidth}
@@ -180,42 +180,48 @@
   \end{enumerate}
 \end{problem}
 
-\end{frame}
-
-
-\begin{frame}{Communication}{État de l'art}
-
-%\vspace{0.5cm}
-  
-  \begin{itemize}
-  \item Vues de taille fixe configurées a priori 
-  \end{itemize}
-  
-  \begin{exampleblock}{Dans un cours en ligne ouvert et massif \ldots}
-    \ldots un cours peut commencer avec énormément d'étudiants; rapidement
-    perdre en popularité à mesure que l'intérêt des étudiants décline; voir sa
-    population croître lorsque les examens finaux arrivent.
-  \end{exampleblock}
-  
-  \vspace{0.5cm}
-
-%  \begin{minipage}{0.37\textwidth}
-  \begin{itemize}
-  \item Protocole peu adapté au type de connexion WebRTC
-  \end{itemize}
-  % L'établissement de connexion nécessite au moins 1 aller-retour de message.
-%\end{minipage}
-%\begin{minipage}{0.61\textwidth}
-  \begin{center}
-    \input{img/fighandshake.tex}
-  \end{center}
-%\end{minipage}
-
-
-
+\begin{itemize}
+\item [$\rightarrow$] Les vues partielles reflètent les besoins du réseau;
+\item [$\rightarrow$] Limiter le nombre de sauts pour établir une connexion.
+\end{itemize}
 
 
 \end{frame}
+
+
+% \begin{frame}{Communication}{État de l'art}
+
+% %\vspace{0.5cm}
+  
+%   \begin{itemize}
+%   \item Vues de taille fixe configurées a priori 
+%   \end{itemize}
+  
+%   \begin{exampleblock}{Dans un cours en ligne ouvert et massif \ldots}
+%     \ldots un cours peut commencer avec énormément d'étudiants; rapidement
+%     perdre en popularité à mesure que l'intérêt des étudiants décline; voir sa
+%     population croître lorsque les examens finaux arrivent.
+%   \end{exampleblock}
+  
+%   \vspace{0.5cm}
+
+% %  \begin{minipage}{0.37\textwidth}
+%   \begin{itemize}
+%   \item Protocole peu adapté au type de connexion WebRTC
+%   \end{itemize}
+%   % L'établissement de connexion nécessite au moins 1 aller-retour de message.
+% %\end{minipage}
+% %\begin{minipage}{0.61\textwidth}
+%   \begin{center}
+%     \input{img/fighandshake.tex}
+%   \end{center}
+% %\end{minipage}
+
+
+
+
+
+% \end{frame}
 
 
 
@@ -231,120 +237,241 @@
   converge rapidement vers une topologie possédant des propriétés similaires à
   celles des graphes aléatoires.
 
-  \vspace{0.5cm}
+  \vspace{1cm}
 
-  Cycle de vie d'un pair : 
-  \begin{enumerate}
-  \item \textbf{Rejoindre} le réseau;
-  \item \textbf{Rester} dans le réseau;
-  \item \textbf{Quitter} le réseau.
-  \end{enumerate}
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+      \input{img/figcycleA.tex}
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+      \input{img/figcycleB.tex}\\
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+      \input{img/figcycleC.tex}
+    \end{center}
+  \end{minipage}
 
-  \large
-  \begin{itemize}
-  \item [$\Rightarrow$] \textbf{Le nombre de connexions établies doit rester cohérent.}
-  \end{itemize}
+  \vspace{0.15cm}
+
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+      \small Ajoute $1+\log |\mathcal{N}|$ connexions
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+%      \small Ajoute $1+\log |\mathcal{N}|$ connexions
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+      \small Retire $1+\log |\mathcal{N}|$ connexions
+    \end{center}
+  \end{minipage}
+
+
+
+  % Cycle de vie d'un pair : 
+  % \begin{enumerate}
+  % \item \textbf{Rejoindre} le réseau;
+  % \item \textbf{Rester} dans le réseau;
+  % \item \textbf{Quitter} le réseau.
+  % \end{enumerate}
+
+  % \large
+  % \begin{itemize}
+  % \item [$\Rightarrow$] \textbf{Le nombre de connexions établies doit rester cohérent.}
+  % \end{itemize}
 \end{frame}
 
 
-\begin{frame}{Communication}{\SPRAY : rejoindre le réseau}
+\begin{frame}{Communication}{Rejoindre le réseau}
 
-  L'introduction d'un nouveau pair s'accompagne de $1+ \ln {|\mathcal{N}|}$
-  connexions.%
-  \begin{itemize}
-  \item [$\rightarrow$] $|\mathcal{N}|$ pairs implique
-    $|\mathcal{N}|\ln |\mathcal{N}|$ connexions.
-  \end{itemize}
-
+  L'entrée d'un nouveau pair s'accompagne de $1+ \log {|\mathcal{N}|}$
+  connexions.
 
   \vspace{0.5cm}
+  
+  \begin{itemize}
+  \item \textbf{1 :} Le pair entrant se connecte à son contact;
+  \item $\pmb{\log |\mathcal{N}|}$: On suppose que le protocole répond au
+    problème et chaque pair possède une taille de vue partielle
+    $\approx \log |\mathcal{N}|$.
+  \end{itemize}
 
-  \begin{minipage}{0.6\textwidth}
-    \begin{enumerate}[(a)]
-    \item Le nouvel arrivant se connecte à un contact ($1$ connexion);
-    \uncover<2->{\item Le contact dissémine la nouvelle arrivée aux membres de sa vue;}
-    \uncover<3->{\item Chacun de ces voisins établit une connexion
-      ($\approx \ln |\mathcal{N}|$ connexions).}
-    \end{enumerate}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.35\textwidth}
+  \vspace{1cm}
+
+  \begin{minipage}{0.32\textwidth}
     \begin{center}
-      \input{img/figjoiningexample.tex}
+      \input{img/figjoiningexampleA.tex}
     \end{center}
   \end{minipage}
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+      \input{img/figjoiningexampleB.tex}
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+      \input{img/figjoiningexampleC.tex}
+    \end{center}
+  \end{minipage}
+
+
+
+  % \begin{itemize}
+  % \item [$\rightarrow$] $|\mathcal{N}|$ pairs implique
+  %   $|\mathcal{N}|\ln |\mathcal{N}|$ connexions.
+  % \end{itemize}
+
+
+%  \vspace{0.5cm}
+
+  % \begin{minipage}{0.6\textwidth}
+  %   \begin{enumerate}[(a)]
+  %   \item Le nouvel arrivant se connecte à un contact ($1$ connexion);
+  %   \uncover<2->{\item Le contact dissémine la nouvelle arrivée aux membres de sa vue;}
+  %   \uncover<3->{\item Chacun de ces voisins établit une connexion
+  %     ($\approx \ln |\mathcal{N}|$ connexions).}
+  %   \end{enumerate}
+  % \end{minipage}
+  % \hfill
+  % \begin{minipage}{0.35\textwidth}
+  %   \begin{center}
+  %     \input{img/figjoiningexample.tex}
+  %   \end{center}
+  % \end{minipage}
   
   \vspace{1cm}
   
   \large
   \begin{itemize}
-  \uncover<4->{\item [$\Rightarrow$] \textbf{Les vues partielles sont déséquilibrées}}
+  \item [$\Rightarrow$] \textbf{Les vues partielles sont déséquilibrées}
   \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Communication}{\SPRAY : échanges périodiques}
+\begin{frame}{Communication}{Échanges périodiques}
  
-  Les échanges périodiques mélangent les vues partielles. Le nombre de
-  connexions n'augmente ni ne diminue.
+  Le nombre de connexions reste \textbf{constant}.
  
   \vspace{0.5cm}
 
-  \begin{minipage}{0.6\textwidth}
-    \begin{enumerate}[(a)]
-    \item Initiation du mélange périodique. Le pair devient médiateur entre
-      $\lceil P \div 2 \rceil - 1$ voisins aléatoires et le pair choisi pour le
-      mélange. 
-    \uncover<2->{\item En réponse, le pair choisi devient médiateur entre
-      $\lceil P\div 2 \rceil$ voisins et le pair initiateur;}
-    \uncover<3->{\item Le pair initiateur reçoit la réponse et établit ses 
-      connexions grâce au pair choisi.}
-    \end{enumerate}
-  \end{minipage}
-  \begin{minipage}{0.37\textwidth}
+  Les deux pairs impliqués dans l'échange périodique donne la \textbf{moitié} de
+  leur vue partielle. Les pairs sont choisis \textbf{aléatoirement}.
+  \begin{itemize}
+  \item [$\rightarrow$] La taille des vues converge vers la \textbf{moyenne} des
+    deux.
+  \end{itemize}
+  
+
+  \vspace{0.5cm}\hspace{-1cm}
+  \begin{minipage}{0.32\textwidth}
     \begin{center}
-      \input{img/figshuffleexample.tex}
+      \input{img/figshuffleexampleA.tex}
     \end{center}
   \end{minipage}
+  \hspace{0.35cm}
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+      \input{img/figshuffleexampleB.tex}
+    \end{center}
+  \end{minipage}
+  \hspace{0.35cm}
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+      \input{img/figshuffleexampleC.tex}
+    \end{center}
+  \end{minipage}
+
+
+
+  % \begin{minipage}{0.6\textwidth}
+  %   \begin{enumerate}[(a)]
+  %   \item Initiation du mélange périodique. Le pair devient médiateur entre
+  %     $\lceil P \div 2 \rceil - 1$ voisins aléatoires et le pair choisi pour le
+  %     mélange. 
+  %   \uncover<2->{\item En réponse, le pair choisi devient médiateur entre
+  %     $\lceil P\div 2 \rceil$ voisins et le pair initiateur;}
+  %   \uncover<3->{\item Le pair initiateur reçoit la réponse et établit ses 
+  %     connexions grâce au pair choisi.}
+  %   \end{enumerate}
+  % \end{minipage}
+  % \begin{minipage}{0.37\textwidth}
+  %   \begin{center}
+  %     \input{img/figshuffleexample.tex}
+  %   \end{center}
+  % \end{minipage}
 
 
   \vspace{0.5cm}
   \large
   \begin{itemize}
-  \uncover<4->{\item [$\Rightarrow$]
-    \textbf{Équilibre rapidement la taille des vues partielles;}}
-  \uncover<4->{\item [$\Rightarrow$] \textbf{Disperse les connexions.}}
+  \item [$\Rightarrow$] \textbf{Équilibre rapidement la taille des vues
+      partielles;}
+  \item [$\Rightarrow$] \textbf{Disperse les groupes fortement connectés.}
   \end{itemize}
   
 \end{frame}
 
-\begin{frame}{Communication}{\SPRAY : quitter le réseau}
+\begin{frame}{Communication}{Quitter le réseau}
 
-  Le départ d'un pair engendre la suppression de $1+\ln|\mathcal{N}|$ connexions.
+  Le départ d'un pair doit engendrer la suppression de $1+\log|\mathcal{N}|$ connexions.
 
   \vspace{0.5cm}
 
-  \begin{minipage}{0.6\textwidth}
-    \begin{enumerate}[(a)]
-    \item Un pair quitte le réseau ou tombe en panne;
-    \uncover<2->{\item Les pairs ayant une connexion vers lui s'aperçoivent de sa disparition;}
-    \uncover<3->{\item Ces pairs ajoutent de manière probabiliste des doublons.}
-    \end{enumerate}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.37\textwidth}
+  Problème : la vue sortante + la vue entrante $\approx 2\log|\mathcal{N}|$
+  \begin{itemize}
+  \item $\pmb{\log|\mathcal{N}|}$ : La vue partielle du pair quittant le réseau;
+  \item \textbf{1} : Un parmis les $\approx \log|\mathcal{N}|$ pairs détectant
+    le départ ne recrée pas de connexion.
+  \end{itemize}
+
+  \vspace{0.5cm}\hspace{-1cm}
+  \begin{minipage}{0.32\textwidth}
     \begin{center}
-      \input{img/figleavingexample.tex}
+      \input{img/figleavingexampleA.tex}
     \end{center}
   \end{minipage}
+  \hspace{0.45cm}
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+      \input{img/figleavingexampleB.tex}
+    \end{center}
+  \end{minipage}
+  \hspace{0.45cm}
+  \begin{minipage}{0.32\textwidth}
+    \begin{center}
+      \input{img/figleavingexampleC.tex}
+    \end{center}
+  \end{minipage}
+
+
+  % \vspace{0.5cm}
+
+  % \begin{minipage}{0.6\textwidth}
+  %   \begin{enumerate}[(a)]
+  %   \item Un pair quitte le réseau ou tombe en panne;
+  %   \uncover<2->{\item Les pairs ayant une connexion vers lui s'aperçoivent de sa disparition;}
+  %   \uncover<3->{\item Ces pairs ajoutent de manière probabiliste des doublons.}
+  %   \end{enumerate}
+  % \end{minipage}
+  % \hfill
+  % \begin{minipage}{0.37\textwidth}
+  %   \begin{center}
+  %     \input{img/figleavingexample.tex}
+  %   \end{center}
+  % \end{minipage}
 
   \vspace{1cm}
   \large
   \begin{itemize}
-  \uncover<4->{\item[$\Rightarrow$] \textbf{Présence de doublons assure la cohérence du nombre de connexions.}
-  \begin{itemize}
-  \item [$\rightarrow$] Mais impacte négativement les propriétés du réseau.
-  \end{itemize}}
+  \item [$\Rightarrow$] \textbf{Présence de doublons assure la cohérence du
+      nombre de connexions.}
   \end{itemize}
  
 \end{frame}
@@ -381,6 +508,22 @@
 
 \end{frame}
 
+
+\begin{frame}{Communication}{Les vues partielles s'adaptent}
+  \hspace{-1cm}
+  \begin{minipage}{0.47\textwidth}
+    \begin{center}
+      \includegraphics[width=1.23\textwidth]{img/network/churn.eps}
+    \end{center}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.47\textwidth}
+      \includegraphics[width=1.23\textwidth]{img/network/avgpv.eps}
+  \end{minipage}
+\end{frame}
+
+
+
 \begin{frame}{Communication}{Coefficient d'agglomération diminue rapidement}
   \hspace{-1cm}
   \begin{minipage}{0.47\textwidth}
@@ -416,20 +559,6 @@
   \begin{center}
     \includegraphics[width=1\textwidth]{img/network/histo.eps}
   \end{center}
-\end{frame}
-
-
-\begin{frame}{Communication}{Les vues partielles s'adaptent}
-  \hspace{-1cm}
-  \begin{minipage}{0.47\textwidth}
-    \begin{center}
-      \includegraphics[width=1.23\textwidth]{img/network/churn.eps}
-    \end{center}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.47\textwidth}
-      \includegraphics[width=1.23\textwidth]{img/network/avgpv.eps}
-  \end{minipage}
 \end{frame}
 
 
