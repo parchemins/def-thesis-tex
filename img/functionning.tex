@@ -1,0 +1,99 @@
+\begin{tikzpicture}
+
+  \newcommand\X{50pt}
+  \newcommand\Y{-20pt}
+  
+  \draw (0*\X, 0*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+  \only<2->{\draw(0*\X, 0*\Y) node{\textbf{A}}};
+
+  \draw (1*\X, -3*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+  \draw (1*\X,  0*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+  \draw (1*\X,  3*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+  \only<3->{
+  \draw (1*\X, -3*\Y) node{\textbf{A}};
+  \draw (1*\X,  0*\Y) node{\textbf{A}};
+  \draw (1*\X,  3*\Y) node{\textbf{A}};
+  };
+
+  \draw (2*\X, -4*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+  \draw (2*\X, -3*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+  \draw (2*\X, -2*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+
+  \draw (2*\X, -1*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+  \draw (2*\X,  0*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+  \draw (2*\X,  1*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+
+  \draw (2*\X,  2*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+  \draw (2*\X,  3*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+  \draw (2*\X,  4*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+
+  \only<4->{
+  \draw (2*\X, -4*\Y) node{\textbf{A}};
+  \draw (2*\X, -3*\Y) node{\textbf{A}};
+  \draw (2*\X, -2*\Y) node{\textbf{A}};
+
+  \draw (2*\X, -1*\Y) node{\textbf{A}};
+  \draw (2*\X,  0*\Y) node{\textbf{A}};
+  \draw (2*\X,  1*\Y) node{\textbf{A}};
+
+  \draw (2*\X,  2*\Y) node{\textbf{A}};
+  \draw (2*\X,  3*\Y) node{\textbf{A}};
+  \draw (2*\X,  4*\Y) node{\textbf{A}};
+  };
+
+
+  \draw[->] (6+0*\X, 0*\Y) -- (-6+1*\X, -3*\Y);
+  \draw[->] (6+0*\X, 0*\Y) -- (-6+1*\X, 0*\Y);
+  \draw[->] (6+0*\X, 0*\Y) -- (-6+1*\X,  3*\Y);
+
+  \only<3>{\draw[->,very thick] (6+0*\X, 0*\Y) -- (-6+1*\X, -3*\Y);
+    \draw[->, very thick] (6+0*\X, 0*\Y) -- (-6+1*\X, 0*\Y);
+    \draw[->, very thick] (6+0*\X, 0*\Y) -- (-6+1*\X,  3*\Y);
+  };
+
+
+  \draw[->] (6+1*\X, -3*\Y) -- (-6+2*\X, -4*\Y);
+  \draw[->] (6+1*\X, -3*\Y) -- (-6+2*\X, -3*\Y);
+  \draw[->] (6+1*\X, -3*\Y) -- (-6+2*\X, -2*\Y);
+
+  \draw[->] (6+1*\X, 0*\Y) -- (-6+2*\X, -1*\Y);
+  \draw[->] (6+1*\X, 0*\Y) -- (-6+2*\X,  0*\Y);
+  \draw[->] (6+1*\X, 0*\Y) -- (-6+2*\X,  1*\Y);
+
+  \draw[->] (6+1*\X, 3*\Y) -- (-6+2*\X, 4*\Y);
+  \draw[->] (6+1*\X, 3*\Y) -- (-6+2*\X, 3*\Y);
+  \draw[->] (6+1*\X, 3*\Y) -- (-6+2*\X, 2*\Y);
+
+  \only<4>{
+  \draw[->,very thick] (6+1*\X, -3*\Y) -- (-6+2*\X, -4*\Y);
+  \draw[->,very thick] (6+1*\X, -3*\Y) -- (-6+2*\X, -3*\Y);
+  \draw[->,very thick] (6+1*\X, -3*\Y) -- (-6+2*\X, -2*\Y);
+
+  \draw[->,very thick] (6+1*\X, 0*\Y) -- (-6+2*\X, -1*\Y);
+  \draw[->,very thick] (6+1*\X, 0*\Y) -- (-6+2*\X,  0*\Y);
+  \draw[->,very thick] (6+1*\X, 0*\Y) -- (-6+2*\X,  1*\Y);
+
+  \draw[->,very thick] (6+1*\X, 3*\Y) -- (-6+2*\X, 4*\Y);
+  \draw[->,very thick] (6+1*\X, 3*\Y) -- (-6+2*\X, 3*\Y);
+  \draw[->,very thick] (6+1*\X, 3*\Y) -- (-6+2*\X, 2*\Y);
+  };
+
+
+  \draw (3*\X, 0*\Y) node{\ldots};
+
+  \foreach \y in {0,...,36}
+  {\draw(4*\X, {(-4.5+\y*0.25)*\Y})
+    node{\includegraphics[width=16px]{img/crateicon.png}};
+    \only<5->{
+      \draw(4*\X, {(-4.5+\y*0.25)*\Y}) node{\textbf{A}};
+    }
+  }
+  % \draw (4*\X,  -4.5*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+  % \draw (4*\X,  -4.25*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+  % \draw (4*\X,  -4*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+  % \draw (4*\X,  -3.75*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+  % \draw (4*\X,  -3.5*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+  % \draw (4*\X,  -3.25*\Y) node{\includegraphics[width=16px]{img/crateicon.png}};
+
+
+\end{tikzpicture}

@@ -29,29 +29,33 @@
 
   \vspace{0.5cm}
 
-  Fonctionnement : chaque pair possède une vue partielle du réseau.
-  \begin{enumerate}
-  \uncover<2->{\item un pair souhaitant diffuser un message l'envoie à sa vue partielle;}
-  \uncover<3->{\item chaque pair recevant un tel message le diffuse à sa vue partielle;}
-  \uncover<4->{\item condition d'arrêt : le message a déjà été reçu auparavant.}
-  \end{enumerate}
+  % Fonctionnement : chaque pair possède une vue partielle du réseau.
+  % \begin{enumerate}
+  % \uncover<2->{\item un pair souhaitant diffuser un message l'envoie à sa vue partielle;}
+  % \uncover<3->{\item chaque pair recevant un tel message le diffuse à sa vue partielle;}
+  % \uncover<4->{\item condition d'arrêt : le message a déjà été reçu auparavant.}
+  % \end{enumerate}
 
-  \begin{minipage}{0.45\textwidth}
+%  \begin{minipage}{0.43\textwidth}
     \begin{center}
       \input{img/figepidemic.tex}
     \end{center}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.53\textwidth}
+%  \end{minipage}
+%  \hfill
+%  \begin{minipage}{0.55\textwidth}
+
+    \vspace{0.5cm}
     \large
     \begin{itemize}
-      \uncover<5->{\item [$\Rightarrow$] \textbf{Comment configurer la taille
+      %\uncover<5->{
+    \item [$\Rightarrow$] \textbf{Comment configurer la taille
           des vues partielles et les peupler ?}
       \begin{itemize}
       \item [$\rightarrow$] Protocole d'échantillonnage de pairs
-      \end{itemize}}
+      \end{itemize}
+      % }
     \end{itemize}
-  \end{minipage}
+%  \end{minipage}
 
 \end{frame}
 
@@ -166,8 +170,7 @@
 
 \begin{frame}{Communication}{Définition du problème}
 
-\begin{problem}
-  \label{net:problem:properties}
+\begin{block}{Un protocole d'échantillonnage adaptatif}
   Soit $t$ une unité de temps arbitraire, soit $\mathcal{N}^t$ l'ensemble des
   membres non-byzantins du réseau à un instant $t$ et soit $P_i^t$ la vue
   partielle du nœud $n_i \in \mathcal{N}^t$. Un protocole d'échantillonnage
@@ -178,7 +181,7 @@
   \item Établissement de connexion : \hfill $\mathcal{O}(1)$
 %  \item \TODO{Convergence}
   \end{enumerate}
-\end{problem}
+\end{block}
 
 \begin{itemize}
 \item [$\rightarrow$] Les vues partielles reflètent les besoins du réseau;

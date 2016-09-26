@@ -81,40 +81,77 @@
 \begin{frame}{Introduction}{Le contexte Web incite à la centralisation}
   
 %  \hspace{-1cm}
-  \begin{minipage}{0.69\textwidth}
-    Problèmes de \textbf{confidentialité}, \textbf{censure},
-    \textbf{intelligence économique}, \textbf{legislation}, etc. \vspace{0.15cm}\\
-    \small\textit{En 2013, les révélations sur PRISM montre que la NSA possède des
-      accès aux données hébergées par Google, Facebook, YouTube, Microsoft,
-      Yahoo!, Skype, AOL et Apple.}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.3\textwidth}
-    \hfill
-    \includegraphics[width=0.97\textwidth]{img/centralizedethicproblems.png}
-  \end{minipage}
+  Problèmes de \textbf{confidentialité}, \textbf{censure},
+  \textbf{intelligence économique}, \textbf{legislation}, etc.
 
-  \begin{minipage}{0.69\textwidth}
-    Problèmes de passage à l'échelle, notamment en \textbf{nombre de
-      collaborateurs}. \vspace{0.15cm}\\
-    \small\textit{En 2013, Coursera rassembla 41000 étudiants sur un seul cours.  Les
-      limitations de l'outil collaboratif utilisé conduisirent au \og
-      désastre\fg.}% \footfullcite{strauss2013how}.}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.3\textwidth}
-    \hfill
-    \includegraphics[width=0.97\textwidth]{img/centralizedcpuproblems.png}
-  \end{minipage}
+  \vspace{0.5cm}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{img/centralizedethicproblems.png}
+  \end{center}
+  
+  \vspace{0.5cm}
 
-  \begin{minipage}{0.69\textwidth}
-    Problèmes de \textbf{robustesse face aux défaillances}.
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.3\textwidth}
-    \hfill
-    \includegraphics[width=0.97\textwidth]{img/centralizedscalabilityproblems.png}
-  \end{minipage}
+  \textit{En 2013, les révélations sur PRISM montre que la NSA possède des
+    accès aux données hébergées par Google, Facebook, YouTube, Microsoft,
+    Yahoo!, Skype, AOL et Apple.}
+
+\end{frame}
+
+\begin{frame}{Introduction}{Le contexte Web incite à la centralisation}
+  
+%  \hspace{-1cm}
+  % \begin{minipage}{0.69\textwidth}
+  %   Problèmes de \textbf{confidentialité}, \textbf{censure},
+  %   \textbf{intelligence économique}, \textbf{legislation}, etc. \vspace{0.15cm}\\
+  %   \small\textit{En 2013, les révélations sur PRISM montre que la NSA possède des
+  %     accès aux données hébergées par Google, Facebook, YouTube, Microsoft,
+  %     Yahoo!, Skype, AOL et Apple.}
+  % \end{minipage}
+  % \hfill
+  % \begin{minipage}{0.3\textwidth}
+  %   \hfill
+  %   \includegraphics[width=0.97\textwidth]{img/centralizedethicproblems.png}
+  % \end{minipage}
+
+  Problèmes de passage à l'échelle, notamment en \textbf{nombre de
+    collaborateurs}.
+  
+  \vspace{0.5cm}
+  
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{img/centralizedcpuproblems.png}
+  \end{center}
+  
+  \vspace{0.5cm}
+
+  \textit{En 2013, Coursera rassembla 41000 étudiants sur un seul cours.  Les
+    limitations de l'outil collaboratif utilisé conduisirent au \og
+    désastre\fg.}% \footfullcite{strauss2013how}.}
+
+
+
+  % \begin{minipage}{0.69\textwidth}
+  %   Problèmes de passage à l'échelle, notamment en \textbf{nombre de
+  %     collaborateurs}. \vspace{0.15cm}\\
+  %   \small\textit{En 2013, Coursera rassembla 41000 étudiants sur un seul cours.  Les
+  %     limitations de l'outil collaboratif utilisé conduisirent au \og
+  %     désastre\fg.}% \footfullcite{strauss2013how}.}
+  % \end{minipage}
+  % \hfill
+  % \begin{minipage}{0.3\textwidth}
+  %   \hfill
+  %   \includegraphics[width=0.97\textwidth]{img/centralizedcpuproblems.png}
+  % \end{minipage}
+
+
+  % \begin{minipage}{0.69\textwidth}
+  %   Problèmes de \textbf{robustesse face aux défaillances}.
+  % \end{minipage}
+  % \hfill
+  % \begin{minipage}{0.3\textwidth}
+  %   \hfill
+  %   \includegraphics[width=0.97\textwidth]{img/centralizedscalabilityproblems.png}
+  % \end{minipage}
 
 \end{frame}
 
@@ -160,7 +197,7 @@
 \end{frame}
 
 
-\begin{frame}{Introduction}{Un éditeur décentralisé dans les navigateurs}
+\begin{frame}{Introduction}{Un éditeur collaboratif dans les navigateurs}
   
 
   \begin{minipage}{0.69\textwidth}
@@ -187,37 +224,85 @@
 \end{frame}
 
 
-\begin{frame}{Introduction}\framesubtitle{Éditeur collaboratif décentralisé}
+\begin{frame}{Introduction}{Fonctionnement décentralisé}
   
-  \begin{center}
-    \includegraphics[width=0.8\textwidth]{img/world.png}
-  \end{center}
-
-  \vspace{0.25cm}
-
-  \begin{itemize}
-  \item [$\rightarrow$] Un éditeur collaboratif doit fonctionner sur les outils
-    informatiques les plus modestes (CPU, mémoire, \textbf{largeur de bande}).
+  \hspace{-1cm}
+  \begin{minipage}{0.42\textwidth}
     \begin{itemize}
-    \item [$\rightarrow$] (taille des messages $\times$ nombre de messages)
+      \item Chaque éditeur possède une copie locale du document;
+      \vspace{0.5cm}
+    \only<1>{\item Chaque caractère tapé est directement inséré dans la copie locale;}
+    \only<2>{\item
+      \textbf{Chaque caractère tapé est directement inséré dans la copie locale;}}
+    \only<3->{\item Chaque caractère tapé est directement inséré dans la copie locale;}
+    \only<1-2>{\item La modification est disséminée à l'ensemble du réseau;
+    \item Les éditeurs recevant la modification l'appliquent.}
+    \only<3->{\item \textbf{La modification est disséminée à l'ensemble du réseau;}
+    \item \textbf{Les éditeurs recevant la modification l'appliquent;}}
+
     \end{itemize}
+  \end{minipage}
+  \begin{minipage}{0.56\textwidth}
+    \begin{center}
+      \input{img/functionning.tex}
+    \end{center}
+  \end{minipage}
+  
+  \vspace{0.4cm}
+  \large
+  \begin{itemize}
+  \item [$\Rightarrow$] \textbf{taille de messages} $\times$ \textbf{nombre de messages}
   \end{itemize}
 
-  \vspace{0.25cm}
-  
-  \begin{enumerate}
-  \item Moyen de représenter efficacement un \textbf{document} de manière
-    \textbf{cohérente}; %\small{$\rightarrow$ taille des messages}
-  \item Moyen de \textbf{communiquer} efficacement les modifications sur le
-    document. %\small{$\rightarrow$ nombre de messages}
-  \end{enumerate}
-
-
-  % \begin{itemize}
-  % \item Répartition géographique des collaborateurs;
-  % \item Édition en temps réel.
-  % \end{itemize}
 \end{frame}
+
+\begin{frame}{Introduction}{Contributions}
+  
+  
+  \begin{itemize}
+  \item \textbf{taille des messages :} \LSEQ qui, dans le contexte de l'édition
+    collaborative, borne la taille des messages de manière sous-linéaire par
+    rapport au nombre d'insertions effectuées dans le document.
+    \vspace{1cm}
+  \item \textbf{nombre de messages :} \SPRAY qui s'adapte automatiquement à la
+    taille du réseau de manière logarithmique et qui supporte le processus
+    complexe d'établissement de connexion disponible dans les navigateurs Web.
+  \end{itemize}
+
+\end{frame}
+
+
+% \begin{frame}{Introduction}{Éditeur collaboratif décentralisé}
+  
+%   \begin{center}
+%     \includegraphics[width=0.8\textwidth]{img/world.png}
+%   \end{center}
+
+%   \vspace{0.25cm}
+
+%   \begin{itemize}
+%   \item [$\rightarrow$] Un éditeur collaboratif doit fonctionner sur les outils
+%     informatiques les plus modestes (CPU, mémoire, \textbf{largeur de bande}).
+%     \begin{itemize}
+%     \item [$\rightarrow$] (taille des messages $\times$ nombre de messages)
+%     \end{itemize}
+%   \end{itemize}
+
+%   \vspace{0.25cm}
+  
+%   \begin{enumerate}
+%   \item Moyen de représenter efficacement un \textbf{document} de manière
+%     \textbf{cohérente}; %\small{$\rightarrow$ taille des messages}
+%   \item Moyen de \textbf{communiquer} efficacement les modifications sur le
+%     document. %\small{$\rightarrow$ nombre de messages}
+%   \end{enumerate}
+
+
+%   % \begin{itemize}
+%   % \item Répartition géographique des collaborateurs;
+%   % \item Édition en temps réel.
+%   % \end{itemize}
+% \end{frame}
 
 
 %%% Local Variables:
