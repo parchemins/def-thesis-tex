@@ -1,0 +1,51 @@
+Bonjour,
+
+Vous êtes cordialement invités à la soutenance de ma thèse intitulée "Édition
+collaborative dans les navigateurs".  Celle-ci aura lieu le mercredi 5 octobre à
+10h00 dans l'amphithéâtre du bâtiment 34 de l'UFR Sciences à Nantes (LINA).
+
+Vous êtes également conviés au traditionnel pot de thèse qui suivra, en salle 3
+du bâtiment 11 de l'UFR Sciences à Nantes (LINA).
+
+Composition du jury
+- Rapporteurs :
+Anne-Marie Kermarrec, Professeur des universités, INRIA
+Peter Van Roy, Professeur des universités, Université de Louvain
+
+- Examinateurs :
+Marc Gelgon, Professeur des universités, Université de Nantes
+Gérald Oster, Maître de conférences, Université de Lorraine
+Marc Shapiro, Professeur des universités, INRIA
+
+- Directeurs et co-directeurs de thèse :
+Pascal Molli, Professeur des universités, Université de Nantes
+Achour Mostéfaoui, Professeur des universités, Université de Nantes
+
+
+Résumé :
+
+Un éditeur collaboratif permet de répartir la tâche de rédaction d’un document à
+travers le temps et l’espace. Par leur simplicité d’utilisation, les éditeurs
+collaboratifs temps réel du Web ont contribué à l’adoption massive de ces outils
+par le grand public. Cependant, les éditeurs actuels sont centralisés : un
+serveur appartenant à un fournisseur de services gère une session d’édition. En
+résultent des problèmes de confidentialité, de censure, de propriété, de passage
+à l’échelle et de tolérance aux pannes.
+
+Récemment, la possibilité d’établir des communications d’un navigateur Web à
+l’autre a ouvert de nouvelles opportunités en faveur d’un Web décentralisé. Un
+éditeur collaboratif temps réel décentralisé fonctionnant dans les navigateurs
+Web doit gérer efficacement des groupes de taille variable et hautement
+dynamiques.
+
+Cette thèse comporte trois contributions : 
+  (i) Pour représenter le document, nous proposons une structure de données
+répliquée dont la taille des métadonnées croît de manière sous-linéaire par
+rapport au nombre de caractères insérés dans le document.
+ (ii) Pour propager efficacement les changements à tous les éditeurs participant
+à l’édition, nous proposons un protocole d’échantillonnage aléatoire de pairs
+adapté aux contraintes des navigateurs Web et s’ajustant automatiquement au
+logarithme de la taille de la session d’édition.
+(iii) Pour démontrer la faisabilité d’un éditeur collaboratif temps réel
+décentralisé fonctionnant dans les navigateurs Web, nous proposons un éditeur
+réunissant (i) et (ii), et dont les performances passent à l’échelle.
