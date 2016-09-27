@@ -236,9 +236,17 @@
 
   \vspace{0.5cm}
 
-  Chaque pair réagit à des événements et agit périodiquement. Le système
-  converge rapidement vers une topologie possédant des propriétés similaires à
-  celles des graphes aléatoires.
+  % Chaque pair réagit à des événements et agit périodiquement. Le système
+  % converge rapidement vers une topologie possédant des propriétés similaires à
+  % celles des graphes aléatoires.
+
+  Le réseau est \textbf{dynamique} : à n'importe quel moment, un pair peut
+  rejoindre ou quitter le réseau. \\
+  
+  \vspace{0.5cm}
+
+  Invariant : nombre de connexions $\approx |\mathcal{N}| \log |\mathcal{N}|$,
+  sans connaissance globale, i.e., $|\mathcal{N}|$ n'est connu de personne.
 
   \vspace{1cm}
 
@@ -564,11 +572,11 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{Communication}{La charge est équilibrée}
-  \begin{center}
-    \includegraphics[width=1\textwidth]{img/network/histo.eps}
-  \end{center}
-\end{frame}
+% \begin{frame}{Communication}{La charge est équilibrée}
+%   \begin{center}
+%     \includegraphics[width=1\textwidth]{img/network/histo.eps}
+%   \end{center}
+% \end{frame}
 
 
 % \begin{frame}{Communication}{Robuste aux défaillances}

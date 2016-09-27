@@ -1,35 +1,35 @@
 \section{Introduction}
 
 
-\begin{frame}{Introduction}\framesubtitle{Édition collaborative}
+% \begin{frame}{Introduction}\framesubtitle{Édition collaborative}
 
-  L'édition collaborative concerne toutes les activités effectuées en
-  \textbf{groupe} dans le but de produire un \textbf{document}. L'effort
-  collectif permet de bénéficier de multiples points de vues différents.
+%   L'édition collaborative concerne toutes les activités effectuées en
+%   \textbf{groupe} dans le but de produire un \textbf{document}. L'effort
+%   collectif permet de bénéficier de multiples points de vues différents.
 
-  \begin{itemize}
-  \item[$\rightarrow$] Les documents sont de \textbf{meilleure qualité}.
-  \end{itemize}
+%   \begin{itemize}
+%   \item[$\rightarrow$] Les documents sont de \textbf{meilleure qualité}.
+%   \end{itemize}
   
-  \vspace{1cm}
+%   \vspace{1cm}
 
-  \begin{minipage}{0.6\textwidth}
-    \textit{La version anglaise de Wikipédia compte \textbf{5 millions}
-      d'articles, \textbf{40 millions} de pages et \textbf{112 mille}
-      utilisateurs actifs.\vspace{0.15cm}\\Les articles possèdent une
-      \textbf{fiabilité} \textbf{comparable} à celle de l'Encyclopædia
-      Britannica.}
-  \end{minipage}\footfullcite{giles2005internet}
-  \hfill
-  \begin{minipage}{0.3\textwidth}
-    \begin{figure}
-      \begin{center}
-        \includegraphics[width=0.7\textwidth]{img/wikipedia.png}
-      \end{center}
-    \end{figure}
-  \end{minipage}
+%   \begin{minipage}{0.6\textwidth}
+%     \textit{La version anglaise de Wikipédia compte \textbf{5 millions}
+%       d'articles, \textbf{40 millions} de pages et \textbf{112 mille}
+%       utilisateurs actifs.\vspace{0.15cm}\\Les articles possèdent une
+%       \textbf{fiabilité} \textbf{comparable} à celle de l'Encyclopædia
+%       Britannica.}
+%   \end{minipage}\footfullcite{giles2005internet}
+%   \hfill
+%   \begin{minipage}{0.3\textwidth}
+%     \begin{figure}
+%       \begin{center}
+%         \includegraphics[width=0.7\textwidth]{img/wikipedia.png}
+%       \end{center}
+%     \end{figure}
+%   \end{minipage}
 
-\end{frame}
+% \end{frame}
 
 
 \begin{frame}{Introduction}{Éditeur collaboratif}
@@ -62,19 +62,23 @@
 %     \end{figure}
 %  \end{minipage}
   
-  \begin{textblock*}{\textwidth}(-1cm,-2.5cm) 
+  \begin{textblock*}{\textwidth}(-1cm,-3cm) 
     \includegraphics[width=1.19\textwidth]{img/googledocs3.png}
     % \footfullcite{johansen1988groupware}
 %    \vspace{0.25cm}
   \end{textblock*}
 
-  \begin{textblock*}{\textwidth}(0cm,4cm)
-    \large
-    \begin{itemize}
-    \item[$\Rightarrow$] L'édition \textbf{temps réel} et le \textbf{Web}
-      contribuent grandement à la popularité de tels éditeurs.
-    \end{itemize}    
-  \end{textblock*}
+%   \begin{textblock*}{\textwidth}(0cm,3cm)
+% %    \large
+%     \begin{itemize}
+%     \item [$\Rightarrow$] Besoin ancien~\footfullcite{engelbart1968research};
+%     \item [$\Rightarrow$] Mais une adoption récente : l'édition \textbf{temps
+%         réel} et le \textbf{Web} contribuent grandement à leur popularité.
+%     \end{itemize}    
+%   \end{textblock*}
+  
+%   \vspace{0.25cm}
+  
 \end{frame}
 
 
@@ -122,13 +126,13 @@
     \includegraphics[width=0.5\textwidth]{img/centralizedcpuproblems.png}
   \end{center}
   
-  \vspace{0.5cm}
+  \vspace{0.25cm}
 
   \textit{En 2013, Coursera rassembla 41000 étudiants sur un seul cours.  Les
     limitations de l'outil collaboratif utilisé conduisirent au \og
-    désastre\fg.}% \footfullcite{strauss2013how}.}
+    désastre\fg\footfullcite{strauss2013how}.}
 
-
+  \vspace{0.25cm}
 
   % \begin{minipage}{0.69\textwidth}
   %   Problèmes de passage à l'échelle, notamment en \textbf{nombre de
@@ -194,6 +198,17 @@
     \textbf{Des milliers d'utilisateurs éditant simultanément} \NO{\xmark}
   \end{minipage}
 
+
+%    \vspace{-4.5cm}\hspace{2cm}%
+  \only<2>{
+    \begin{tikzpicture}[remember picture,overlay]
+      \draw (150pt,120pt) node
+      [draw,align=left,fill=darkblue!25!white,font=\large]{\textbf{L'édition
+          collaborative temps réel}\\\textbf{est-elle possible sur le
+          Web},\\\textbf{sans l'intervention d'un tiers}\\\textbf{et sans limites quant
+        aux dimensions du système ?}};
+    \end{tikzpicture}
+  }
 \end{frame}
 
 
@@ -206,7 +221,7 @@
     \item temps réel \YES{\cmark}
     \item fonctionnant dans les navigateurs Web \YES{\cmark}
     \item sans fournisseur de services \YES{\cmark}
-    \item pouvant atteindre de large dimensions \YES{\cmark}
+    \item passant à l'échelle \YES{\cmark}
     \end{itemize}
   \end{minipage}
   \begin{minipage}{0.3\textwidth}
