@@ -22,42 +22,82 @@
 % \end{frame}
 
 
-\begin{frame}{Communication}{Diffusion épidémique}
-  En \textbf{décentralisé}, la diffusion épidémique de messages constitue une
-  manière efficace de disséminer l'information. Les messages parviennent à tous
-  les pairs sans que ceux-ci ne connaissent tous les membres du réseau.
+% \begin{frame}{Communication}{Diffusion épidémique}
+%   En \textbf{décentralisé}, la diffusion épidémique de messages constitue une
+%   manière efficace de disséminer l'information. Les messages parviennent à tous
+%   les pairs sans que ceux-ci ne connaissent tous les membres du réseau.
+
+%   \vspace{0.5cm}
+
+%   % Fonctionnement : chaque pair possède une vue partielle du réseau.
+%   % \begin{enumerate}
+%   % \uncover<2->{\item un pair souhaitant diffuser un message l'envoie à sa vue partielle;}
+%   % \uncover<3->{\item chaque pair recevant un tel message le diffuse à sa vue partielle;}
+%   % \uncover<4->{\item condition d'arrêt : le message a déjà été reçu auparavant.}
+%   % \end{enumerate}
+
+% %  \begin{minipage}{0.43\textwidth}
+%     \begin{center}
+%       \input{img/figepidemic.tex}
+%     \end{center}
+% %  \end{minipage}
+% %  \hfill
+% %  \begin{minipage}{0.55\textwidth}
+
+%     \vspace{0.5cm}
+%     \large
+%     \begin{itemize}
+%       %\uncover<5->{
+%     \item [$\Rightarrow$] \textbf{Comment configurer la taille
+%           des vues partielles et les peupler ?}
+%       \begin{itemize}
+%       \item [$\rightarrow$] Protocole d'échantillonnage de pairs
+%       \end{itemize}
+%       % }
+%     \end{itemize}
+% %  \end{minipage}
+
+% \end{frame}
+
+\begin{frame}{Communication}{Contexte Web}
+
+
+  N'importe quel outil informatique ayant accès à l'internet peut rejoindre une
+  session d'édition.
+  \begin{itemize}
+  \item [$\rightarrow$] capacité hétérogènes et parfois limitées.    
+  \end{itemize}
 
   \vspace{0.5cm}
+  
+  Facilite l'accès à un grand nombre d'utilisateurs.
+  \begin{itemize}
+  \item [$\rightarrow$] nombre fluctuant d'utilisateurs au cours du temps
+  \end{itemize}
 
-  % Fonctionnement : chaque pair possède une vue partielle du réseau.
-  % \begin{enumerate}
-  % \uncover<2->{\item un pair souhaitant diffuser un message l'envoie à sa vue partielle;}
-  % \uncover<3->{\item chaque pair recevant un tel message le diffuse à sa vue partielle;}
-  % \uncover<4->{\item condition d'arrêt : le message a déjà été reçu auparavant.}
-  % \end{enumerate}
 
-%  \begin{minipage}{0.43\textwidth}
-    \begin{center}
-      \input{img/figepidemic.tex}
-    \end{center}
-%  \end{minipage}
-%  \hfill
-%  \begin{minipage}{0.55\textwidth}
+  
+  \vspace{0.5cm}
 
-    \vspace{0.5cm}
-    \large
-    \begin{itemize}
-      %\uncover<5->{
-    \item [$\Rightarrow$] \textbf{Comment configurer la taille
-          des vues partielles et les peupler ?}
-      \begin{itemize}
-      \item [$\rightarrow$] Protocole d'échantillonnage de pairs
-      \end{itemize}
-      % }
-    \end{itemize}
-%  \end{minipage}
+  La diffusion d'informations et d'idées dans le Web est extrêmement rapide. 
+  \begin{itemize}
+  \item [$\rightarrow$] expose au pic soudains de popularité.
+  \end{itemize}
+
+%  capacités hétérogènes et parfois limitées des outils de
+%    navigation;
+%  \item le contexte Web expose aux \textbf{pics soudains de popularité.}
+
+ 
+  \vspace{0.5cm}
+  \large
+  \begin{itemize}
+  \item [$\Rightarrow$] \textbf{Le réseau doit pouvoir supporter la haute
+      dynamicité induite par le Web.}
+  \end{itemize}
 
 \end{frame}
+
 
 
 % \begin{frame}{Communication}{Contexte Web}
@@ -106,7 +146,7 @@
 % \end{frame}
 
 
-\begin{frame}{Communication}{Possible grâce à WebRTC}
+\begin{frame}{Communication}{Un seul moyen de communiquer : WebRTC}
 
 
   \begin{minipage}{0.67\textwidth}
@@ -125,9 +165,9 @@
   \item \textbf{ni adresses ni routes};
   \item les connexions sont \textbf{coûteuses} et sujettes aux
     \textbf{défaillances};
-  \item \textbf{capacités hétérogènes et parfois limitées} des outils de
-    navigation;
-  \item le contexte Web expose aux \textbf{pics soudains de popularité.}
+%  \item \textbf{capacités hétérogènes et parfois limitées} des outils de
+%    navigation;
+%  \item le contexte Web expose aux \textbf{pics soudains de popularité.}
   \end{itemize}
   
   \vspace{0.5cm}
@@ -150,13 +190,13 @@
   % \end{minipage}
   
   
-  % \vspace{0.5cm}
+  \vspace{0.5cm}
   
-  % \large
-  % \begin{itemize}
-  % \item [$\Rightarrow$] \textbf{Protocole d'échantillonnage de pair adapté à ces
-  %     contraintes.}
-  % \end{itemize}
+  \large
+  \begin{itemize}
+  \item [$\Rightarrow$] \textbf{Le réseau doit supporter ce processus complexe
+      d'établissement de connexion.}
+  \end{itemize}
   
 
   

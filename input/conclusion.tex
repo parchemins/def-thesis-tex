@@ -104,8 +104,13 @@
 %  \hfill
 %  \begin{minipage}{0.45\textwidth}
 
-  
+  Contraint la topologie afin de construire des routes rapides.
 
+  \vspace{0.5cm}
+
+
+
+  \vspace{0.5cm}
 
   \begin{center}
     \input{img/dhtexample.tex}
@@ -114,14 +119,39 @@
 
 \end{frame}
 
-\begin{frame}{Conclusion}{Perspectives}
-  \begin{itemize}
-  \item Compromis entre causalité et concurrence
-  \end{itemize}
+\begin{frame}{Conclusion}{Perspectives : compromis entre causalité et concurrence}
+  
+  Localement, \CRATE utilise toujours un vecteur de $N$ entiers où $N$ est le
+  nombre de personnes ayant jamais participé à l'édition.
+  
+  \vspace{0.5cm}
+
+  Remplacer ce vecteur de taille $N$ par un vecteur de taille $K$, $K\ll N$
+  dépendant du taux de concurrence.
+
+  \vspace{0.5cm}
+
+  Intuition : sans concurrence, $K=1$ serait suffisant pour caractériser toutes
+  les relations causales.
+
+  \vspace{0.5cm}
+
+  Cependant, une procédure est toujours nécessaire dans les cas ambigus.
+
 \end{frame}
 
 
 \begin{frame}{Conclusion}{Perspectives : O'Browser, Where Art Thou ?}
+
+  Langage adapté au Web permettant de dévolopper un catalogue d'applications
+  décentralisées garantissant certaines propriétés, e.g., critère de cohérence
+  ou sécurité.
+
+  \vspace{0.25cm}
+  
+  \begin{itemize}
+  \item [$\rightarrow$] Redécentraliser le Web.
+  \end{itemize}
 
   \begin{center}
     \input{img/figarchitecture.tex}
