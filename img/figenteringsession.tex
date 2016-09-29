@@ -33,9 +33,26 @@
     \draw[<->, densely dashed, color=darkblue, very thick]
     (-2*\X, 5+1.5*\Y) -- node[anchor=east]{\DARKBLUE{rejoint}} (-2*\X, -5pt);
   }
-
+  \only<4-5>{
+    \draw[<->, densely dashed, color=darkblue, very thick]
+    (-2*\X, 5+1.5*\Y) -- (-2*\X, -5pt);
+  }
   \only<4>{
+    \draw[->, very thick] (5-2*\X, 10+1.5*\Y) -- (5-2*\X, -10pt);
+    \draw[->, very thick] (20-2*\X, -10pt) -- (-12pt, \Y);
+  }
+  \only<5>{
+    \draw[<-, very thick] (5-2*\X, 10+1.5*\Y) -- (5-2*\X, -10pt);
+    \draw[<-, very thick] (20-2*\X, -10pt) -- (-12pt, \Y);
+  }
+
+  \only<6->{
     \draw[<->, very thick](5-2*\X,1.5*\Y) -- (-5pt, -3+ \Y);
+  }
+
+
+  \only<8->{
+    \draw[<->, very thick](5-2*\X, -3+1.5*\Y ) -- (-5+3*\X ,1*\Y);
   }
 
   \draw[fill=white] (-2*\X, 0) node{$mediateur_1$} +(-20pt, -5pt)rectangle+(20pt, 5pt);
@@ -69,5 +86,10 @@
   % \draw[fill=white] (0 , \Y)+(-55pt, -10pt)rectangle+(5pt, 10pt);
   \draw[fill=white](0,\Y) node{\includegraphics[width=12pt]{img/crateicon.png}};
   % {$e_8$}+(-5pt, -5pt)rectangle+(5pt, 5pt);
+
+
+  \only<7->{
+    \draw (0pt, \Y) node{\textbf{M}};
+  }
 
 \end{tikzpicture}
