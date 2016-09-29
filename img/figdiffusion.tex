@@ -1,0 +1,38 @@
+
+
+\begin{tikzpicture}
+
+  \newcommand\X{100pt};
+  \newcommand\Y{-60pt};
+
+
+  \draw[fill=white](0*\X,0*\Y) node{$n$} +(-5pt,-5pt) rectangle +(5pt,5pt);
+
+  \foreach \y in {0,...,30}
+  {
+    \draw[->](5+0*\X, 0*\Y) -- (-5+1*\X, {(4*\y)+\Y});
+  }
+  
+
+  \only<2->{
+    \foreach \y in { -2*4, -14*4, 10*4, 3*4, -12*4, 8*4}
+    {
+      \draw[->, very thick, color=darkblue](5+0*\X, 0*\Y) -- (-5+1*\X, \y pt);
+    }
+  }
+
+  \only<3->{
+    \foreach \y in { -12*4, -3*4, 11*4, 0*4, -9*4, -5*4}
+    {
+      \draw[->, very thick, color=termithgreen](5+0*\X, 0*\Y) -- (-5+1*\X, \y pt);
+    }
+  }
+    
+  \only<4->{
+    \foreach \y in { -8*4, -15*4, 2*4, 3*4, 8*4, 15*4}
+    {
+      \draw[->, very thick, color=termithorange](5+0*\X, 0*\Y) -- (-5+1*\X, \y pt);
+    }    
+  }
+
+\end{tikzpicture}

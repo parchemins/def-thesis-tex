@@ -70,7 +70,7 @@
 
   % \vspace{0.5cm}
   
-  Facilite l'accès à un grand nombre d'utilisateurs.
+  Facilite l'accès à un \textbf{grand nombre d'utilisateurs}.
   % \begin{itemize}
   % \item [$\rightarrow$] nombre fluctuant d'utilisateurs au cours du temps
   % \end{itemize}
@@ -82,7 +82,7 @@
 %%  La diffusion d'informations et d'idées dans le Web est extrêmement rapide. 
 %  \begin{itemize}
 %  \item [$\rightarrow$]
-  Expose au pic soudains de popularité.
+  Expose au \textbf{pic soudains de popularité}.
 %  \end{itemize}
 
 %  capacités hétérogènes et parfois limitées des outils de
@@ -90,7 +90,7 @@
 %  \item le contexte Web expose aux \textbf{pics soudains de popularité.}
 
  
-  \vspace{0.5cm}
+  \vspace{1cm}
   \large
   \begin{itemize}
   \item [$\Rightarrow$] \textbf{Le réseau doit pouvoir supporter un nombre
@@ -151,8 +151,22 @@
 
 
   \begin{minipage}{0.67\textwidth}
-    Seulement depuis récemment, et grâce à WebRTC, les navigateurs Web ne sont
-    plus seulement des clients mais aussi des \textbf{serveurs}.
+    % Seulement depuis récemment, et grâce à WebRTC, les navigateurs Web ne sont
+    % plus seulement des clients mais aussi des \textbf{serveurs}.
+
+%    \begin{itemize}
+    %\item 
+    \textbf{Ni adresses ni routes};
+    %\item 
+    \vspace{0.25cm} 
+
+    Les connexions sont \textbf{coûteuses} et sujettes aux
+    \textbf{défaillances};
+    
+      % \item \textbf{capacités hétérogènes et parfois limitées} des outils de
+      %   navigation;
+      %  \item le contexte Web expose aux \textbf{pics soudains de popularité.}
+      %  \end{itemize}
   \end{minipage}
   \hfill
   \begin{minipage}{0.3\textwidth}
@@ -161,17 +175,12 @@
     \end{center}
   \end{minipage}
   
-  % \vspace{0.5cm}
-  \begin{itemize}
-  \item \textbf{ni adresses ni routes};
-  \item les connexions sont \textbf{coûteuses} et sujettes aux
-    \textbf{défaillances};
-%  \item \textbf{capacités hétérogènes et parfois limitées} des outils de
-%    navigation;
-%  \item le contexte Web expose aux \textbf{pics soudains de popularité.}
-  \end{itemize}
-  
   \vspace{0.5cm}
+      
+  \begin{center}
+    \input{img/figenteringsession.tex}
+  \end{center}
+
 
   % \begin{minipage}{0.6\textwidth}
   %   Pour créer un réseau : 
@@ -191,13 +200,13 @@
   % \end{minipage}
   
   
-  \vspace{0.5cm}
+  % \vspace{0.5cm}
   
-  \large
-  \begin{itemize}
-  \item [$\Rightarrow$] \textbf{Le réseau doit supporter ce processus complexe
-      d'établissement de connexion.}
-  \end{itemize}
+  % \large
+  % \begin{itemize}
+  % \item [$\Rightarrow$] \textbf{Le réseau doit supporter ce processus complexe
+  %     d'établissement de connexion.}
+  % \end{itemize}
   
 
   
@@ -561,6 +570,14 @@
 \end{frame}
 
 
+\begin{frame}{Communication}{Problème d'établissement de connexions}
+
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/network/degen.eps}
+  \end{center}
+
+\end{frame}
+
 \begin{frame}{Communication}{Les vues partielles s'adaptent}
   % \hspace{-1cm}
   % \begin{minipage}{0.47\textwidth}
@@ -578,14 +595,6 @@
   \begin{center}
     $250+250+250+250-500+250+250$
   \end{center}
-\end{frame}
-
-\begin{frame}{Communication}{Problème d'établissement de connexions}
-
-  \begin{center}
-    \includegraphics[width=1\textwidth]{img/network/degen.eps}
-  \end{center}
-
 \end{frame}
 
 \begin{frame}{Communication}{Coefficient d'agglomération diminue rapidement}
@@ -641,9 +650,13 @@
 
 
 \begin{frame}{Communication}{Cas de la diffusion de messages}
-  \begin{algorithm}[H]
-    \input{img/algobroadcast.tex}
-  \end{algorithm}
+  % \begin{algorithm}[H]
+  %   \input{img/algobroadcast.tex}
+  % \end{algorithm}
+
+  \begin{center}
+    \input{img/figdiffusion.tex}
+  \end{center}
 
   \begin{itemize}
   \item \CYCLON 
