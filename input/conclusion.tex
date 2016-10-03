@@ -10,27 +10,35 @@
 
 
 \begin{frame}{Conclusion}
+  
+  \textbf{\large L'édition collaborative temps réel est-elle possible sur le Web
+    sans l'intervention d'un tiers et sans limites quant aux dimensions du
+    système ? \YES{\cmark}}
 
+  \vspace{1cm}
+
+  Contributions :
   \begin{enumerate}
-  \item \textbf{taille des messages :} Fonction d'allocation d'identifiants
-    polylogarithmique par rapport au nombre d'insertions dans la séquence;
-    \vspace{0.2cm}
-  \item \textbf{nombre de messages :} Protocole d'échantillonnage adaptatif
-    fournissant des vues logarithmiques par rapport à la taille du réseau
-    supportant le processus de connexion des navigateurs Web.
+  \item %\textbf{taille des messages :}
+    Fonction d'allocation d'identifiants polylogarithmique par rapport au nombre
+    d'insertions dans la séquence; \vspace{0.2cm}
+  \item %\textbf{nombre de messages :}
+    Protocole d'échantillonnage adaptatif fournissant des vues logarithmiques
+    par rapport à la taille du réseau supportant le processus de connexion des
+    navigateurs Web.
   \end{enumerate}
 
-  \vspace{0.6cm}\hspace{-1cm}
-  \begin{minipage}{0.52\textwidth}
-    \large
-    \begin{itemize}
-    \item [$\Rightarrow$] \textbf{Éditeur collaboratif Web décentralisé supportant les
-        groupes d'utilisateurs de toute taille.}
-    \end{itemize}
-  \end{minipage}
-  \begin{minipage}{0.47\textwidth}
-      \includegraphics[width=1.4\textwidth]{img/editor/communication.eps}
-  \end{minipage}
+  % \vspace{0.6cm}\hspace{-1cm}
+  % \begin{minipage}{0.52\textwidth}
+  %   \large
+  %   \begin{itemize}
+  %   \item [$\Rightarrow$] \textbf{Éditeur collaboratif Web décentralisé supportant les
+  %       groupes d'utilisateurs de toute taille.}
+  %   \end{itemize}
+  % \end{minipage}
+  % \begin{minipage}{0.47\textwidth}
+  %     \includegraphics[width=1.4\textwidth]{img/editor/communication.eps}
+  % \end{minipage}
 
 \end{frame}
 
@@ -70,64 +78,64 @@
 % \end{frame}
 
 
-\begin{frame}{Conclusion}{Perspectives : la fusion de réseaux}
+% \begin{frame}{Conclusion}{Perspectives : la fusion de réseaux}
 
-  \begin{block}{Les réseaux fusionnant préservent leurs propriétés}
-    Soit $\mathcal{N}_1,\, \mathcal{N}_2,\, \ldots ,\, \mathcal{N}_k$ des réseaux
-    de taille arbitraire. On a : \vspace{-5pt}
-    \begin{equation}
-      \sum\limits_{i = 1}^k |\mathcal{N}_i|\ln (|\mathcal{N}_i|) < (\sum\limits_{i = 1}^k |\mathcal{N}_i|)\ln{(\sum\limits_{i=1}^k |\mathcal{N}_i|)}
-    \end{equation}
-    Comment adapter les nombres d'arcs effectif (à gauche) pour qu'il atteigne le
-    nombre d'arcs requis (à droite)?
-  \end{block}
+%   \begin{block}{Les réseaux fusionnant préservent leurs propriétés}
+%     Soit $\mathcal{N}_1,\, \mathcal{N}_2,\, \ldots ,\, \mathcal{N}_k$ des réseaux
+%     de taille arbitraire. On a : \vspace{-5pt}
+%     \begin{equation}
+%       \sum\limits_{i = 1}^k |\mathcal{N}_i|\ln (|\mathcal{N}_i|) < (\sum\limits_{i = 1}^k |\mathcal{N}_i|)\ln{(\sum\limits_{i=1}^k |\mathcal{N}_i|)}
+%     \end{equation}
+%     Comment adapter les nombres d'arcs effectif (à gauche) pour qu'il atteigne le
+%     nombre d'arcs requis (à droite)?
+%   \end{block}
 
-  \begin{minipage}{0.325\textwidth}
-    \includegraphics[width=1.2\textwidth]{img/graphA.png}
-  \end{minipage}
-  \begin{minipage}{0.325\textwidth}
-    \includegraphics[width=1.2\textwidth]{img/graphB.png}
-  \end{minipage}
-  \begin{minipage}{0.325\textwidth}
-    \includegraphics[width=1.2\textwidth]{img/graphC.png}
-  \end{minipage}
+%   \begin{minipage}{0.325\textwidth}
+%     \includegraphics[width=1.2\textwidth]{img/graphA.png}
+%   \end{minipage}
+%   \begin{minipage}{0.325\textwidth}
+%     \includegraphics[width=1.2\textwidth]{img/graphB.png}
+%   \end{minipage}
+%   \begin{minipage}{0.325\textwidth}
+%     \includegraphics[width=1.2\textwidth]{img/graphC.png}
+%   \end{minipage}
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}{Conclusion}{Perspectives : les tables de hachage réparties}
+% \begin{frame}{Conclusion}{Perspectives : les tables de hachage réparties}
 
-%  \begin{minipage}{0.45\textwidth}
-%  \begin{itemize}
-%  \item Table de hachage répartie
-%  \end{itemize}
-%  \end{minipage}
-%  \hfill
-%  \begin{minipage}{0.45\textwidth}
+% %  \begin{minipage}{0.45\textwidth}
+% %  \begin{itemize}
+% %  \item Table de hachage répartie
+% %  \end{itemize}
+% %  \end{minipage}
+% %  \hfill
+% %  \begin{minipage}{0.45\textwidth}
 
-  Contraint la topologie afin de construire des routes rapides.
+%   Contraint la topologie afin de construire des routes rapides.
 
-  \vspace{0.25cm}
-
-
-  \begin{center}
-    \input{img/dhtexample.tex}
-  \end{center}
-
-  \vspace{0.25cm}
-
-  Construire de telles tables au dessus d'un réseau aléatoire possède certains 
-  avantages.
-  \begin{itemize}
-  \item [$\rightarrow$] Rapidité de convergence
-  \item [$\rightarrow$] Résilience aux défaillances
-  \end{itemize}
-
-  \vspace{0.25cm}
-
-  Avec \SPRAY, des vues s'ajustant à la taille du réseau automatiquement.
+%   \vspace{0.25cm}
 
 
-\end{frame}
+%   \begin{center}
+%     \input{img/dhtexample.tex}
+%   \end{center}
+
+%   \vspace{0.25cm}
+
+%   Construire de telles tables au dessus d'un réseau aléatoire possède certains 
+%   avantages.
+%   \begin{itemize}
+%   \item [$\rightarrow$] Rapidité de convergence
+%   \item [$\rightarrow$] Résilience aux défaillances
+%   \end{itemize}
+
+%   \vspace{0.25cm}
+
+%   Avec \SPRAY, des vues s'ajustant à la taille du réseau automatiquement.
+
+
+% \end{frame}
 
 \begin{frame}{Conclusion}{Perspectives : compromis entre causalité et concurrence}
   
@@ -153,15 +161,12 @@
 
 \begin{frame}{Conclusion}{Perspectives : O'Browser, Where Art Thou ?}
 
-  
-
   \CRATE est un éditeur collaboratif décentralisé fonctionnant dans les
   navigateurs.
 
   \vspace{0.25cm}
 
-  Qu'est-il possible de développer comme autres applications décentralisées dans
-  les navigateurs ?
+  Quelles autres applications décentralisées est-il possible de développer ?
 
   \vspace{0.25cm}
   
@@ -173,12 +178,12 @@
     \input{img/figarchitecture.tex}
   \end{center}
 
-  \vspace{0.25cm}
+  % \vspace{0.25cm}
   
-  \large
-  \begin{itemize}
-  \item [$\Rightarrow$] \textbf{Projet ANR O'Browser}
-  \end{itemize}
+  % \large
+  % \begin{itemize}
+  % \item [$\Rightarrow$] \textbf{Projet ANR O'Browser}
+  % \end{itemize}
 
 
 \end{frame}

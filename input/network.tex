@@ -99,9 +99,9 @@
 %   \vspace{1cm}
   \large
   \begin{itemize}
-  \item [$\Rightarrow$]
-    \textbf{Le réseau doit pouvoir supporter un nombre
-      fluctuant d'utilisateurs et les standards des navigateurs Web.}
+  \item [$\Rightarrow$] \textbf{Le protocole de construction du réseau doit
+      pouvoir supporter un nombre fluctuant d'utilisateurs ET les standards des
+      navigateurs Web.}
   \end{itemize}
 
   \vspace{1cm}
@@ -115,18 +115,19 @@
 
 \begin{frame}{Communication}{État de l'art}
 
+%  \begin{minipage}{0.4\textwidth}
   \begin{center}
     \begin{table}[H]
       \input{img/tablenetwork.tex}
     \end{table}
   \end{center}
-
-  \vspace{0.15cm}
-
-  \begin{center}
-    \includegraphics[width=0.8\textwidth]{img/network/motivation.eps}
-  \end{center}
-
+%  \end{minipage}
+%  \begin{minipage}{0.58\textwidth}
+%  \vspace{0.15cm}
+    \begin{center}
+      \includegraphics[width=0.65\textwidth]{img/network/motivation.eps}
+    \end{center}
+%  \end{minipage}
 
 \end{frame}
 
@@ -523,7 +524,7 @@
   Problème : la vue sortante + la vue entrante $\approx 2\log|\mathcal{N}|$
   \begin{itemize}
   \item $\pmb{\log|\mathcal{N}|}$ : La vue partielle du pair quittant le réseau;
-  \item \textbf{1} : Un parmis les $\approx \log|\mathcal{N}|$ pairs détectant
+  \item \textbf{1} : Un parmi les $\approx \log|\mathcal{N}|$ pairs détectant
     le départ ne recrée pas de connexion.
   \end{itemize}
 
@@ -577,14 +578,14 @@
 
   Simulations \PEERSIM.
 
-  \vspace{0.5cm}
+  % \vspace{0.5cm}
 
-  \begin{itemize}
-  \item \CYCLON : vue partielle dont la taille est configurée \textit{a priori};
-  \item \SCAMP : vue partielle dont la taille s'ajuste au réseau;
-  \item \SPRAY : vue partielle dont la taille s'ajuste au réseau et adapté au
-    contexte Web.
-  \end{itemize}
+  % \begin{itemize}
+  % \item \CYCLON : vue partielle dont la taille est configurée \textit{a priori};
+  % \item \SCAMP : vue partielle dont la taille s'ajuste au réseau;
+  % \item \SPRAY : vue partielle dont la taille s'ajuste au réseau et adapté au
+  %   contexte Web.
+  % \end{itemize}
 
 %\end{frame}
 
@@ -692,6 +693,10 @@
   \begin{center}
     \input{img/figdiffusion.tex}
   \end{center}
+  
+  \begin{center}
+    \uncover<2->{\DARKBLUE{diffuse($msg_1$)}} \uncover<3->{\textcolor{termithgreen}{diffuse($msg_2$)}} \uncover<4->{\textcolor{termithorange}{$diffuse(msg_3)$}}
+  \end{center}
 
   \begin{itemize}
   \item \CYCLON 
@@ -710,9 +715,9 @@
 
 %  \vspace{0.5cm}
 
-  \begin{itemize}
-  \item[$\rightarrow$] \CYCLON et \SPRAY sont équivalent à 100 pairs
-  \end{itemize}
+  % \begin{itemize}
+  % \item[$\rightarrow$] \CYCLON et \SPRAY sont équivalent à 100 pairs
+  % \end{itemize}
 \end{frame}
 
 \begin{frame}{Communication}{Le taux d'erreur reste constant}
@@ -737,18 +742,88 @@
     WebRTC.
   \end{itemize}
 
-  \vspace{0.25cm}
+  % \vspace{0.25cm}
 
-  \begin{itemize}
-  \item \SPRAY a le désavantage d'utiliser des doublons, mais leur faible
-    proportion n'impacte pas les propriétés du réseau.    
-  \end{itemize}
+  % \begin{itemize}
+  % \item \SPRAY a le désavantage d'utiliser des doublons, mais leur faible
+  %   proportion n'impacte pas les propriétés du réseau.    
+  % \end{itemize}
 
-  \vspace{0.25cm}
+  \vspace{1cm}
 
   \begin{itemize}
   \item Les protocoles construits au dessus de \SPRAY bénéficient de cette
     adaptativité.
   \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Communication}{Perspective}
+
+  \begin{block}{Les réseaux fusionnant préservent leurs propriétés}
+    Soit $\mathcal{N}_1,\, \mathcal{N}_2,\, \ldots ,\, \mathcal{N}_k$ des réseaux
+    de taille arbitraire. On a : \vspace{-5pt}
+    \begin{equation}
+      \sum\limits_{i = 1}^k |\mathcal{N}_i|\ln (|\mathcal{N}_i|) < (\sum\limits_{i = 1}^k |\mathcal{N}_i|)\ln{(\sum\limits_{i=1}^k |\mathcal{N}_i|)}
+    \end{equation}
+    Comment adapter les nombres d'arcs effectif (à gauche) pour qu'il atteigne le
+    nombre d'arcs requis (à droite)?
+  \end{block}
+
+  \begin{minipage}{0.325\textwidth}
+    \includegraphics[width=1.2\textwidth]{img/graphA.png}
+  \end{minipage}
+  \begin{minipage}{0.325\textwidth}
+    \includegraphics[width=1.2\textwidth]{img/graphB.png}
+  \end{minipage}
+  \begin{minipage}{0.325\textwidth}
+    \includegraphics[width=1.2\textwidth]{img/graphC.png}
+  \end{minipage}
+
+\end{frame}
+
+
+\begin{frame}{Communication}{Vues partielles adaptatives}
+
+  \hspace{-1cm}
+  \begin{minipage}{0.55\textwidth}
+    \begin{itemize}
+      \item \textbf{Chaque éditeur possède une copie locale du document;}
+      \item \textbf{Chaque éditeur est connecté à d'autres éditeurs.}
+      \vspace{0.5cm}
+    \item Chaque caractère tapé est directement inséré dans la copie locale;
+    \item La modification est disséminée à l'ensemble du réseau;
+    \item Les éditeurs recevant la modification l'appliquent.
+    \end{itemize}
+  \end{minipage}
+  % \begin{minipage}{0.56\textwidth}
+  %   \begin{center}
+  %     \input{img/functionning.tex}
+  %   \end{center}
+  % \end{minipage}
+  \hfill
+  \begin{minipage}{0.44\textwidth}
+    \begin{center}
+      \input{img/figenteringsessionstatic.tex}
+    \end{center}
+  \end{minipage}
+
+  
+  \vspace{1cm}
+  \large
+  \begin{itemize}
+  \item [$\Rightarrow$] \textbf{taille de messages} $\times$ \textbf{nombre de messages}
+  \end{itemize}
+
+
+
+\end{frame}
+
+
+\begin{frame}{\CRATE}{Experimentation}
+
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/editor/communication.eps}
+  \end{center}
 
 \end{frame}
