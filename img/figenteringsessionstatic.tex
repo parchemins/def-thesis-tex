@@ -100,64 +100,19 @@
   \draw[fill=white] (0, \Y)node{\includegraphics[width=12pt]{img/crateicon.png}};
 
 
-  \only<2->{
-    \draw (0pt, \Y) node{\textbf{A}};
-  }
 
-  \only<3>{
+    \draw (0pt, \Y) node{\textbf{A}};
+
     \draw[->, very thick] (0pt, \Y) -- (2*\X, -5pt); %% p8 p2
     \draw[->, very thick] (0pt, \Y) -- (\X, 5+3*\Y); %% p8 p6
     \draw[->, very thick] (0pt, \Y) -- (-5+3*\X, \Y); %% p8 p3
 
     \draw[fill=white] (0*\X, \Y)node{\includegraphics[width=12pt]{img/crateicon.png}};
     \draw (0pt, \Y) node{\textbf{A}};
-  }
   
-  \only<3->{
     \draw (2*\X, 0pt) node{\textbf{A}};
     \draw (\X, 3*\Y) node{\textbf{A}};
     \draw (3*\X, \Y) node{\textbf{A}};
-  }
-  
-  \only<4>{
-    \draw[->, very thick] (-5+2*\X, 0)--(5+\X, 0); %% p2 p1
-    \draw[->, very thick] (2*\X, 0) -- (-5+3*\X, \Y); %% p2 p3
-    \draw[->, very thick] (2*\X, 0) -- (-5+3*\X, 2*\Y); %% p2 p4
-    \draw (2*\X, 0)node{\includegraphics[width=12pt]{img/crateicon.png}}node{\textbf{A}};
-    
-    \draw[->, very thick] (-5+\X, 3*\Y) -- (0pt, -5+2*\Y); %% p6 p7
-    \draw (\X, 3*\Y)node{\includegraphics[width=12pt]{img/crateicon.png}}node{\textbf{A}};
-
-    \draw[->, very thick] (3*\X, 5+\Y) -- ( 5+2*\X, 0); %% p3 p2
-    \draw[->, very thick] (3*\X, \Y) -- (5pt, 2*\Y); %% p3 p7
-    \draw[->, very thick] (3*\X, \Y) -- (2*\X, 5+3*\Y); %% p3 p5
-    \draw (3*\X, \Y)node{\includegraphics[width=12pt]{img/crateicon.png}}node{\textbf{A}};
-  }
-
-  \only<4->{
-    \draw (\X, 0) node{\textbf{A}};
-    \draw (3*\X, \Y) node{\textbf{A}};
-    \draw (3*\X, 2*\Y) node{\textbf{A}};
-
-    \draw (2*\X, 0pt) node{\textbf{A}};
-    \draw (0pt, 2*\Y) node{\textbf{A}};
-    \draw (2*\X, 3*\Y) node{\textbf{A}};
-  }
-
-  \only<5>{
-    \draw[->, very thick] (\X, 0)--(\X, 5+3*\Y); %% p1 p6
-    \draw (\X, 0)node{\includegraphics[width=12pt]{img/crateicon.png}}node{\textbf{A}};
-
-    \draw[->, very thick] (3*\X, 2*\Y) -- (5pt, 2*\Y); %% p4 p7
-    \draw[->, very thick] (3*\X, 2*\Y) -- (5pt, \Y); %% p4 p8
-     \draw (3*\X, 2*\Y)node{\includegraphics[width=12pt]{img/crateicon.png}}node{\textbf{A}}; 
-    \draw[->, very thick] (2*\X, 3*\Y) -- (\X, -5pt); %% p5 p1
-    \draw[->, very thick] (5+2*\X, 3*\Y) -- (3*\X, -5+ 2*\Y); %% p5 p4
-    \draw (2*\X, 3*\Y)node{\includegraphics[width=12pt]{img/crateicon.png}}node{\textbf{A}};
-    \draw[->, very thick] (0pt, 2*\Y) -- (-5+3*\X, \Y); %% p7 p3
-    \draw[->, very thick] (0pt, 2*\Y) -- (\X, -5pt); %% p7 p1
-    \draw (0, 2*\Y)node{\includegraphics[width=12pt]{img/crateicon.png}}node{\textbf{A}};
-  };
 
 
 \end{tikzpicture}

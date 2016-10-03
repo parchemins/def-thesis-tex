@@ -104,8 +104,31 @@
       fluctuant d'utilisateurs et les standards des navigateurs Web.}
   \end{itemize}
 
+  \vspace{1cm}
+
+  \begin{center}
+    \includegraphics[width=0.2\textwidth]{img/webrtc.png}
+  \end{center}
+
+
 \end{frame}
 
+\begin{frame}{Communication}{État de l'art}
+
+  \begin{center}
+    \begin{table}[H]
+      \input{img/tablenetwork.tex}
+    \end{table}
+  \end{center}
+
+  \vspace{0.15cm}
+
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/network/motivation.eps}
+  \end{center}
+
+
+\end{frame}
 
 
 % \begin{frame}{Communication}{Contexte Web}
@@ -154,70 +177,70 @@
 % \end{frame}
 
 
-\begin{frame}{Communication}{Un seul moyen de communiquer : WebRTC}
+% \begin{frame}{Communication}{Un seul moyen de communiquer : WebRTC}
 
 
-  \begin{minipage}{0.67\textwidth}
-    % Seulement depuis récemment, et grâce à WebRTC, les navigateurs Web ne sont
-    % plus seulement des clients mais aussi des \textbf{serveurs}.
+%   \begin{minipage}{0.67\textwidth}
+%     % Seulement depuis récemment, et grâce à WebRTC, les navigateurs Web ne sont
+%     % plus seulement des clients mais aussi des \textbf{serveurs}.
 
-%    \begin{itemize}
-    %\item 
-    \textbf{Ni adresses ni routes};
-    %\item 
-    \vspace{0.25cm} 
+% %    \begin{itemize}
+%     %\item 
+%     \textbf{Ni adresses ni routes};
+%     %\item 
+%     \vspace{0.25cm} 
 
-    Les connexions sont \textbf{coûteuses} et sujettes aux
-    \textbf{défaillances};
+%     Les connexions sont \textbf{coûteuses} et sujettes aux
+%     \textbf{défaillances};
     
-      % \item \textbf{capacités hétérogènes et parfois limitées} des outils de
-      %   navigation;
-      %  \item le contexte Web expose aux \textbf{pics soudains de popularité.}
-      %  \end{itemize}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.3\textwidth}
-    \begin{center}
-    \includegraphics[width=0.6\textwidth]{img/webrtc.png}
-    \end{center}
-  \end{minipage}
+%       % \item \textbf{capacités hétérogènes et parfois limitées} des outils de
+%       %   navigation;
+%       %  \item le contexte Web expose aux \textbf{pics soudains de popularité.}
+%       %  \end{itemize}
+%   \end{minipage}
+%   \hfill
+%   \begin{minipage}{0.3\textwidth}
+%     \begin{center}
+%     \includegraphics[width=0.6\textwidth]{img/webrtc.png}
+%     \end{center}
+%   \end{minipage}
   
-  \vspace{0.5cm}
+%   \vspace{0.5cm}
       
-  \begin{center}
-    \input{img/figenteringsession.tex}
-  \end{center}
+%   \begin{center}
+%     \input{img/figenteringsession.tex}
+%   \end{center}
 
 
-  % \begin{minipage}{0.6\textwidth}
-  %   Pour créer un réseau : 
-  %   \begin{itemize}
-  %     \uncover<2->{\item Un \textbf{serveur sert de médiateur} à la connexion initiale;
-  %     \begin{itemize}
-  %     \item [$\rightarrow$] Au moins 1 aller-retour de messages 
-  %     \end{itemize}}
-  %     \uncover<3->{\item Les pairs \textbf{deviennent des médiateurs} du réseau;}
-  %     \uncover<4>{\item Réseau de trois membres avec connexions directes.}
-  %   \end{itemize}
-  % \end{minipage}
-  % \begin{minipage}{0.3\textwidth}
-  %   \begin{center}
-  %     \input{img/figsignalingexample.tex}
-  %   \end{center}
-  % \end{minipage}
+%   % \begin{minipage}{0.6\textwidth}
+%   %   Pour créer un réseau : 
+%   %   \begin{itemize}
+%   %     \uncover<2->{\item Un \textbf{serveur sert de médiateur} à la connexion initiale;
+%   %     \begin{itemize}
+%   %     \item [$\rightarrow$] Au moins 1 aller-retour de messages 
+%   %     \end{itemize}}
+%   %     \uncover<3->{\item Les pairs \textbf{deviennent des médiateurs} du réseau;}
+%   %     \uncover<4>{\item Réseau de trois membres avec connexions directes.}
+%   %   \end{itemize}
+%   % \end{minipage}
+%   % \begin{minipage}{0.3\textwidth}
+%   %   \begin{center}
+%   %     \input{img/figsignalingexample.tex}
+%   %   \end{center}
+%   % \end{minipage}
   
   
-  % \vspace{0.5cm}
+%   % \vspace{0.5cm}
   
-  % \large
-  % \begin{itemize}
-  % \item [$\Rightarrow$] \textbf{Le réseau doit supporter ce processus complexe
-  %     d'établissement de connexion.}
-  % \end{itemize}
+%   % \large
+%   % \begin{itemize}
+%   % \item [$\Rightarrow$] \textbf{Le réseau doit supporter ce processus complexe
+%   %     d'établissement de connexion.}
+%   % \end{itemize}
   
 
   
-\end{frame}
+% \end{frame}
 
 % \begin{frame}{Communication}{Création de réseau}
 
@@ -287,11 +310,18 @@
 
 \begin{frame}{Communication}{\SPRAY}
 
-  \SPRAY est un protocole d'échantillonnage aléatoire de pairs
-  \textbf{adaptatif} supportant le processus complexe d'établissement de
-  connexions WebRTC.
-
-  \vspace{0.5cm}
+  \SPRAY :
+  \begin{itemize}
+  \item Protocole d'échantillonnage aléatoire de pairs;
+    \vspace{0.25cm}
+  \item Invariant : nombre de connexions
+    $\approx |\mathcal{N}| \log |\mathcal{N}|$, sans connaissance globale, i.e.,
+    $|\mathcal{N}|$ n'est connu de personne.
+    \vspace{0.25cm}
+  \item Établissement de connexions de proche en proche.
+  \end{itemize}
+    
+  \vspace{1cm}
 
   % Chaque pair réagit à des événements et agit périodiquement. Le système
   % converge rapidement vers une topologie possédant des propriétés similaires à
@@ -300,10 +330,8 @@
   Le réseau est \textbf{dynamique} : à n'importe quel moment, un pair peut
   rejoindre ou quitter le réseau. \\
   
-  \vspace{0.5cm}
+%  \vspace{0.5cm}
 
-  Invariant : nombre de connexions $\approx |\mathcal{N}| \log |\mathcal{N}|$,
-  sans connaissance globale, i.e., $|\mathcal{N}|$ n'est connu de personne.
 
   \vspace{1cm}
 
@@ -554,7 +582,7 @@
   \begin{itemize}
   \item \CYCLON : vue partielle dont la taille est configurée \textit{a priori};
   \item \SCAMP : vue partielle dont la taille s'ajuste au réseau;
-  \item \SPRAY : vue partielles dont la taille s'ajuste au réseau et adapté au
+  \item \SPRAY : vue partielle dont la taille s'ajuste au réseau et adapté au
     contexte Web.
   \end{itemize}
 

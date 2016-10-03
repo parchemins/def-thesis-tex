@@ -47,11 +47,11 @@
 
 \begin{frame}{Document}{Intention et ordre dense}
   
-  L'effet observé sur le document lors de la génération d'une opération doit
-  être également observé lors de son intégration malgré l'interférence
-  d'opérations \textbf{concurrentes}.
+  % L'effet observé sur le document lors de la génération d'une opération doit
+  % être également observé lors de son intégration malgré l'interférence
+  % d'opérations \textbf{concurrentes}.
 
-  \vspace{1cm}
+  % \vspace{1cm}
 
   % \begin{itemize}
   % \item Difficile à formaliser dans le cas général;
@@ -61,28 +61,36 @@
 
   % \vspace{0.5cm}
   
-  Pour la séquence :
-  \begin{itemize}
-  \item \og insérer l'élément $e$ à la position $i$ dans la séquence \fg
-    $\rightarrow$ \textsc{insert}$(e,\,i)$
-  \item \small \og supprimer l'élément à la position $i$ dans la séquence \fg
-    $\rightarrow$ \textsc{delete}$(i)$
-  \end{itemize}
+  % Pour la séquence :
+  % \begin{itemize}
+  % \item \og insérer l'élément $e$ à la position $i$ dans la séquence \fg
+  %   $\rightarrow$ \textsc{insert}$(e,\,i)$
+  % \item \small \og supprimer l'élément à la position $i$ dans la séquence \fg
+  %   $\rightarrow$ \textsc{delete}$(i)$
+  % \end{itemize}
 
 
   \vspace{0.5cm}
 
-  \begin{itemize}
+%  \begin{itemize}
 %%    \only<1-1>{\item [$\rightarrow$]L'intention semble être liée aux
 %%      positions.}
 %%    \only<2->{\item [$\rightarrow$]\sout{L'intention semble être
 %%        liée aux \textbf{positions}.}}
-  \item [$\rightarrow$] Une séquence se définit par un \textbf{ordre dense} sur
-    ses éléments : les éléments sont ordonnés et il est toujours possible
-    d'insérer un élément entre deux autres éléments.
-  \end{itemize}
+%  \item [$\rightarrow$] 
+  Une séquence se définit par un \textbf{ordre dense} sur ses éléments : les
+  éléments sont ordonnés et il est toujours possible d'insérer un élément entre
+  deux autres éléments.
+%  \end{itemize}
 
-  \vspace{0.2cm}
+  \vspace{0.75cm}
+
+  Pour créer cet ordre dense, il est possible d'allouer un \textbf{identifiant}
+  unique et immuable à chaque caractère\footfullcite{weiss2010logootundo}. Les
+  identifiants permettent de retrouver l'ordre des éléments de la séquence.
+  
+  
+
   
 \end{frame}
 
@@ -131,12 +139,6 @@
 
 \begin{frame}{Document}{Ordre dense grâce aux identifiants}
 
-  Pour créer cet ordre dense, il est possible d'allouer un \textbf{identifiant}
-  unique et immuable à chaque caractère\footfullcite{weiss2010logootundo}. Les
-  identifiants permettent de retrouver l'ordre des éléments de la séquence.
-  
-  \vspace{1cm}
-  
   \begin{center}
   \textsc{insert}$($\texttt{R}, $0)$ \uncover<2->{\textsc{insert}$($\texttt{T},
     $1)$} \uncover<3->{\textsc{insert}$($\texttt{Y}, $2)$} \\
@@ -280,15 +282,15 @@
     \end{equation}
   \end{block}
   
-  \vspace{0.5cm}
+  % \vspace{0.5cm}
 
-  \begin{itemize}
-  \item [$\rightarrow$] Sinon, il faut relocaliser les identifiants qui ont été
-    générés pour retrouver un arbre équilibré et conserver de bonnes performances
-    \begin{itemize}
-    \item [$\approx$] consensus répartis qui ne passe pas à l'échelle.
-    \end{itemize}
-  \end{itemize}
+  % \begin{itemize}
+  % \item [$\rightarrow$] Sinon, il faut relocaliser les identifiants qui ont été
+  %   générés pour retrouver un arbre équilibré et conserver de bonnes performances
+  %   \begin{itemize}
+  %   \item [$\approx$] consensus répartis qui ne passe pas à l'échelle.
+  %   \end{itemize}
+  % \end{itemize}
 
 \end{frame}
 
@@ -314,7 +316,7 @@
 
 \begin{frame}{Document}{\LSEQ}
   
-  Fonction d'allocation de chemins :
+  Fonction d'allocation d'identifiants :
   \begin{enumerate}
   \item Une structure d'arbre dont l'arité maximale augmente avec la profondeur;
   \item Deux sous-fonctions d'allocation conçues pour gérer des comportements
@@ -514,13 +516,10 @@
   \vspace{2cm}
   
   \begin{itemize}
-  \item La complexité en espace des identifiants est indépendante de la
-    structure choisie pour la réplique;
-  \item \LSEQ fournit des identifiants sous-linéaires pour l'édition monotone
-    et aléatoire;
-  \item Le trafic généré par l'éditeur collaboratif dépend de cette complexité.
-  \item [$\rightarrow$] Important car la largeur de bande est souvent le facteur
-    le plus limitant d'un système.
+  \item Indépendante de la structure choisie pour la réplique;
+    \vspace{0.5cm}
+  \item Important car impactant directement le trafic généré par
+    les éditeurs.
   \end{itemize}
   
 %   \begin{itemize}
@@ -541,7 +540,7 @@
   \vspace{0.5cm}\hspace{-1cm}  
   \begin{minipage}{0.51\textwidth}
     \begin{itemize}
-    \item Coût réparti équitablement entre la partie locale et la partie distante
+    \item Répartition entre la partie locale et la partie distante;
     \item [$\rightarrow$] Avantageux car à 1 opération locale correspond $N$
       exécutions distantes où $N$ est le nombre de répliques.
     \end{itemize}    
@@ -645,24 +644,75 @@
   \begin{itemize}
   \item \LSEQ est une fonction d'allocation d'identifiants pour les séquences
     réparties;
+    \vspace{0.5cm}
   \item Les identifiants générés ont une complexité sous-linéaire dans le contexte
     de l'édition collaborative
   \item [$\rightarrow$] ce qui répond partiellement au problème scientifique.
-  \item [$\rightarrow$] Évite l'utilisation d'un mécanisme périodique de
-    relocalisation dans notre contexte.
   \end{itemize}
 
 
-  \vspace{1cm}
+  % \vspace{1cm}
   
-  \large
-  \begin{itemize}
-  \item [$\Rightarrow$] \textbf{Nécessite un moyen de communiquer les
-      identifiants à tous les éditeurs fonctionnant dans les navigateurs Web.}
-  \end{itemize}
+  % \large
+  % \begin{itemize}
+  % \item [$\Rightarrow$] \textbf{Nécessite un moyen de communiquer les
+  %     identifiants à tous les éditeurs fonctionnant dans les navigateurs Web.}
+  % \end{itemize}
   
 \end{frame}
 
+
+\begin{frame}{Document}{Perspective}
+  
+  Utiliser \LSEQ avec \og Split \fg\footfullcite{andre2013supporting} pour
+  adapter la granularité d'allocation aux chaînes de caractères.
+  \vspace{0.75cm}
+  \begin{itemize}
+  \item [$\rightarrow$] Moins de messages à envoyer sur le réseau;
+  \item [$\rightarrow$] Moins de trafic généré par l'éditeur;
+  \item [$\rightarrow$] Moins \og temps réel \fg.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Document}{Dissémination des identifiants}
+
+    \hspace{-1cm}
+  \begin{minipage}{0.55\textwidth}
+    \begin{itemize}
+      \only<1>{\item \textbf{Chaque éditeur possède une copie locale du document;}}
+      \only<2->{\item Chaque éditeur possède une copie locale du document;}
+      \only<1>{\item Chaque éditeur est connecté à d'autres éditeurs.}
+      \only<2>{\item \textbf{Chaque éditeur est connecté à d'autres éditeurs.}}
+      \vspace{0.5cm}
+    \item Chaque caractère tapé est directement inséré dans la copie locale;
+    \item La modification est disséminée à l'ensemble du réseau;
+    \item Les éditeurs recevant la modification l'appliquent.
+    \end{itemize}
+  \end{minipage}
+  % \begin{minipage}{0.56\textwidth}
+  %   \begin{center}
+  %     \input{img/functionning.tex}
+  %   \end{center}
+  % \end{minipage}
+  \hfill
+  \begin{minipage}{0.44\textwidth}
+    \begin{center}
+      \input{img/figenteringsessionstatic.tex}
+    \end{center}
+  \end{minipage}
+
+  
+  \vspace{1cm}
+  \large
+  \begin{itemize}
+  \only<1>{\item [$\Rightarrow$] \textbf{taille de messages} $\times$ nombre de messages}
+  \only<2>{\item [$\Rightarrow$] taille de messages $\times$ \textbf{nombre de messages}}
+  \end{itemize}
+
+
+
+\end{frame}
 
 
 %%% Local Variables:
