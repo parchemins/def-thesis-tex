@@ -1,7 +1,7 @@
 
 \section*{Slides additionnels}
 
-\begin{frame}{Structure de séquences}{Spécification}
+\begin{frame}{Document}{Spécification}
   \begin{definition}[Spécification séquentielle d'une séquence]
   Soit une série d'opérations $H$ produisant la séquence
   $s(H) = \{p_1,\, p_2 \ldots p_k\}$ avec $p_{1..k} \in \mathcal{P}$ où
@@ -37,30 +37,31 @@
 \end{frame}
 
 
-\begin{frame}{Structure de séquences}{Complexité temporelle des accès}
+\begin{frame}{Document}{Complexité temporelle des accès}
   
   \begin{center}
     \input{img/tablelseqlookup.tex}
   \end{center}
   
-  Fonction qui permet de passer d'une structure de séquence à une structure
-  d'arbre, et inversement.
+%%  Fonction qui permet de passer d'une structure de séquence à une structure
+%%  d'arbre, et inversement.
   
   \vspace{0.25cm}%
   \begin{center}%
   \input{img/figgetexample.tex}
   \end{center}%
-  \vspace{0.25cm}
 
-  \begin{itemize}
-  \item Linéaire dans le cas monotone qui est aussi le pire cas.
-  \item [$\rightarrow$] Heureusement, ce coût peut souvent être réduit.
-  \end{itemize}
+%  \vspace{0.25cm}
+
+%  \begin{itemize}
+%  \item Linéaire dans le cas monotone qui est aussi le pire cas.
+%  \item [$\rightarrow$] Heureusement, ce coût peut souvent être réduit.
+%  \end{itemize}
   
 \end{frame}
 
 
-\begin{frame}{Structure de séquences}{Effets de la concurrence}
+\begin{frame}{Document}{Effets de la concurrence}
   \vspace{-0.5cm}
   \begin{center}
     \includegraphics[angle=-90, width=\textwidth]{img/replication/latency.eps}
@@ -70,3 +71,67 @@
 
 %% WORST CASE SLIDE LSEQ
 
+\begin{frame}{Document}{Traces réelles}
+  
+  \hspace{-1cm}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=1.29\textwidth]{img/replication/poste.eps}
+  \end{minipage}
+  \hspace{1.2cm}
+  \begin{minipage}{0.45\textwidth}
+%    \begin{tikzpicture}
+%      \node[visible on=<2>]
+      {\includegraphics[width=1.29\textwidth]{img/replication/templatetalk.eps}}%;
+%    \end{tikzpicture}
+  \end{minipage}
+
+  \begin{minipage}{0.4\textwidth}
+    Document édité en fin
+  \end{minipage}
+  \hspace{1.6cm}
+  \begin{minipage}{0.4\textwidth}
+%    \begin{tikzpicture}
+%      \node[visible on=<2>]
+      {Document édité au début}%;
+%    \end{tikzpicture}
+  \end{minipage}
+
+\end{frame}
+
+
+\begin{frame}{Communication}{Échec de connexion}
+
+  \begin{center}
+    \input{img/fighandshake.tex}
+  \end{center}
+
+  \vspace{1cm}
+
+  \begin{equation} P_{E}^{Scamp}=1-(1- P_f)^{k+1} \end{equation}
+
+  \vspace{0.5cm}
+
+  \begin{align} P_{E,\,webrtc}^{Scamp} &=1 - ((1-P_f)^{2(k+1)} (1-P_f)^{2k}
+                                         \ldots (1-P_f)^2) \nonumber \\
+                                       &=1-(1-P_f)^{k^2+3k+2}
+  \end{align}
+  
+\end{frame}
+
+\begin{frame}{Communication}{L'information se propage rapidement}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/network/avgpath.eps}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Communication}{La charge est équilibrée}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/network/histo.eps}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Communication}{Robuste aux défaillances}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/network/resilience.eps}
+  \end{center}
+\end{frame}
