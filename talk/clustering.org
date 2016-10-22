@@ -1,8 +1,0 @@
-
-
-Dans cette experimentation, nous mesurons le coefficient d'agglomération du
-réseau, c'est à dire, à quelle point les pairs du graphes sont interconnectés en
-fonction du temps.
-
-
-
