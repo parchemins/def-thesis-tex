@@ -1,6 +1,6 @@
 # def-thesis-tex
 
-Sources of the beamer slides written for my Ph.D defense performed on Wednesday 5th
+Sources of the [beamer slides](https://github.com/Chat-Wane/def-thesis-tex/blob/master/slides.pdf) written for my Ph.D defense performed on Wednesday 5th
 October 2016.
 
 ```
