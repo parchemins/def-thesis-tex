@@ -1,102 +1,7 @@
 \section{Un protocole d'échantillonnage aléatoire adaptatif}
 
-% \begin{frame}{Communication}{Propagation des modifications}
-
-%   Préserver la \textbf{cohérence à terme} des documents requière que tous les
-%   identifiants générés par la structure de séquences soient intégrés par tous
-%   les éditeurs.
-  
-%   \vspace{0.5cm}
-  
-%   Les éditeurs collaboratifs nécessitent un moyen de \textbf{communiquer} les
-%   changements effectués sur le document à tous les éditeurs impliqués dans
-%   l'édition.
-  
-%   \vspace{0.5cm}
-
-%   \large
-%   \begin{itemize}
-%   \item [$\Rightarrow$] \textbf{Dissémination d'information}
-%   \end{itemize}
-%   \vspace{0.5cm}
-% \end{frame}
-
-
-% \begin{frame}{Communication}{Diffusion épidémique}
-%   En \textbf{décentralisé}, la diffusion épidémique de messages constitue une
-%   manière efficace de disséminer l'information. Les messages parviennent à tous
-%   les pairs sans que ceux-ci ne connaissent tous les membres du réseau.
-
-%   \vspace{0.5cm}
-
-%   % Fonctionnement : chaque pair possède une vue partielle du réseau.
-%   % \begin{enumerate}
-%   % \uncover<2->{\item un pair souhaitant diffuser un message l'envoie à sa vue partielle;}
-%   % \uncover<3->{\item chaque pair recevant un tel message le diffuse à sa vue partielle;}
-%   % \uncover<4->{\item condition d'arrêt : le message a déjà été reçu auparavant.}
-%   % \end{enumerate}
-
-% %  \begin{minipage}{0.43\textwidth}
-%     \begin{center}
-%       \input{img/figepidemic.tex}
-%     \end{center}
-% %  \end{minipage}
-% %  \hfill
-% %  \begin{minipage}{0.55\textwidth}
-
-%     \vspace{0.5cm}
-%     \large
-%     \begin{itemize}
-%       %\uncover<5->{
-%     \item [$\Rightarrow$] \textbf{Comment configurer la taille
-%           des vues partielles et les peupler ?}
-%       \begin{itemize}
-%       \item [$\rightarrow$] Protocole d'échantillonnage de pairs
-%       \end{itemize}
-%       % }
-%     \end{itemize}
-% %  \end{minipage}
-
-% \end{frame}
-
 \begin{frame}{Communication}{Contexte Web}
 
-
-  % N'importe quel outil informatique ayant accès à l'internet peut rejoindre une
-  % session d'édition.
-  % \begin{itemize}
-  % \item [$\rightarrow$] capacité hétérogènes et parfois limitées.    
-  % \end{itemize}
-
-  % \vspace{0.5cm}
-
-%   \begin{minipage}{0.7\textwidth}
-%   Facilite l'accès à un \textbf{grand nombre d'utilisateurs}.
-%   % \begin{itemize}
-%   % \item [$\rightarrow$] nombre fluctuant d'utilisateurs au cours du temps
-%   % \end{itemize}
-
-
-  
-%   \vspace{0.5cm}
-
-% %%  La diffusion d'informations et d'idées dans le Web est extrêmement rapide. 
-% %  \begin{itemize}
-% %  \item [$\rightarrow$]
-%   Expose au \textbf{pic soudains de popularité}.
-%   \end{minipage}
-%   \hfill
-%   \begin{minipage}{0.28\textwidth}
-%     \includegraphics[width=0.8\textwidth]{img/www.png}
-%   \end{minipage}
-% %  \end{itemize}
-
-% %  capacités hétérogènes et parfois limitées des outils de
-% %    navigation;
-% %  \item le contexte Web expose aux \textbf{pics soudains de popularité.}
-
- 
-%   \vspace{1cm}
   \large
   \begin{itemize}
   \item [$\Rightarrow$] \textbf{Le protocole de construction du réseau doit
@@ -110,143 +15,21 @@
     \includegraphics[width=0.2\textwidth]{img/webrtc.png}
   \end{center}
 
-
 \end{frame}
+
 
 \begin{frame}{Communication}{État de l'art}
 
-%  \begin{minipage}{0.4\textwidth}
   \begin{center}
     \begin{table}[H]
       \input{img/tablenetwork.tex}
     \end{table}
   \end{center}
-%  \end{minipage}
-%  \begin{minipage}{0.58\textwidth}
-%  \vspace{0.15cm}
-    \begin{center}
-      \includegraphics[width=0.65\textwidth]{img/network/motivation.eps}
-    \end{center}
-%  \end{minipage}
+  \begin{center}
+    \includegraphics[width=0.65\textwidth]{img/network/motivation.eps}
+  \end{center}
 
 \end{frame}
-
-
-% \begin{frame}{Communication}{Contexte Web}
-  
-%   \begin{minipage}{0.69\textwidth}
-%     Le contexte \textbf{Web} pousse à la \textbf{centralisation :}
-%     \begin{itemize}
-%     \item problèmes de \textbf{confidentialité}, \textbf{censure}, etc.
-%     \uncover<2->{\item problèmes de passage à l'échelle, notamment en \textbf{nombre de
-%         collaborateurs};}
-%     \uncover<3->{\item problèmes de \textbf{résilience} aux pannes.}
-%     \end{itemize}
-%   \end{minipage}
-%   \hfill
-%   \begin{minipage}{0.3\textwidth}
-%     \includegraphics[width=0.7\textwidth]{img/www.png}
-%   \end{minipage}
-
-%   \vspace{0.75cm}
-  
-
-%   \begin{minipage}{0.32\textwidth}
-%     \begin{center}
-%       \begin{tikzpicture}
-%         \node[visible on=<1-3>]
-%         {\includegraphics[width=0.95\textwidth]{img/centralizedethicproblems.png}};
-%       \end{tikzpicture}
-%     \end{center}
-%   \end{minipage}
-%   \begin{minipage}{0.32\textwidth}
-%     \begin{center}
-%       \begin{tikzpicture}
-%         \node[visible on=<2-3>]
-%         {\includegraphics[width=0.95\textwidth]{img/centralizedcpuproblems.png}};
-%       \end{tikzpicture}
-%     \end{center}
-%   \end{minipage}
-%   \begin{minipage}{0.32\textwidth}
-%     \begin{center}
-%       \begin{tikzpicture}
-%         \node[visible on=<3-3>]
-%         {\includegraphics[width=0.95\textwidth]{img/centralizedscalabilityproblems.png}};
-%       \end{tikzpicture}        
-%     \end{center}
-%   \end{minipage}
-% \end{frame}
-
-
-% \begin{frame}{Communication}{Un seul moyen de communiquer : WebRTC}
-
-
-%   \begin{minipage}{0.67\textwidth}
-%     % Seulement depuis récemment, et grâce à WebRTC, les navigateurs Web ne sont
-%     % plus seulement des clients mais aussi des \textbf{serveurs}.
-
-% %    \begin{itemize}
-%     %\item 
-%     \textbf{Ni adresses ni routes};
-%     %\item 
-%     \vspace{0.25cm} 
-
-%     Les connexions sont \textbf{coûteuses} et sujettes aux
-%     \textbf{défaillances};
-    
-%       % \item \textbf{capacités hétérogènes et parfois limitées} des outils de
-%       %   navigation;
-%       %  \item le contexte Web expose aux \textbf{pics soudains de popularité.}
-%       %  \end{itemize}
-%   \end{minipage}
-%   \hfill
-%   \begin{minipage}{0.3\textwidth}
-%     \begin{center}
-%     \includegraphics[width=0.6\textwidth]{img/webrtc.png}
-%     \end{center}
-%   \end{minipage}
-  
-%   \vspace{0.5cm}
-      
-%   \begin{center}
-%     \input{img/figenteringsession.tex}
-%   \end{center}
-
-
-%   % \begin{minipage}{0.6\textwidth}
-%   %   Pour créer un réseau : 
-%   %   \begin{itemize}
-%   %     \uncover<2->{\item Un \textbf{serveur sert de médiateur} à la connexion initiale;
-%   %     \begin{itemize}
-%   %     \item [$\rightarrow$] Au moins 1 aller-retour de messages 
-%   %     \end{itemize}}
-%   %     \uncover<3->{\item Les pairs \textbf{deviennent des médiateurs} du réseau;}
-%   %     \uncover<4>{\item Réseau de trois membres avec connexions directes.}
-%   %   \end{itemize}
-%   % \end{minipage}
-%   % \begin{minipage}{0.3\textwidth}
-%   %   \begin{center}
-%   %     \input{img/figsignalingexample.tex}
-%   %   \end{center}
-%   % \end{minipage}
-  
-  
-%   % \vspace{0.5cm}
-  
-%   % \large
-%   % \begin{itemize}
-%   % \item [$\Rightarrow$] \textbf{Le réseau doit supporter ce processus complexe
-%   %     d'établissement de connexion.}
-%   % \end{itemize}
-  
-
-  
-% \end{frame}
-
-% \begin{frame}{Communication}{Création de réseau}
-
-
-% \end{frame}
 
 
 \begin{frame}{Communication}{Définition du problème}
@@ -260,7 +43,6 @@
   \item Taille des vues partielles : \hfill $\forall n_i \in \mathcal{N}^t$,
     $|P_i^t| \approx \mathcal{O}(\ln |\mathcal{N}^t|)$
   \item Établissement de connexion : \hfill $\mathcal{O}(1)$
-%  \item \TODO{Convergence}
   \end{enumerate}
 \end{block}
 
@@ -269,44 +51,7 @@
 \item [$\rightarrow$] Limiter le nombre de sauts pour établir une connexion.
 \end{itemize}
 
-
 \end{frame}
-
-
-% \begin{frame}{Communication}{État de l'art}
-
-% %\vspace{0.5cm}
-  
-%   \begin{itemize}
-%   \item Vues de taille fixe configurées a priori 
-%   \end{itemize}
-  
-%   \begin{exampleblock}{Dans un cours en ligne ouvert et massif \ldots}
-%     \ldots un cours peut commencer avec énormément d'étudiants; rapidement
-%     perdre en popularité à mesure que l'intérêt des étudiants décline; voir sa
-%     population croître lorsque les examens finaux arrivent.
-%   \end{exampleblock}
-  
-%   \vspace{0.5cm}
-
-% %  \begin{minipage}{0.37\textwidth}
-%   \begin{itemize}
-%   \item Protocole peu adapté au type de connexion WebRTC
-%   \end{itemize}
-%   % L'établissement de connexion nécessite au moins 1 aller-retour de message.
-% %\end{minipage}
-% %\begin{minipage}{0.61\textwidth}
-%   \begin{center}
-%     \input{img/fighandshake.tex}
-%   \end{center}
-% %\end{minipage}
-
-
-
-
-
-% \end{frame}
-
 
 
 \begin{frame}{Communication}{\SPRAY}
@@ -324,16 +69,9 @@
     
   \vspace{1cm}
 
-  % Chaque pair réagit à des événements et agit périodiquement. Le système
-  % converge rapidement vers une topologie possédant des propriétés similaires à
-  % celles des graphes aléatoires.
-
   Le réseau est \textbf{dynamique} : à n'importe quel moment, un pair peut
   rejoindre ou quitter le réseau. \\
   
-%  \vspace{0.5cm}
-
-
   \vspace{1cm}
 
   \begin{minipage}{0.32\textwidth}
@@ -361,7 +99,7 @@
   \end{minipage}
   \begin{minipage}{0.32\textwidth}
     \begin{center}
-%      \small Ajoute $1+\log |\mathcal{N}|$ connexions
+      % nothing
     \end{center}
   \end{minipage}
   \begin{minipage}{0.32\textwidth}
@@ -370,19 +108,6 @@
     \end{center}
   \end{minipage}
 
-
-
-  % Cycle de vie d'un pair : 
-  % \begin{enumerate}
-  % \item \textbf{Rejoindre} le réseau;
-  % \item \textbf{Rester} dans le réseau;
-  % \item \textbf{Quitter} le réseau.
-  % \end{enumerate}
-
-  % \large
-  % \begin{itemize}
-  % \item [$\Rightarrow$] \textbf{Le nombre de connexions établies doit rester cohérent.}
-  % \end{itemize}
 \end{frame}
 
 
@@ -418,31 +143,6 @@
     \end{center}
   \end{minipage}
 
-
-
-  % \begin{itemize}
-  % \item [$\rightarrow$] $|\mathcal{N}|$ pairs implique
-  %   $|\mathcal{N}|\ln |\mathcal{N}|$ connexions.
-  % \end{itemize}
-
-
-%  \vspace{0.5cm}
-
-  % \begin{minipage}{0.6\textwidth}
-  %   \begin{enumerate}[(a)]
-  %   \item Le nouvel arrivant se connecte à un contact ($1$ connexion);
-  %   \uncover<2->{\item Le contact dissémine la nouvelle arrivée aux membres de sa vue;}
-  %   \uncover<3->{\item Chacun de ces voisins établit une connexion
-  %     ($\approx \ln |\mathcal{N}|$ connexions).}
-  %   \end{enumerate}
-  % \end{minipage}
-  % \hfill
-  % \begin{minipage}{0.35\textwidth}
-  %   \begin{center}
-  %     \input{img/figjoiningexample.tex}
-  %   \end{center}
-  % \end{minipage}
-  
   \vspace{1cm}
   
   \large
@@ -451,6 +151,7 @@
   \end{itemize}
 
 \end{frame}
+
 
 \begin{frame}{Communication}{Échanges périodiques}
  
@@ -484,26 +185,6 @@
       \input{img/figshuffleexampleC.tex}
     \end{center}
   \end{minipage}
-
-
-
-  % \begin{minipage}{0.6\textwidth}
-  %   \begin{enumerate}[(a)]
-  %   \item Initiation du mélange périodique. Le pair devient médiateur entre
-  %     $\lceil P \div 2 \rceil - 1$ voisins aléatoires et le pair choisi pour le
-  %     mélange. 
-  %   \uncover<2->{\item En réponse, le pair choisi devient médiateur entre
-  %     $\lceil P\div 2 \rceil$ voisins et le pair initiateur;}
-  %   \uncover<3->{\item Le pair initiateur reçoit la réponse et établit ses 
-  %     connexions grâce au pair choisi.}
-  %   \end{enumerate}
-  % \end{minipage}
-  % \begin{minipage}{0.37\textwidth}
-  %   \begin{center}
-  %     \input{img/figshuffleexample.tex}
-  %   \end{center}
-  % \end{minipage}
-
 
   \vspace{0.5cm}
   \large
@@ -547,23 +228,6 @@
     \end{center}
   \end{minipage}
 
-
-  % \vspace{0.5cm}
-
-  % \begin{minipage}{0.6\textwidth}
-  %   \begin{enumerate}[(a)]
-  %   \item Un pair quitte le réseau ou tombe en panne;
-  %   \uncover<2->{\item Les pairs ayant une connexion vers lui s'aperçoivent de sa disparition;}
-  %   \uncover<3->{\item Ces pairs ajoutent de manière probabiliste des doublons.}
-  %   \end{enumerate}
-  % \end{minipage}
-  % \hfill
-  % \begin{minipage}{0.37\textwidth}
-  %   \begin{center}
-  %     \input{img/figleavingexample.tex}
-  %   \end{center}
-  % \end{minipage}
-
   \vspace{1cm}
   \large
   \begin{itemize}
@@ -577,22 +241,8 @@
 \begin{frame}{Communication}{Expérimentations}
 
   Simulations \PEERSIM.
-
-  % \vspace{0.5cm}
-
-  % \begin{itemize}
-  % \item \CYCLON : vue partielle dont la taille est configurée \textit{a priori};
-  % \item \SCAMP : vue partielle dont la taille s'ajuste au réseau;
-  % \item \SPRAY : vue partielle dont la taille s'ajuste au réseau et adapté au
-  %   contexte Web.
-  % \end{itemize}
-
-%\end{frame}
-
-%\begin{frame}{Communication}{Résultats attendus}
   
   \vspace{0.5cm}
-
 
   Résultats attendus :
   \begin{itemize}
@@ -614,17 +264,9 @@
 
 \end{frame}
 
+
 \begin{frame}{Communication}{Les vues partielles s'adaptent}
-  % \hspace{-1cm}
-  % \begin{minipage}{0.47\textwidth}
-  %   \begin{center}
-  %     \includegraphics[width=1.23\textwidth]{img/network/churn.eps}
-  %   \end{center}
-  % \end{minipage}
-  % \hfill
-  % \begin{minipage}{0.47\textwidth}
-  %     \includegraphics[width=1.23\textwidth]{img/network/avgpv.eps}
-  % \end{minipage}
+
   \begin{center}
     \begin{tikzpicture}
     \draw(0pt,0pt) node{\includegraphics[width=1\textwidth]{img/network/avgpv.eps}};
@@ -638,10 +280,8 @@
     
     \end{tikzpicture}
   \end{center}
-  \begin{center}
-%    $250+250+250+250-500+250+250$
-  \end{center}
 \end{frame}
+
 
 \begin{frame}{Communication}{Coefficient d'agglomération diminue rapidement}
   \hspace{-1cm}
@@ -668,26 +308,6 @@
 \end{frame}
 
 
-% \begin{frame}{Communication}{L'information se propage rapidement}
-%   \begin{center}
-%     \includegraphics[width=1\textwidth]{img/network/avgpath.eps}
-%   \end{center}
-% \end{frame}
-
-% \begin{frame}{Communication}{La charge est équilibrée}
-%   \begin{center}
-%     \includegraphics[width=1\textwidth]{img/network/histo.eps}
-%   \end{center}
-% \end{frame}
-
-
-% \begin{frame}{Communication}{Robuste aux défaillances}
-%   \begin{center}
-%     \includegraphics[width=1\textwidth]{img/network/resilience.eps}
-%   \end{center}
-% \end{frame}
-
-
 \begin{frame}{Communication}{Faible taux de doublons}
   \begin{center}
     \includegraphics[width=1\textwidth]{img/network/duplicates.eps}
@@ -696,9 +316,6 @@
 
 
 \begin{frame}{Communication}{Cas de la diffusion de messages}
-  % \begin{algorithm}[H]
-  %   \input{img/algobroadcast.tex}
-  % \end{algorithm}
 
   \begin{center}
     \input{img/figdiffusion.tex}
@@ -723,12 +340,8 @@
     \end{enumerate}
   \end{itemize}
 
-%  \vspace{0.5cm}
-
-  % \begin{itemize}
-  % \item[$\rightarrow$] \CYCLON et \SPRAY sont équivalent à 100 pairs
-  % \end{itemize}
 \end{frame}
+
 
 \begin{frame}{Communication}{Le taux d'erreur reste constant}
   \begin{center}
@@ -736,12 +349,12 @@
   \end{center} 
 \end{frame}
 
+
 \begin{frame}{Communication}{Le pic de popularité est mieux géré}
   \begin{center}
     \includegraphics[width=1\textwidth]{img/network/peak.eps}
   \end{center} 
 \end{frame}
-
 
 
 \begin{frame}{Communication}{Conclusion}
@@ -751,13 +364,6 @@
   \item \SPRAY est adapté au processus complexe d'établissement de connexion de
     WebRTC.
   \end{itemize}
-
-  % \vspace{0.25cm}
-
-  % \begin{itemize}
-  % \item \SPRAY a le désavantage d'utiliser des doublons, mais leur faible
-  %   proportion n'impacte pas les propriétés du réseau.    
-  % \end{itemize}
 
   \vspace{1cm}
 
@@ -806,26 +412,19 @@
     \item Les éditeurs recevant la modification l'appliquent.
     \end{itemize}
   \end{minipage}
-  % \begin{minipage}{0.56\textwidth}
-  %   \begin{center}
-  %     \input{img/functionning.tex}
-  %   \end{center}
-  % \end{minipage}
   \hfill
   \begin{minipage}{0.44\textwidth}
     \begin{center}
       \input{img/figenteringsessionstatic.tex}
     \end{center}
   \end{minipage}
-
   
+
   \vspace{1cm}
   \large
   \begin{itemize}
   \item [$\Rightarrow$] \textbf{taille de messages} $\times$ \textbf{nombre de messages}
   \end{itemize}
-
-
 
 \end{frame}
 
