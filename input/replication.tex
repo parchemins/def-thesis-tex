@@ -8,14 +8,6 @@
   la \textbf{disponibilité} d'un document et sa \textbf{réactivité} aux
   changements effectués.  \vspace{0.75cm}
 
-  % Fonctionnement :
-  % \begin{enumerate}[(a)]
-  % \item Une modification \textbf{produit un résultat};
-  % \item ce résultat est \textbf{disséminé} aux autres répliques;
-  % \item ces dernières exécutent -- ou \textbf{intègrent} -- le résultat
-  %   \textbf{reçu}.
-  % \end{enumerate}
-
   \begin{textblock*}{\textwidth}(-0.65cm,0.4cm) 
     \input{img/figoptimisticsteps.tex}
   \end{textblock*}
@@ -47,41 +39,11 @@
 
 \begin{frame}{Document}{Intention et ordre dense}
   
-  % L'effet observé sur le document lors de la génération d'une opération doit
-  % être également observé lors de son intégration malgré l'interférence
-  % d'opérations \textbf{concurrentes}.
-
-  % \vspace{1cm}
-
-  % \begin{itemize}
-  % \item Difficile à formaliser dans le cas général;
-  % \item L'opération doit respecter le plus possible sa spécification
-  %   séquentielle \footfullcite{bieniusa2012brief}.
-  % \end{itemize}
-
-  % \vspace{0.5cm}
-  
-  % Pour la séquence :
-  % \begin{itemize}
-  % \item \og insérer l'élément $e$ à la position $i$ dans la séquence \fg
-  %   $\rightarrow$ \textsc{insert}$(e,\,i)$
-  % \item \small \og supprimer l'élément à la position $i$ dans la séquence \fg
-  %   $\rightarrow$ \textsc{delete}$(i)$
-  % \end{itemize}
-
-
   \vspace{0.5cm}
 
-%  \begin{itemize}
-%%    \only<1-1>{\item [$\rightarrow$]L'intention semble être liée aux
-%%      positions.}
-%%    \only<2->{\item [$\rightarrow$]\sout{L'intention semble être
-%%        liée aux \textbf{positions}.}}
-%  \item [$\rightarrow$] 
   Une séquence se définit par un \textbf{ordre dense} sur ses éléments : les
   éléments sont ordonnés et il est toujours possible d'insérer un élément entre
   deux autres éléments.
-%  \end{itemize}
 
   \vspace{0.75cm}
 
@@ -93,49 +55,6 @@
 
   
 \end{frame}
-
-% \begin{frame}{Document}{Complexités}
-
-% Créer un ordre dense a un coût dont la progression peut être estimée par : 
-
-% \vspace{0.5cm}
-
-% \begin{itemize}
-%   \only<1-1>{\item Complexité en \textbf{communication};}
-%   \only<2->{\item  \textbf{Complexité en communication};}
-% \item Complexité \textbf{spatiale} de la réplique;
-% \item Complexité \textbf{temporelle} d'une opération \textbf{générée} localement;
-%   \only<1-1>{\item Complexité \textbf{temporelle} de l'\textbf{intégration} d'une opération reçue.}
-%   \only<2->{\item \textbf{Complexité temporelle de l'intégration d'une opération reçue.}}
-% \end{itemize}
-
-% %% (TODO) maybe explain the reasons of this emphasis
-% \end{frame}
-
-
-% \begin{frame}{Document}{État de l'art : transformées opérationnelles}
-
-%   \vspace{-1.5cm}
-
-%   Ces approches \REF{} ont une signature identique à celle communément employée
-%   pour les séquences : 
-%   \begin{itemize}
-%   \item \textsc{insert}($element,\,position$)
-%   \item \textsc{delete}($position$)
-%   \end{itemize}
-
-%   \vspace{0.5cm}
-
-%   Lors de la réception d'une opération, ses arguments sont ajustés afin qu'ils
-%   s'appliquent à l'état courant de la réplique malgré les opérations effectuées
-%   et intégrées en concurrence. 
-
-
-%   \begin{textblock*}{\textwidth}(-0.65cm,0.4cm) 
-%     \input{img/figotexample.tex}
-%   \end{textblock*}
-% \end{frame}
-
 
 \begin{frame}{Document}{Ordre dense grâce aux identifiants}
 
@@ -156,58 +75,6 @@
 \end{frame}
 
 
-% \begin{frame}{Document}{Le prix de la causalité}
-
-%   Concernant la Causalité du CCI:
-%   \begin{itemize}
-%   \item Ordonner les opérations selon l'ordre causal est extrêmement coûteux :
-%     au minimum $\pmb{\mathcal{O}(W)}$\textbf{ en communication} où $W$ est le
-%     nombre de participants ayant jamais écrit dans le document
-%     \footfullcite{charronbost1991concerning}.
-%     \begin{itemize}
-%     \item[$\rightarrow$] Relaxer l'ordre est nécessaire pour le passage à l'échelle
-%     \end{itemize}
-%   \end{itemize}
-  
-%   \vspace{0.5cm}
-  
-%   \large
-%   \begin{itemize}
-%   \item [$\rightarrow$] L'utilisation de structures de données répliquées sans
-%     conflits \footfullcite{shapiro2011conflict} permet cela.
-%     \begin{itemize}
-%     \item [$\rightarrow$] Ces approches se basent sur la génération
-%       d'identifiants uniques et immuables. Nous nous intéresserons
-%       particulièrement à celles dont les identifiants sont des listes de taille
-%       variable.
-%       \begin{itemize}
-%       \item [$\rightarrow$] Garder ces identifiants de petite taille.
-%       \end{itemize}
-%     \end{itemize}
-%   \end{itemize}
-
-% \end{frame}
-
-% \begin{frame}{Document}{Structures sans conflits}
-  
-%   La signature change : 
-%   \begin{itemize}
-%   \item \textsc{insert}($element,\, position$) $\rightarrow$
-%     \textsc{insert}($id_{position-1},\, element,\, id_{position}$)
-%   \item \textsc{delete}($position$) $\rightarrow$ \textsc{delete}($id_{position}$)
-%   \end{itemize}
-  
-%   \vspace{0.2cm}
-%   La complexité algorithmique se situe dans la partie locale de l'insertion.
-
-%   \vspace{0.2cm}
-  
-%   \begin{algorithm}[H]
-%     \input{img/algogeneral.tex}
-%   \end{algorithm}
-
-% \end{frame}
-
 \begin{frame}{Document}{Problèmes d'allocation d'identifiants}
 
   \textbf{Avec la connaissance} de la position des caractères dans la séquence
@@ -225,9 +92,6 @@
   \textbf{Sans connaissance}, les identifiants peuvent grandir très
   rapidement. Une stratégie adaptée à l'édition de gauche à droite devient
   catastrophique lorsque l'ordre d'insertion est opposé.
-
-%  La fonction d'allocation ne connait ni le \textbf{nombre} de caractères, ni
-%  leur \textbf{position} dans la séquence finale.
   
   \vspace{0.1cm}
 
@@ -282,16 +146,6 @@
     \end{equation}
   \end{block}
   
-  % \vspace{0.5cm}
-
-  % \begin{itemize}
-  % \item [$\rightarrow$] Sinon, il faut relocaliser les identifiants qui ont été
-  %   générés pour retrouver un arbre équilibré et conserver de bonnes performances
-  %   \begin{itemize}
-  %   \item [$\approx$] consensus répartis qui ne passe pas à l'échelle.
-  %   \end{itemize}
-  % \end{itemize}
-
 \end{frame}
 
 
@@ -305,7 +159,6 @@
   \item [$\rightarrow$] Progression linéaire des identifiants
   \end{itemize}
 
-%  \hspace{-1cm}
   \begin{center}
     \includegraphics[width=0.7\textwidth]{img/replication/motivationartificial.eps}
   \end{center}
@@ -356,15 +209,7 @@
   \hspace{1.5cm}
   \begin{minipage}{0.45\textwidth}
     \includegraphics[width=1.25\textwidth]{img/replication/double.eps}
-  \end{minipage}
-
-
-  % \vspace{0.25cm}
-  % \large
-  % \begin{itemize}
-  % \item [$\Rightarrow$] \textbf{Les chemins doivent être très prudemmment assignés.}
-  % \end{itemize}
-    
+  \end{minipage}    
 
 \end{frame}
 
@@ -402,19 +247,6 @@
     \includegraphics[width=1.25\textwidth]{img/replication/robin.eps}
   \end{minipage}
 
-
-  % \begin{itemize}
-  % \item Petit espace laissé entre les caractères pour les corrections eventuelles;
-  % \item Grand espace laissé avant/après les caractères pour les insertions à venir.
-  % \end{itemize}
-  
-  % \vspace{0.5cm}
-  % \large
-  % \begin{itemize}
-  % \item [$\Rightarrow$] \textbf{Quand appliquer telle ou telle sous-fonction
-  %     d'allocation ?}
-  % \end{itemize}
-
 \end{frame}
 
 
@@ -442,58 +274,32 @@
     \includegraphics[width=1.25\textwidth]{img/replication/lseq.eps}
   \end{minipage}
 
-  
-  % \begin{itemize}
-  % \item Une sous-fonction d'allocation par niveau de l'arbre;
-  % \item Choix de sous-fonction identiques quelle que soit la réplique.
-  % \end{itemize}
-
-  % \vspace{0.5cm}
-
-  % \large
-  % \begin{itemize}
-  % \item [$\Rightarrow$] \textbf{Sacrifice de niveau pour trouver la bonne sous-fonction
-  %   d'allocation.}
-  % \end{itemize}
-
 \end{frame}
 
 \begin{frame}{Document}{Complexités}
 
-%  \hspace{-1cm}
   \begin{minipage}{0.45\textwidth}
     \begin{center}
       \input{img/figrandomlseqtree.tex}
     \end{center}
   \end{minipage}
   \hfill
-%  \hspace{1.cm}
   \begin{minipage}{0.45\textwidth}
     \begin{center}
       \input{img/figmonotoniclseqtree.tex}
     \end{center}
   \end{minipage}
-  % \begin{minipage}{0.32\textwidth}
-  %   \begin{center}
-  %     \input{img/figworstlseqtree.tex}
-  %   \end{center}
-  % \end{minipage}
 
   \vspace{0.5cm}
   
   Comportements d'édition étudiés :
   \begin{itemize}
-  \item Insertions en position
-    aléatoire; % $\rightarrow$ corrections orthographiques;
+  \item Insertions en position aléatoire;
   \item Insertions monotone : de gauche à droite ou de droite à gauche;
   \item [$\rightarrow$] L'édition collaborative est une composition de ces
     comportements.
   \end{itemize}
   
-%  \begin{itemize}
-%  \item Pire cas.
-%  \end{itemize}
-
   \vspace{0.5cm}
   
   La structure analysée est un arbre 
@@ -522,12 +328,6 @@
     les éditeurs.
   \end{itemize}
   
-%   \begin{itemize}
-%   \item [$\rightarrow$] Léger surcoût par rapport à l'état de l'art sur la
-%     séquence répliquée totale.
-%  \item [$\rightarrow$] Pire cas quadratique
-%   \end{itemize}
-  
 \end{frame}
 
 
@@ -553,92 +353,6 @@
   
 \end{frame}
 
-% \begin{frame}{Document}{Expérimentations}
-
-%   Attentes sur les expérimentations : 
-%   \begin{itemize}
-%   \item Confirmation des résutlats de l'analyse en complexité
-%     \begin{itemize}
-%     \item [$\rightarrow$] temps des opérations
-%     \item [$\rightarrow$] espace des identifiants
-%     \end{itemize}
-% %  \item Effets de la concurrence sur la taille des identifiants
-%   \end{itemize}
-
-% \end{frame}
-
-
-
-% \begin{frame}{Document}{Contribution de chaque composant}
-  
-%   \hspace{-1cm}
-%   \begin{minipage}{0.45\textwidth}
-%     \includegraphics[width=1.25\textwidth]{img/replication/logoot.eps}
-%   \end{minipage}
-%   \hspace{1.5cm}
-%   \begin{minipage}{0.45\textwidth}
-% %    \begin{tikzpicture}
-% %      \node[visible on=<2-4>]
-%       {\includegraphics[width=1.25\textwidth]{img/replication/double.eps}}%;
-% %    \end{tikzpicture}
-%   \end{minipage}
-  
-%   \hspace{-1cm}
-%   \begin{minipage}{0.45\textwidth}
-% %    \begin{tikzpicture}
-% %      \node[visible on=<3-4>]
-%       {\includegraphics[width=1.25\textwidth]{img/replication/robin.eps}}%;
-% %    \end{tikzpicture}
-%   \end{minipage}
-%   \hspace{1.5cm}
-%   \begin{minipage}{0.45\textwidth}
-% %    \begin{tikzpicture}
-% %      \node[visible on=<4-4>]
-%       {\includegraphics[width=1.25\textwidth]{img/replication/lseq.eps}}%;
-% %    \end{tikzpicture}
-%   \end{minipage}
-
-% \end{frame}
-
-
-% \begin{frame}{Document}{Identifiants sur traces réelles}
-
-%   \hspace{-1cm}
-%   \begin{minipage}{0.45\textwidth}
-%     \includegraphics[width=1.29\textwidth]{img/replication/poste.eps}
-%   \end{minipage}
-%   \hspace{1.2cm}
-%   \begin{minipage}{0.45\textwidth}
-% %    \begin{tikzpicture}
-% %      \node[visible on=<2>]
-%       {\includegraphics[width=1.29\textwidth]{img/replication/templatetalk.eps}}%;
-% %    \end{tikzpicture}
-%   \end{minipage}
-
-%   \begin{minipage}{0.4\textwidth}
-%     Document édité en fin
-%   \end{minipage}
-%   \hspace{1.6cm}
-%   \begin{minipage}{0.4\textwidth}
-% %    \begin{tikzpicture}
-% %      \node[visible on=<2>]
-%       {Document édité au début}%;
-% %    \end{tikzpicture}
-%   \end{minipage}
-
-
-% \end{frame}
-
-
-% \begin{frame}{Document}{Évolution des performances}
-
-%   \begin{center}
-%     \includegraphics[width=\textwidth]{img/replication/time.eps}
-%   \end{center}
-
-% \end{frame}
-
-
 \begin{frame}{Document}{Conclusion}
 
   \begin{itemize}
@@ -647,17 +361,7 @@
     \vspace{0.5cm}
   \item Les identifiants générés ont une complexité sous-linéaire dans le contexte
     de l'édition collaborative
-%  \item [$\rightarrow$] ce qui répond partiellement au problème scientifique.
   \end{itemize}
-
-
-  % \vspace{1cm}
-  
-  % \large
-  % \begin{itemize}
-  % \item [$\Rightarrow$] \textbf{Nécessite un moyen de communiquer les
-  %     identifiants à tous les éditeurs fonctionnant dans les navigateurs Web.}
-  % \end{itemize}
   
 \end{frame}
 
@@ -681,20 +385,13 @@
   \begin{minipage}{0.55\textwidth}
     \begin{itemize}
       \only<1>{\item \textbf{Chaque éditeur possède une copie locale du document;}}
-%      \only<2->{\item Chaque éditeur possède une copie locale du document;}
       \only<1>{\item Chaque éditeur est connecté à d'autres éditeurs.}
-%      \only<2>{\item \textbf{Chaque éditeur est connecté à d'autres éditeurs.}}
       \vspace{0.5cm}
     \item Chaque caractère tapé est directement inséré dans la copie locale;
     \item La modification est disséminée à l'ensemble du réseau;
     \item Les éditeurs recevant la modification l'appliquent.
     \end{itemize}
   \end{minipage}
-  % \begin{minipage}{0.56\textwidth}
-  %   \begin{center}
-  %     \input{img/functionning.tex}
-  %   \end{center}
-  % \end{minipage}
   \hfill
   \begin{minipage}{0.44\textwidth}
     \begin{center}
@@ -707,10 +404,7 @@
   \large
   \begin{itemize}
   \only<1>{\item [$\Rightarrow$] \textbf{taille de messages} $\times$ nombre de messages}
-%  \only<2>{\item [$\Rightarrow$] taille de messages $\times$ \textbf{nombre de messages}}
   \end{itemize}
-
-
 
 \end{frame}
 
